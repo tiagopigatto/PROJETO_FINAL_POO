@@ -167,7 +167,7 @@ void PostPageNAut::verOptions()
             LIMPATELA;
             showScreen();
             cout << "Digite uma opcao: "
-                 cin >> opc;
+            cin >> opc;
         }
         switch(opc)
         {
