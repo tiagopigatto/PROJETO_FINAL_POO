@@ -1,0 +1,25 @@
+|| MENU PRINCIPAL ||
+1. Login
+2. Cadastrar-se
+3. Listar identificadores usuarios
+4. Listar identificadores das postagens
+5. Listar postagens
+
+
+|| MENU LOGIN ||
+1. Alterar dados
+2. Encerrar conta
+3. Fazer postagem
+4. Listar postagens
+5. Listar identificadores
+
+
+|| MENU POSTAGENS NAO AUTENTICADO ||
+1. Mostrar texto
+2. Mostrar comentários
+
+
+
+|| MENU POSTAGENS AUTENTICADO ||
+1. Avaliar postagem
+2. Submeter comentário
