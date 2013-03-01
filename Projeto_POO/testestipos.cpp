@@ -4,6 +4,41 @@
 
 #include "testestipos.h"
 using std::invalid_argument;
+void StarTesteTipos::exec()
+{
+    cout << "Realizacao de testes com argumentos validos e invalidos" << endl;
+
+    //Teste do tipo básico NomeUsuario
+    TesteTBUserName nomeusuario;
+    nomeusuario.run();
+
+    //Teste do tipo básico Senha
+    TesteTBPassword senha;
+    senha.run();
+
+    //Teste do tipo básico Ident
+    TesteTBIdentify ident;
+    ident.run();
+
+    //Teste do tipo básico Post
+    TesteTBPostText post;
+    post.run();
+
+    //Teste do tipo básico Comment
+    TesteTBComentText comment;
+    comment.run();
+
+    //Teste do tipo básico Date
+    TesteTBDate date;
+    date.run();
+
+    //Teste dp tipo básico Avalia
+    TesteTBEvaluation avalia;
+    avalia.run();
+
+    cout << "Todos os testes foram realizados com sucesso!" << endl;
+    cin.get();
+}
 
 void TesteBasico::run() {
     setUp();

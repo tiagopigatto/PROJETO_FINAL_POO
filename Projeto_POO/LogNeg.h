@@ -1,10 +1,19 @@
 #ifndef LOGICA_NEGOCIO_H
 #define	LOGICA_NEGOCIO_H
 
+/*
+#ifdef WIN32 || _WIN32  /*Parece que a MS gosta muito de usar o prefixo _ 
+    #include <direct.h>
+#else 
+    #include <sys/stat.h>
+#endif
+*/
+
 #include "Entidades.h"
 #include "PerComent.h"
 #include "PerPost.h"
 #include "PerUsu.h"
+#include "Protocolo.h"
 
 class LNProjeto : ProtocoloDeUsuario
 {
@@ -33,8 +42,7 @@ public:
 
 };
 
-class LNPost : ProtocoloDePost
-{
+class LNPost : ProtocoloDePost{
 public:
 	void cadastrar(Post *);
 	void update(Post *);

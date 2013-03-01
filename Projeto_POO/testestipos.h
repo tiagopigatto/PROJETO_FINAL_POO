@@ -5,6 +5,14 @@
 #include "TiposBasicos.h"
 #include "Entidades.h"
 
+class StarTesteTipos
+{
+public:
+    void exec();
+};
+
+
+
 /** \class TesteBasico
  *  \brief Classe que contem o tipo basico para realizar os testes, estes serão herdados por outras classes
  */
