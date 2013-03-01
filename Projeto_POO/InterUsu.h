@@ -11,7 +11,7 @@
 class BasicScreen {
 protected:
     virtual void showScreen() = 0;
-    virtual void showOptions() = 0;
+    virtual void verOptions() = 0;
 public:
     BasicScreen(User user);
     virtual void telaExec();
@@ -29,6 +29,7 @@ private:
 
 public:
 void showScreen();
+void verOptions();
 
 };
 
@@ -40,6 +41,7 @@ private:
 
 public:
 void showScreen();
+void verOptions();
 };
 
 class PostPageNAut : public BasicScreen {
@@ -50,6 +52,7 @@ private:
 
 public:
 void showScreen();
+void verOptions();
 };
 
 class MenuLogin : public BasicScreen {
@@ -63,6 +66,7 @@ private:
 
 public:
 void showScreen();
+void verOptions();
 };
 
 
