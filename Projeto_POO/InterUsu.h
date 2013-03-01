@@ -8,6 +8,9 @@
 #ifndef INTERFACEUSUARIO_H
 #define	INTERFACEUSUARIO_H
 
+using namespace std;
+
+
 class BasicScreen {
 protected:
     virtual void showScreen() = 0;

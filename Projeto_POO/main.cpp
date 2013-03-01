@@ -8,9 +8,9 @@
 #include <iostream>
 #include <string>
 #include <stdio.h>
-#include "TiposBasicos.h"
-#include "Entidades.h"
+#include "InterUsu.h"
 #include "testestipos.h"
+
 using namespace std;
 
 /*
