@@ -19,7 +19,17 @@
 2. Mostrar comentários
 
 
+|| MENU USUARIO LOGADO ||
+1. Postar
+2. Listar postagens
+
 
 || MENU POSTAGENS AUTENTICADO ||
 1. Avaliar postagem
 2. Submeter comentário
+
+
+|| POST || // aqui o usuário estaria olhando 1 POST
+1. Mostrar post
+2. Comentar post
+3. Avaliar post

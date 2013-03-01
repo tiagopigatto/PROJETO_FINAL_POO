@@ -20,12 +20,13 @@ public:
 
 class StartPage : public BasicScreen {
 private:
-    static const unsigned int N_OPCOES = 5;
+    static const unsigned int N_OPCOES = 6;
     static const unsigned int N_LOGIN = 1;
     static const unsigned int N_CADASTRO = 2;
     static const unsigned int N_LIU = 3;
     static const unsigned int N_LIP = 4;
     static const unsigned int N_LP = 5;
+    static const unsigned int N_SAIR = 6;
 
 public:
     void showScreen();
@@ -35,9 +36,10 @@ public:
 
 class PostPageAut : public BasicScreen {
 private:
-    static const unsigned int N_OPCOES = 2;
+    static const unsigned int N_OPCOES = 3;
     static const unsigned int N_APOST = 1;
     static const unsigned int N_SUBCOMENT = 2;
+    static const unsigned int N_SAIR = 3;
 
 public:
     void showScreen();
