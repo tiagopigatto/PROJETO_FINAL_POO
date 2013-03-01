@@ -15,42 +15,42 @@
 #include "PerUsu.h"
 #include "Protocolo.h"
 
-class LNProjeto : ProtocoloDeUsuario
+class LNProjeto : ProtocoloUsuario
 {
 public:
 	void cadastrar(User *);
-    void update(User *);
-    void deleta(Identify *);
-    User pesquisa(Identify *);
-    User pesquisa(UserName *);
+        void update(User *);        
+        void deleta(Identify *);
+        User pesquisa(Identify *);
+        User pesquisa(UserName *);
 
-    LNProjeto(){};
-    ~LNProjeto(){};
+        LNProjeto(){};
+        ~LNProjeto(){};
 
 };
 
-class LNComment : ProtocoloDeCommet
+class LNComent : ProtocoloComent
 {
 public:
-	void cadastrar(Comment *);
-    void update(Comment *);
+    void cadastrar(Coment *);
+    void update(Coment *);
     void deleta(Identify *);
-    Comment pesquisa(Indentify *);
+    Coment pesquisa(Identify *);
 
-    LNComment();
-    ~LNComment();
+    LNComent();
+    ~LNComent();
 
 };
 
-class LNPost : ProtocoloDePost{
+class LNPost : ProtocoloPost{
 public:
 	void cadastrar(Post *);
 	void update(Post *);
-	void deleta(Indentify *);
-	void pesquisa(Identify *);
+	void deleta(Identify *);
+	Post pesquisa(Identify *);
 
 	LNPost();
-	~LNComment();
+	~LNPost();
 
 };
 

@@ -10,43 +10,43 @@
 
 #include "TiposBasicos.h"
  
-class ProtocoloUsuaria
+class ProtocoloUsuario
 {
-    public:
-    	virtual void cadastrar(User *) = 0;
-    	virtual void update(User *) = 0;
-    	virtual void deleta(Identify *) = 0;
-    	virtual User pesquisa(Identify *) = 0;
-    	virtual User pesquisa(UserName *) = 0;
+public:
+    virtual void cadastrar(User *) = 0;
+    virtual void update(User *) = 0;
+    virtual void deleta(Identify *) = 0;
+    virtual User pesquisa(Identify *) = 0;
+    virtual User pesquisa(UserName *) = 0;
 
-    	ProtocoloUsuario(){}
-    	~ProtocoloUsuario(){}
+    ProtocoloUsuario(){}
+    ~ProtocoloUsuario(){}
 
 };
 
-class ProtocoloComment
+class ProtocoloComent
 {
-    public:
-    	virtual void cadastrar(Comment *) = 0;
-    	virtual void update(Comment *) = 0;
-    	virtual void deleta(Identify *) = 0;
-    	virtual Comment pesquisa(Indentify *) = 0;
+public:
+    virtual void cadastrar(Coment *) = 0;
+    virtual void update(Coment *) = 0;
+    virtual void deleta(Identify *) = 0;
+    virtual Coment pesquisa(Identify *) = 0;
 
-    	ProtocoloComment(){};
-    	~ProtocoloComment();
+    ProtocoloComent(){};
+    ~ProtocoloComent(){};
 
 };
 
 class ProtocoloPost
 {
-	public:
-		virtual void cadastrar(Post *) = 0;
-		virtual void update(Post *) = 0;
-		virtual void deleta(Indentify *) = 0;
-		virtual void pesquisa(Identify *) = 0;
+public:
+    virtual void cadastrar(Post *) = 0;
+    virtual void update(Post *) = 0;
+    virtual void deleta(Identify *) = 0;
+    virtual Post pesquisa(Identify *) = 0;
 
-		ProtocoloPost(){};
-		~ProtocoloPost(){};
+    ProtocoloPost(){};
+    ~ProtocoloPost(){};
 };
         
 

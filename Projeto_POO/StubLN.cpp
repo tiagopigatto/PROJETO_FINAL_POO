@@ -1,4 +1,4 @@
-#ifndef TESTEUSU
+#ifdef TESTE
 #include "LogNeg.h"
 
 void LNProjeto::cadastrar(User*) {
@@ -50,4 +50,5 @@ void LNPost::update(Post*) {
 
 Post LNPost::pesquisa(Identify*) {
 }
+
 #endif
