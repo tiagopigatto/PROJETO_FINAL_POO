@@ -32,14 +32,24 @@ public:
     void showScreen();
     void verOptions();
 
+    string nomeUsuario;
+    string senhaUsuario;
+    string identUsuario;
+
+    UserName username;
+    Password password;
+    Identify identificador;
+
 };
 
 class PostPageAut : public BasicScreen {
 private:
-    static const unsigned int N_OPCOES = 3;
-    static const unsigned int N_APOST = 1;
-    static const unsigned int N_SUBCOMENT = 2;
-    static const unsigned int N_SAIR = 3;
+    static const unsigned int N_OPCOES = 5;
+    static const unsigned int N_MOSTRAPOST = 1;
+    static const unsigned int N_MOSTRACOMENT = 2;
+    static const unsigned int N_COMENTPOST = 3;
+    static const unsigned int N_AVALIAPOST = 4;
+    static const unsigned int N_SAIR = 5;
 
 public:
     void showScreen();
@@ -48,9 +58,10 @@ public:
 
 class PostPageNAut : public BasicScreen {
 private:
-    static const unsigned int N_OPCOES = 2;
-    static const unsigned int N_MOSTEXTO = 1;
-    static const unsigned int N_SUBCOMENT = 2;
+    static const unsigned int N_OPCOES = 3;
+    static const unsigned int N_MOSTRAPOST = 1;
+    static const unsigned int N_MOSTRACOMENT = 2;
+    static const unsigned int N_SAIR = 3;
 
 public:
     void showScreen();
@@ -59,12 +70,13 @@ public:
 
 class MenuLogin : public BasicScreen {
 private:
-    static const unsigned int N_OPCOES = 5;
+    static const unsigned int N_OPCOES = 6;
     static const unsigned int N_ALTERAR = 1;
     static const unsigned int N_ENCERRAR = 2;
     static const unsigned int N_POSTAR = 3;
     static const unsigned int N_LISTAR_POST = 4;
     static const unsigned int N_LISTAR_IDENT = 5;
+    static const unsigned int N_SAIR = 6;
 
 public:
     void showScreen();
