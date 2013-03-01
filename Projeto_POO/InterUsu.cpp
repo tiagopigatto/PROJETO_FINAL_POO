@@ -43,15 +43,29 @@ void StartPage::verOptions()
             cin >> senhaUsuario;
             cout << "Digite o identificador do usuario: "
             cin << identUsuario;
+            user = new User();
+            try
+            {
+                UserName name = new UserName(nomeUsuario);
+                //senha
+                //idendetificador
+                user.setIdentify(Idetificador);
+                bool a = loginUser(User);
+                //if do bool
 
-            try{
+                menu.usuariologado = user;
+                menu.verOptions();
                 //digitar funçao de login
             }
-            catch(invalid_argument& e){
-            cout << "Error: " << e.what() << endl;
-            system("PAUSE");
-            return;
+            catch(invalid_argument& e)
+            {
+                cout << "Error: " << e.what() << endl;
+                system("PAUSE");
+                return;
             }
+
+            MenuLogin verifica;
+
             break;
         case N_CADASTRO:
             cout << "**********************************" << endl;
@@ -62,19 +76,22 @@ void StartPage::verOptions()
             cout << "Digite o nome de usuario: ";
             cin >> nomeUsuario;
             cout << "Digite a senha do usuario: "
-            cin >> senhaUsuario;
+                 cin >> senhaUsuario;
             cout << "Digite o identificador do usuario: "
-            cin << identUsuario;
+                 cin << identUsuario;
 
-            try{
-            username.setValue(nomeUsuario);
-            password.setValue(senhaUsuario);
-            identificador.setValue(identUsuario);
+            try
+            {
+                user = new User();
+                user.name.setValue(nomeUsuario);
+                user.password.setValue(senhaUsuario);
+                user.identify.setValue(identUsuario);
             }
-            catch(invalid_argument& e){
-            cout << "Error: " << e.what() << endl;
-            system("PAUSE");
-            return;
+            catch(invalid_argument& e)
+            {
+                cout << "Error: " << e.what() << endl;
+                system("PAUSE");
+                return;
             }
             break;
         case N_LIU:
@@ -167,7 +184,7 @@ void PostPageNAut::verOptions()
             LIMPATELA;
             showScreen();
             cout << "Digite uma opcao: "
-            cin >> opc;
+                 cin >> opc;
         }
         switch(opc)
         {
@@ -216,6 +233,30 @@ void MenuLogin::verOptions()
         switch(opc)
         {
         case N_ALTERAR:
+            cout << "**********************************" << endl;
+            cout << "********** SISTEMA BLOG **********" << endl;
+            cout << "**********************************" << endl;
+            cout << "PAGINA DE ALTERACAO DE DADOS DO USUARIO" << endl;
+
+            cout << "Digite o nome de usuario: ";
+            cin >> nomeUsuario;
+            cout << "Digite a senha do usuario: "
+                 cin >> senhaUsuario;
+            cout << "Digite o identificador do usuario: "
+                 cin << identUsuario;
+
+            try
+            {
+                username.setValue(nomeUsuario);
+                password.setValue(senhaUsuario);
+                identificador.setValue(identUsuario);
+            }
+            catch(invalid_argument& e)
+            {
+                cout << "Error: " << e.what() << endl;
+                system("PAUSE");
+                return;
+            }
             break;
         case N_ENCERRAR:
             //mostra os comentarios da postagem

@@ -22,6 +22,8 @@ public:
 };
 
 class StartPage : public BasicScreen {
+
+
 private:
     static const unsigned int N_OPCOES = 6;
     static const unsigned int N_LOGIN = 1;
@@ -39,9 +41,8 @@ public:
     string senhaUsuario;
     string identUsuario;
 
-    UserName username;
-    Password password;
-    Identify identificador;
+    User *user;
+    MenuLogin menu;
 
 };
 
@@ -72,6 +73,7 @@ public:
 };
 
 class MenuLogin : public BasicScreen {
+    User *usuariologado;
 private:
     static const unsigned int N_OPCOES = 6;
     static const unsigned int N_ALTERAR = 1;
@@ -84,6 +86,10 @@ private:
 public:
     void showScreen();
     void verOptions();
+
+    User user;
+    Password password;
+    Identify identify;
 };
 
 
