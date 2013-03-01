@@ -14,7 +14,7 @@
 5. Listar identificadores
 
 
-|| MENU POSTAGENS NAO AUTENTICADO ||
+|| POST NAO AUTENTICADO || // o usuario nao autenticado só pode selecionar um post para ver
 1. Mostrar texto
 2. Mostrar comentários
 
@@ -24,12 +24,7 @@
 2. Listar postagens
 
 
-|| MENU POSTAGENS AUTENTICADO ||
-1. Avaliar postagem
-2. Submeter comentário
-
-
-|| POST || // aqui o usuário estaria olhando 1 POST
+|| POST AUTENTICADO|| // aqui o usuário estaria olhando 1 POST
 1. Mostrar post
 2. Comentar post
 3. Avaliar post
