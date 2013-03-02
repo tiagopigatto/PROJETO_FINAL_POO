@@ -11,7 +11,7 @@ Operacoes::GetResult() {
     //Mais alguma coisa?
         char *sql, *end;
         int retval, i;
-        int q_cnt = 5, q_size = 150, ind = 0;
+        int q_cnt = 5, q_size = 150;
         char **queries = malloc(sizeof (char) * q_cnt * q_size);
         char valida_name[11];
         // definindo ponteiros
@@ -24,7 +24,7 @@ Operacoes::GetResult() {
             /** Erro no banco **/
         }
         int result;
-
+        sql = (char *) malloc(sizeof (char) * q_size);
         /*! \brief Cadastra Usuário No BD
          *
          *
@@ -32,7 +32,7 @@ Operacoes::GetResult() {
          * não exista nem um indentificador nem um nome igual na tabela
          */
         if (currentAction == TYPES::ACTION_LIST::CADASTRAUSER) {
-            Operacoes.CriaUser(sql,retval,*handle,q_size);
+            Operacoes.CriaUser(sql,retval,handle);
         }
             /*! \brief Atualiza Usuário No BD
              *
@@ -41,33 +41,15 @@ Operacoes::GetResult() {
              * existir ainda.
              */
         else if (currentAction == TYPES::ACTION_LIST::UPDATEUSER) {
-            //Sem verificação de existência do ID no BD
-            //Update na entidade no BD
-            sql = (char *) malloc(sizeof (char) * q_size);
-            strcpy(sql, "UPDATE user SET name = '");
-            strcat(sql, user_.getName());
-            strcpy(sql, ", password = '");
-            strcat(sql, user_.getPassword());
-            strcat(sql, "' WHERE Identify = '");
-            strcat(sql, user_.getIdentify());
-            strcat(sql, "'");
-            // executa nosso comando no banco 
-            retval = sqlite3_exec(handle, sql, 0, 0, 0);
-            if (retval) {
-                /** NOME já existe **/
-            }
-        }            /*! \brief Deleta Usuário No BD
+            Operacoes.UpdateUser(sql,retval,handle);
+        }            
+        /*! \brief Deleta Usuário No BD
         *
         *
         * Recebe o objeto endereço que deve ser deletado e apartir dele faz um drop Delete na linha 
         */
         else if (currentAction == TYPES::ACTION_LIST::DELETEUSER) {
-            //Delete na entidade no BD            
-            sql = (char *) malloc(sizeof (char) * q_size);
-            strcpy(sql, "DELETE FROM user WHERE Identify = '");
-            strcat(sql, user_.getIdentify());
-            strcat(sql, "'");
-            retval = sqlite3_exec(handle, sql, 0, 0, 0);
+            Operacoes.DeleteUser(sql,retval,handle);
         }
             /*! \brief Procura um nome de Usuário No BD
              *
@@ -75,66 +57,14 @@ Operacoes::GetResult() {
              * Recebe um Name e procura na tabela se esse existe, caso sim armazena as informações dele em um objeto User 
              */
         else if (currentAction == TYPES::ACTION_LIST::FINDUSERN) {
-            sql = (char *) malloc(sizeof (char) * q_size);
-            strcpy(sql, "SELECT * FROM user WHERE name = '");
-            strcat(sql, user_.getName());
-            strcat(sql, "'");
-            retval = sqlite3_prepare_v2(handle, queries[ind - 1], -1, &stmt, 0);
-            // caso de erro
-            if (retval) {
-                printf("db selecionado com erro\n");
-                return -1;
-            }
-            //Status
-            retval = sqlite3_step(stmt);
-            while (1) {
-                if (retval == SQLITE_ROW) {
-                    const char *val = (const char*) sqlite3_column_text(stmt, 0);
-                    user_.setIdentify(val);
-                    free(val);
-                    const char *val = (const char*) sqlite3_column_text(stmt, 1);
-                    user_.setName(val);
-                    free(val);
-                    const char *val = (const char*) sqlite3_column_text(stmt, 2);
-                    user_.setPassword(val);
-                    free(val);
-                } else if (retval == SQLITE_DONE) {
-                    break;
-                }
-            }
+            Operacoes.FindUserN(sql,retval,handle,queries,stmt );
         }            /*! \brief Procura um id de Usuário No BD
         *
         *
         * Recebe um identificador e procura na tabela se esse existe, caso sim armazena as informações dele em um objeto User 
         */
         else if (currentAction == TYPES::ACTION_LIST::FINDUSERID) {
-            sql = (char *) malloc(sizeof (char) * q_size);
-            strcpy(sql, "SELECT * FROM user WHERE Identify = '");
-            strcat(sql, user_.getIdentify());
-            strcat(sql, "'");
-            retval = sqlite3_prepare_v2(handle, queries[ind - 1], -1, &stmt, 0);
-            // caso de erro
-            if (retval) {
-                printf("db selecionado com erro\n");
-                return -1;
-            }
-            //Status
-            retval = sqlite3_step(stmt);
-            while (1) {
-                if (retval == SQLITE_ROW) {
-                    const char *val = (const char*) sqlite3_column_text(stmt, 0);
-                    user_.setIdentify(val);
-                    free(val);
-                    const char *val = (const char*) sqlite3_column_text(stmt, 1);
-                    user_.setName(val);
-                    free(val);
-                    const char *val = (const char*) sqlite3_column_text(stmt, 2);
-                    user_.setPassword(val);
-                    free(val);
-                } else if (retval == SQLITE_DONE) {
-                    break;
-                }
-            }
+            Operacoes.FindUserID(sql,retval,handle,queries,stmt );
         }
             /*! \brief Cadastra Comentário No BD
              *
@@ -336,10 +266,7 @@ Operacoes::GetResult() {
         return result;
 }
 
-Operacoes::CriaUser(char *sql,int retval, sqlite3 *handle,int q_size) {
-//Sem verificação de existência do nome no BD
-            //ADD a entidade no BD
-            sql = (char *) malloc(sizeof (char) * q_size);
+Operacoes::CriaUser(char *sql,int retval, sqlite3 *handle) {
             strcpy(sql, "INSERT INTO user VALUES('");
             strcat(sql, user_.getIdentify());
             strcat(sql, "','");
@@ -353,6 +280,91 @@ Operacoes::CriaUser(char *sql,int retval, sqlite3 *handle,int q_size) {
                 /** ID ou NOME já existe **/
             }
 }
-Operacoes::UpdateUser(char *sql,int retval, sqlite3 *handle,int q_size){
-    
+Operacoes::UpdateUser(char *sql,int retval, sqlite3 *handle){
+            strcpy(sql, "UPDATE user SET name = '");
+            strcat(sql, user_.getName());
+            strcpy(sql, ", password = '");
+            strcat(sql, user_.getPassword());
+            strcat(sql, "' WHERE Identify = '");
+            strcat(sql, user_.getIdentify());
+            strcat(sql, "'");
+            // executa nosso comando no banco 
+            retval = sqlite3_exec(handle, sql, 0, 0, 0);
+            if (retval) {
+                /** NOME já existe **/
+            }
+}
+Operacoes::DeleteUser(char *sql,int retval, sqlite3 *handle){
+            strcpy(sql, "UPDATE user SET name = '");
+            strcat(sql, user_.getName());
+            strcpy(sql, ", password = '");
+            strcat(sql, user_.getPassword());
+            strcat(sql, "' WHERE Identify = '");
+            strcat(sql, user_.getIdentify());
+            strcat(sql, "'");
+            // executa nosso comando no banco 
+            retval = sqlite3_exec(handle, sql, 0, 0, 0);
+            if (retval) {
+                /** NOME já existe **/
+            }
+}
+Operacoes::FindUserN(char *sql,int retval, sqlite3 *handle, char **queries,sqlite3_stmt stmt ){
+            int ind=0;
+            strcpy(sql, "SELECT * FROM user WHERE name = '");
+            strcat(sql, user_.getName());
+            strcat(sql, "'");
+            queries[ind++] = sql;
+            retval = sqlite3_prepare_v2(handle, queries[ind - 1], -1, &stmt, 0);
+            // caso de erro
+            if (retval) {
+                printf("db selecionado com erro\n");
+                return -1;
+            }
+            //Status
+            retval = sqlite3_step(stmt);
+            while (1) {
+                if (retval == SQLITE_ROW) {
+                    const char *val = (const char*) sqlite3_column_text(stmt, 0);
+                    user_.setIdentify(val);
+                    free(val);
+                    const char *val = (const char*) sqlite3_column_text(stmt, 1);
+                    user_.setName(val);
+                    free(val);
+                    const char *val = (const char*) sqlite3_column_text(stmt, 2);
+                    user_.setPassword(val);
+                    free(val);
+                } else if (retval == SQLITE_DONE) {
+                    break;
+                }
+            }
+}
+Operacoes::FindUserID(char *sql,int retval, sqlite3 *handle, char **queries,sqlite3_stmt stmt ){
+            int ind=0;
+            strcpy(sql, "SELECT * FROM user WHERE Identify = '");
+            strcat(sql, user_.getIdentify());
+            strcat(sql, "'");
+            queries[ind++] = sql;
+            retval = sqlite3_prepare_v2(handle, queries[ind - 1], -1, &stmt, 0);
+            // caso de erro
+            if (retval) {
+                printf("db selecionado com erro\n");
+                return -1;
+            }
+            //Status
+            retval = sqlite3_step(stmt);
+            while (1) {
+                if (retval == SQLITE_ROW) {
+                    const char *val = (const char*) sqlite3_column_text(stmt, 0);
+                    user_.setIdentify(val);
+                    free(val);
+                    const char *val = (const char*) sqlite3_column_text(stmt, 1);
+                    user_.setName(val);
+                    free(val);
+                    const char *val = (const char*) sqlite3_column_text(stmt, 2);
+                    user_.setPassword(val);
+                    free(val);
+                } else if (retval == SQLITE_DONE) {
+                    break;
+                }
+            }
 }
