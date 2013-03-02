@@ -101,13 +101,13 @@ public:
             retval = sqlite3_step(stmt);
             while (1) {
                 if (retval == SQLITE_ROW) {
-                    const char *val = (const char*) sqlite3_column_text(stmt, 1);
+                    const char *val = (const char*) sqlite3_column_text(stmt, 0);
                     user_.setIdentify(val);
                     free(val);
-                    const char *val = (const char*) sqlite3_column_text(stmt, 2);
+                    const char *val = (const char*) sqlite3_column_text(stmt, 1);
                     user_.setName(val);
                     free(val);
-                    const char *val = (const char*) sqlite3_column_text(stmt, 1);
+                    const char *val = (const char*) sqlite3_column_text(stmt, 2);
                     user_.setPassword(val);
                     free(val);
                 } else if (retval == SQLITE_DONE) {
@@ -115,8 +115,35 @@ public:
                 }
             }
         } else if (currentAction == TYPES::ACTION_LIST::FINDUSERID) {
-
+            sql = (char *) malloc(sizeof (char) * q_size);
+            strcpy(sql, "SELECT * FROM user WHERE Identify = '");
+            strcat(sql, user_.getIdentify());
+            strcat(sql, "'");
+            retval = sqlite3_prepare_v2(handle, queries[ind - 1], -1, &stmt, 0);
+            // caso de erro
+            if (retval) {
+                printf("db selecionado com erro\n");
+                return -1;
+            }
+            //Status
+            retval = sqlite3_step(stmt);
+            while (1) {
+                if (retval == SQLITE_ROW) {
+                    const char *val = (const char*) sqlite3_column_text(stmt, 0);
+                    user_.setIdentify(val);
+                    free(val);
+                    const char *val = (const char*) sqlite3_column_text(stmt, 1);
+                    user_.setName(val);
+                    free(val);
+                    const char *val = (const char*) sqlite3_column_text(stmt, 2);
+                    user_.setPassword(val);
+                    free(val);
+                } else if (retval == SQLITE_DONE) {
+                    break;
+                }
+            }
         }
+        
 
         // fecha a conexão
         free(sql);
