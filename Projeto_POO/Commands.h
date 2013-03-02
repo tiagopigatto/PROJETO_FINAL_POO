@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "IReciever.h"
+#include "TiposBasicos.h"
 
 class ACommand {
 protected:
@@ -206,3 +206,28 @@ public:
 };
 
 #endif
+
+#ifndef OPERANDS
+#define OPERANDS
+
+#include "TiposBasicos.h"
+#include "Entidades.h"
+#include "sqlite3.h"
+
+/*  \file   Operacoes.h 
+    \brief  Este e o cabecalho resposavel por gerenciar os comandos BD nas tabelas: 
+    \n Os comandos são na ordem da classe:\n 
+    Criar um novo usário\n
+    Atualizar um usuário\n
+    Deletar um usuario\n                      
+    Procurar um nome na tabela user\n
+    Procurar um id na tabela user\n
+    Criar um novo comentárion
+    Atualizar um comentário\n
+    Deletar um comentário\n
+    Procurar um id na tabela coment\n
+    Criar um novo post\n
+    Atualizar um post\\n
+    Deletar um post\n
+    Procurar um id na tabela post\n            
+ */
