@@ -26,6 +26,34 @@ using namespace std;
 //Variaveis Globais
 
 //Declaracoes de Classes
+namespace TYPES {
+
+    enum ACTION_LIST {
+        CADASTRAUSER,
+        UPDATEUSER,
+        DELETEUSER,
+        FINDUSERN,
+        FINDUSERID,
+
+        CADASTRACOMENT,
+        UPDATECOMENT,
+        DELETECOMENT,
+        FINDCOMENT,
+
+        CADASTRAPOST,
+        UPDATEPOST,
+        DELETEPOST,
+        FINDPOST
+    };
+};
+
+class IReciever {
+public:
+    virtual void SetAction(TYPES::ACTION_LIST action) = 0;
+    virtual int GetResult() = 0;
+};
+
+
 
 /** \class BasicType
  *  \brief Essa e a classe responsavel por ser um padrao de classe para clases tipos basicos       \n
@@ -263,9 +291,15 @@ public:
      *  \exception std::invalid_argument o argumeto e invalido.
      */
     void setVoteNumber(const int voteNumber) throw (invalid_argument);
+    
+    void getVoteNumber();
 };
 
 //Metodos Inline
+inline void Evaluation::getVoteNumber()
+{
+    return this->voteNumber;
+}
 
 inline void BasicType::setValue(const string& value) throw (invalid_argument) {
     validate(value);
@@ -275,5 +309,6 @@ inline void BasicType::setValue(const string& value) throw (invalid_argument) {
 inline string BasicType::getValue()const {
     return value;
 }
+
 #endif	
 

@@ -10,10 +10,7 @@
 */
 
 #include "Entidades.h"
-#include "PerComent.h"
-#include "PerPost.h"
-#include "PerUsu.h"
-#include "Protocolo.h"
+#include "ProtocoloLN.h"
 
 class LNProjeto : ProtocoloUsuario
 {

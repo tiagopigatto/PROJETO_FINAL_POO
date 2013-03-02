@@ -1,3 +1,6 @@
+#ifndef COMANDS
+#define COMANDS
+
 #pragma once
 
 #include "IReciever.h"
@@ -201,3 +204,5 @@ public:
         return pReciever_->GetResult();
     }
 };
+
+#endif
