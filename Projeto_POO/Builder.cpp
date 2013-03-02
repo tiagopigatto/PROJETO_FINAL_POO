@@ -35,7 +35,7 @@ Builder::Builder() {
 
     //comencando
 
-    this->initialIUControler->start();
+    this->initialIUControler->exec();
 }
 
 Builder::~Builder() {
