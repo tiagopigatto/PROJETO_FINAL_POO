@@ -9,8 +9,10 @@
 #define	PROTOCOLOS_H
 
 #include "TiposBasicos.h"
- 
-class ProtocoloUsuario
+#include "BaseProtocol.h"
+#include "PercistenceProtocol.h"
+
+class UserProtocol : public BaseProtocol
 {
 public:
     virtual void cadastrar(User *) = 0;
@@ -18,33 +20,36 @@ public:
     virtual void deleta(Identify *) = 0;
     virtual User pesquisa(Identify *) = 0;
     virtual User pesquisa(UserName *) = 0;
+    virtual void setPercistence(PercistenceProtocol *) = 0;
 
     ProtocoloUsuario(){}
     ~ProtocoloUsuario(){}
 
 };
 
-class ProtocoloComent
+class ComentProtocol : public BaseProtocol
 {
 public:
     virtual void cadastrar(Coment *) = 0;
     virtual void update(Coment *) = 0;
     virtual void deleta(Identify *) = 0;
     virtual Coment pesquisa(Identify *) = 0;
-
+    virtual void setPercistence(PercistenceProtocol *) = 0;
+    
     ProtocoloComent(){};
     ~ProtocoloComent(){};
 
 };
 
-class ProtocoloPost
+class PostProtocol : public BaseProtocol
 {
 public:
     virtual void cadastrar(Post *) = 0;
     virtual void update(Post *) = 0;
     virtual void deleta(Identify *) = 0;
     virtual Post pesquisa(Identify *) = 0;
-
+    virtual void setPercistence(PercistenceProtocol *) = 0;
+    
     ProtocoloPost(){};
     ~ProtocoloPost(){};
 };
