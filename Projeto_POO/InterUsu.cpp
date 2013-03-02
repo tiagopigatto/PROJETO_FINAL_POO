@@ -19,6 +19,7 @@ void StartPage::showScreen()
 void StartPage::verOptions()
 {
     unsigned int opc;
+    bool acheck;
     while(true)
     {
         opc = 0;
@@ -47,15 +48,20 @@ void StartPage::verOptions()
             try
             {
                 UserName name = new UserName(nomeUsuario);
-                //senha
-                //idendetificador
-                user.setIdentify(Idetificador);
-                bool a = loginUser(User);
-                //if do bool
+                Password senha = new Password(senhaUsuario);
+                Identify identificador = new Identify(identUsuario);
+                bool acheck = loginUser(user);
+                if(acheck == 0){
+                    cout << "Não encontrou o usuário!" << endl;
+                    break;
+                }
+                postlogado = new PostPageAut();
+                postlogado.usuariologado = user;
 
+                menu = new MenuLogin();
                 menu.usuariologado = user;
+                MenuLogin verifica;
                 menu.verOptions();
-                //digitar funçao de login
             }
             catch(invalid_argument& e)
             {
@@ -63,8 +69,6 @@ void StartPage::verOptions()
                 system("PAUSE");
                 return;
             }
-
-            MenuLogin verifica;
 
             break;
         case N_CADASTRO:
@@ -79,13 +83,12 @@ void StartPage::verOptions()
                  cin >> senhaUsuario;
             cout << "Digite o identificador do usuario: "
                  cin << identUsuario;
-
+            user = new User();
             try
             {
-                user = new User();
-                user.name.setValue(nomeUsuario);
-                user.password.setValue(senhaUsuario);
-                user.identify.setValue(identUsuario);
+                UserName name = new UserName(nomeUsuario);
+                Password senha = new Password(senhaUsuario);
+                Identify identificador = new Identify(identUsuario);
             }
             catch(invalid_argument& e)
             {
@@ -119,7 +122,7 @@ void PostPageAut::showScreen()
     cout << "********** SISTEMA BLOG **********" << endl;
     cout << "**********************************" << endl;
     cout << "PAGINA DO POST" << endl
-         cout << "1. Mostrar postagem." << endl;
+    cout << "1. Mostrar postagem." << endl;
     cout << "2. Mostrar comentários." << endl;
     cout << "3. Comentar postagem." << endl;
     cout << "4. Avaliar postagem." << endl;
@@ -142,16 +145,34 @@ void PostPageAut::verOptions()
         switch(opc)
         {
         case N_MOSTRAPOST:
-            //mostra a postagem selecionada
+            //usuario seleciona o ID da postagem
             break;
         case N_MOSTRACOMENT:
             //mostra os comentarios da postagem
             break;
         case N_COMENTPOST:
-            //abre para comentar a pagina
+            cout << "Digite o comentário: ";
+            cin >> comentario;
+
+            comment = new Coment();
+            try{
+            ComentText comentario = new ComentText(comentario);
+            comment.authorIdentify = usuariologado.getAuthorIdentify();
+            comment.postIdentify = postatual.getPostIdentify();
+            //setar o identificador do comentario (banco de dados ou manual?)
+            //setar a data do comentario (banco de dados ou manual?)
+            }
+            catch(invalid_argument& e)
+            {
+                cout << "Error: " << e.what() << endl;
+                system("PAUSE");
+                return;
+            }
+
             break;
         case N_AVALIAPOST:
-            //abre para avaliar a postagem
+            cout << "Digite uma nota de 0 a 5 para esta postagem: ";
+            cin >> nota;
             break;
         case N_SAIR:
             //volta omenu
@@ -209,7 +230,7 @@ void MenuLogin::showScreen()
     cout << "********** SISTEMA BLOG **********" << endl;
     cout << "**********************************" << endl;
     cout << "PAGINA DO USUARIO" << endl
-         cout << "1. Alterar dados." << endl;
+    cout << "1. Alterar dados." << endl;
     cout << "2. Encerrar conta." << endl;
     cout << "3. Fazer postagem." << endl;
     cout << "4. Listar postagens." << endl;
@@ -236,20 +257,32 @@ void MenuLogin::verOptions()
             cout << "**********************************" << endl;
             cout << "********** SISTEMA BLOG **********" << endl;
             cout << "**********************************" << endl;
-            cout << "PAGINA DE ALTERACAO DE DADOS DO USUARIO" << endl;
+            cout << "PAGINA DE LOGIN" << endl;
 
             cout << "Digite o nome de usuario: ";
             cin >> nomeUsuario;
             cout << "Digite a senha do usuario: "
-                 cin >> senhaUsuario;
+            cin >> senhaUsuario;
             cout << "Digite o identificador do usuario: "
-                 cin << identUsuario;
-
+            cin << identUsuario;
+            user = new User();
             try
             {
-                username.setValue(nomeUsuario);
-                password.setValue(senhaUsuario);
-                identificador.setValue(identUsuario);
+                UserName name = new UserName(nomeUsuario);
+                Password senha = new Password(senhaUsuario);
+                Identify identificador = new Identify(identUsuario);
+                bool acheck = loginUser(user);
+                if(acheck == 0){
+                    cout << "Não encontrou o usuário!" << endl;
+                    break;
+                }
+                postlogado = new PostPageAut();
+                postlogado.usuariologado = user;
+
+                menu = new MenuLogin();
+                menu.usuariologado = user;
+                MenuLogin verifica;
+                menu.verOptions();
             }
             catch(invalid_argument& e)
             {
@@ -257,6 +290,7 @@ void MenuLogin::verOptions()
                 system("PAUSE");
                 return;
             }
+
             break;
         case N_ENCERRAR:
             //mostra os comentarios da postagem

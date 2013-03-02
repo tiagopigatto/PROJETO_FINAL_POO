@@ -47,6 +47,8 @@ public:
 };
 
 class PostPageAut : public BasicScreen {
+    User *usuariologado;
+    Post *postatual;
 private:
     static const unsigned int N_OPCOES = 5;
     static const unsigned int N_MOSTRAPOST = 1;
@@ -58,6 +60,9 @@ private:
 public:
     void showScreen();
     void verOptions();
+
+    string comentario;
+    int nota;
 };
 
 class PostPageNAut : public BasicScreen {
