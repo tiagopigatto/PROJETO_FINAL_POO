@@ -1,25 +1,27 @@
-﻿/**
- * \file   Operacoes.h
- * \brief  Este e o cabecalho resposável por gerenciar os comandos BD nas tabelas: 
- * \n Os comandos são na ordem da classe:\n
- * Criar um novo usário\n
- * Atualizar um usuário\n
- * Deletar um usuário\n
- * Procurar um nome na tabela user\n
- * Procurar um id na tabela user\n
-* Criar um novo comentárion
- * Atualizar um comentário\n
- * Deletar um comentário\n
- * Procurar um id na tabela coment\n
-* Criar um novo post\n
- * Atualizar um post\\n
- * Deletar um post\n
- * Procurar um id na tabela post\n
- */
-#include "IReciever.h"
+#ifndef OPERANDS
+#define OPERANDS
+
+#include "TiposBasicos.h"
 #include "Entidades.h"
 #include "sqlite3.h"
-//e ai queo q será? isso apareceu dps que comecei a comentar
+
+/*  \file   Operacoes.h 
+    \brief  Este e o cabecalho resposavel por gerenciar os comandos BD nas tabelas: 
+    \n Os comandos são na ordem da classe:\n 
+    Criar um novo usário\n
+    Atualizar um usuário\n
+    Deletar um usuario\n                      
+    Procurar um nome na tabela user\n
+    Procurar um id na tabela user\n
+    Criar um novo comentárion
+    Atualizar um comentário\n
+    Deletar um comentário\n
+    Procurar um id na tabela coment\n
+    Criar um novo post\n
+    Atualizar um post\\n
+    Deletar um post\n
+    Procurar um id na tabela post\n            
+ */
 
 class Operacoes : public IReciever {
     User user_;
@@ -98,8 +100,7 @@ public:
             if (retval) {
                 /** ID ou NOME já existe **/
             }
-        }
-            /*! \brief Atualiza Usuário No BD
+        }            /*! \brief Atualiza Usuário No BD
              *
              *
              * Recebe o objeto User e apartir dele são atualizados o nome e a senha, se existir um identificador e o novo nome não
@@ -121,7 +122,7 @@ public:
             if (retval) {
                 /** NOME já existe **/
             }
-        }            /*! \brief Deleta Usuário No BD
+        }/*! \brief Deleta Usuário No BD
         *
         *
         * Recebe o objeto endereço que deve ser deletado e apartir dele faz um drop Delete na linha 
@@ -133,8 +134,7 @@ public:
             strcat(sql, user_.getIdentify());
             strcat(sql, "'");
             retval = sqlite3_exec(handle, sql, 0, 0, 0);
-        }
-            /*! \brief Procura um nome de Usuário No BD
+        }            /*! \brief Procura um nome de Usuário No BD
              *
              *
              * Recebe um Name e procura na tabela se esse existe, caso sim armazena as informações dele em um objeto User 
@@ -167,7 +167,7 @@ public:
                     break;
                 }
             }
-        }            /*! \brief Procura um id de Usuário No BD
+        }/*! \brief Procura um id de Usuário No BD
         *
         *
         * Recebe um identificador e procura na tabela se esse existe, caso sim armazena as informações dele em um objeto User 
@@ -200,8 +200,7 @@ public:
                     break;
                 }
             }
-        }
-            /*! \brief Cadastra Comentário No BD
+        }            /*! \brief Cadastra Comentário No BD
              *
              *
              * Recebe o objeto Coment e apartir dele é gerado uma linha no BD, no entanto isso só ocorre caso\n
@@ -226,8 +225,7 @@ public:
             if (retval) {
                 /** ID já existe **/
             }
-        }
-            /*! \brief Atualiza Comentário No BD
+        }            /*! \brief Atualiza Comentário No BD
              *
              *
              * Recebe o objeto Coment e apartir dele é gerado uma linha no BD, no entanto isso só ocorre caso\n
@@ -248,8 +246,7 @@ public:
             if (retval) {
                 /** BUG **/
             }
-        }
-            /*! \brief Deleta Comentário No BD
+        }            /*! \brief Deleta Comentário No BD
              *
              *
              * Recebe o id de um Comentário e apartir dele é feito um delete na linha caso essa exista.
@@ -261,8 +258,7 @@ public:
             strcat(sql, coment_.getComentIdentify());
             strcat(sql, "'");
             retval = sqlite3_exec(handle, sql, 0, 0, 0);
-        }
-            /*! \brief Procura um id de Comentário No BD
+        }            /*! \brief Procura um id de Comentário No BD
              *
              *
              * Recebe o id de busca e caso encontre coloca os valores da linha em um objeto Coment
@@ -299,8 +295,7 @@ public:
                     break;
                 }
             }
-        }
-            /*! \brief Cadastra um Post No BD
+        }            /*! \brief Cadastra um Post No BD
              *
              *
              * Recebe o objeto Post e armazena no Banco de Dados, só armazena se o id do Post não existir
@@ -322,8 +317,7 @@ public:
             if (retval) {
                 /** ID já existe **/
             }
-        }
-            /*! \brief Atualiza um Post No BD
+        }            /*! \brief Atualiza um Post No BD
              *
              *
              * Recebe o id de um Post e atualiza seu texto, data e avaliação se esse post existir
@@ -343,8 +337,7 @@ public:
             if (retval) {
                 /** Atualizar ID q n existe **/
             }
-        }
-            /*! \brief Deleta um Post No BD
+        }            /*! \brief Deleta um Post No BD
              *
              *
              * Recebe o id de um Post e deleta a linha em que ele se encontra
@@ -356,8 +349,7 @@ public:
             strcat(sql, post_.getPostIdentify());
             strcat(sql, "'");
             retval = sqlite3_exec(handle, sql, 0, 0, 0);
-        }
-            /*! \brief Encontra um Post pelo id No BD
+        }            /*! \brief Encontra um Post pelo id No BD
              *
              *
              * Recebe o id de um Post e o armazena no objeto Post
