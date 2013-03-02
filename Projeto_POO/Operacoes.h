@@ -69,4 +69,12 @@ private:
     void DeleteUser(char *,int , sqlite3 *);
     void FindUserN(char *,int , sqlite3 *, char **,sqlite3_stmt);
     void FindUserID(char *,int , sqlite3 *, char **,sqlite3_stmt);
+    void CriaComent(char *,int , sqlite3 *);
+    void UpdateComent(char *,int , sqlite3 *);
+    void DeleteComent(char *,int , sqlite3 *);
+    void FindComentID(char *,int , sqlite3 *, char **,sqlite3_stmt);
+    void CriaPost(char *,int , sqlite3 *);
+    void UpdatePost(char *,int , sqlite3 *);
+    void DeletePost(char *,int , sqlite3 *);
+    void FindPostID(char *,int , sqlite3 *, char **,sqlite3_stmt);
 };
