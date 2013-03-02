@@ -313,7 +313,7 @@ void MenuLogin::verOptions()
             cout >> "Digite o identificador da postagem: ";
             cin << identPost;
 
-            try
+                        try
             {
                 PostText texto = new PostText(textoPost);
                 Identify ident = new Identify(identPost);

@@ -1,6 +1,6 @@
 /**
  * \file   TiposBasicos.h
- * \brief  Este e o cabecalho do modulo das classes tipos basicos que definem os 
+ * \brief  Este e o cabecalho do modulo das classes tipos basicos que definem os
  * \n tipos basicos do sistema neste caso estes sao:\n
  * Nome de Usuario\n
  * Senha\n
@@ -25,15 +25,15 @@ namespace TYPES
 	{
         CADASTRAUSER,
         UPDATEUSER,
-        DELETEUSER, 
+        DELETEUSER,
         FINDUSERN,
         FINDUSERID,
-        
+
         CADASTRACOMENT,
         UPDATECOMENT,
         DELETECOMENT,
         FINDCOMENT,
-        
+
         CADASTRAPOST,
         UPDATEPOST,
         DELETEPOST,
@@ -45,7 +45,7 @@ class IReciever
 {
 public:
 	virtual void SetAction(TYPES::ACTION_LIST action) = 0;
-	virtual int GetResult() = 0;	
+	virtual int GetResult() = 0;
 };
 
 using namespace std;
@@ -117,7 +117,7 @@ public:
 
 /** \class UserName
  *  \brief Essa e a classe responsavel reprensentar o nome do ususario no sistema
- *     
+ *
  */
 class UserName : public BasicType {
 private:
@@ -320,7 +320,7 @@ public:
      *  \exception std::invalid_argument o argumeto e invalido.
      */
     void setVoteNumber(const int voteNumber) throw (invalid_argument);
-    
+
     void getVoteNumber();
 };
 
@@ -339,5 +339,5 @@ inline string BasicType::getValue()const {
     return value;
 }
 
-#endif	
+#endif
 

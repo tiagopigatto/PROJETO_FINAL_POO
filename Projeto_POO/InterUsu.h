@@ -62,7 +62,8 @@ public:
     void verOptions();
 
     string comentario;
-    int nota;
+    string identificador;
+    string nota;
 };
 
 class PostPageNAut : public BasicScreen {
@@ -95,6 +96,9 @@ public:
     User user;
     Password password;
     Identify identify;
+
+    string textPost;
+    string identPost;
 };
 
 
