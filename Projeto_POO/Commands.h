@@ -1,5 +1,20 @@
 #pragma once
-#include "Acommand.h"
+
+class ACommand
+{
+protected:
+
+	IReciever *pReciever_;
+
+public:
+
+	ACommand(IReciever *reciever)
+		:pReciever_(reciever)
+	{
+	}
+
+	virtual int Execute() = 0;
+};
 
 //Usuário
 class CadastraUser : public ACommand
