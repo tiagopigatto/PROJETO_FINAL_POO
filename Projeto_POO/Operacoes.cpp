@@ -177,9 +177,7 @@ Operacoes::DeleteUser(char *sql, int retval, sqlite3 *handle) {
 
 Operacoes::FindUserN(char *sql, int retval, sqlite3 *handle, char **queries, sqlite3_stmt stmt) {
     int ind = 0;
-    strcpy(sql, "SELECT * FROM user WHERE name = '");
-    strcat(sql, user_.getName());
-    strcat(sql, "'");
+    strcpy(sql, "SELECT * FROM user WHERE *");
     queries[ind++] = sql;
     retval = sqlite3_prepare_v2(handle, queries[ind - 1], -1, &stmt, 0);
     // caso de erro

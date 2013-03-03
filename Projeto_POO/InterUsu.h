@@ -38,8 +38,8 @@ private:
     IUComentProtocol *comentProto;
 
     //Usuario / postagem
-    User *user = NULL;
-    Post *post = NULL;
+    User user;
+    Post post;
 
     //Pilha opcoes
     int option[2];

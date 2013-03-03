@@ -81,6 +81,51 @@ void CommandDeleteUser::execute() {
 }
 
 void CommandFindUsers::execute() {
+    int ind = 0;
+    std::list<int> mylist;
+    
+    UserName nome;
+    Password senha;
+    Identify ident;
+    
+    User user;
+    
+    strcpy(sql, "SELECT * FROM user WHERE *");
+    queries[ind++] = sql;
+    retval = sqlite3_prepare_v2(handle, queries[ind - 1], -1, &stmt, 0);
+    
+    // caso de erro
+    if (retval) {
+        printf("db selecionado com erro\n");
+        return -1;
+    }
+    
+    //Status
+    retval = sqlite3_step(stmt);
+    while (1) {
+        if (retval == SQLITE_ROW) {
+            const char *val = (const char*) sqlite3_column_text(stmt, 0);
+            ident.setValue(val);
+            user.setIdentify(ident);
+            free(val);
+            
+            const char *val = (const char*) sqlite3_column_text(stmt, 1);
+            nome.setValue(val);
+            user.setName(nome);
+            free(val);
+            
+            const char *val = (const char*) sqlite3_column_text(stmt, 2);
+            senha.setValue(val);
+            user.setPassword(senha);
+            free(val);
+            
+            mylist.push_back(user);
+            
+        } else if (retval == SQLITE_DONE) {
+            break;
+        }
+    }
+    
 }
 
 void CommandUpdateUser::execute() {
