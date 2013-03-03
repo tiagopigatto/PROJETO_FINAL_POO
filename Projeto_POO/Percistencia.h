@@ -3,56 +3,49 @@
 
 #include <list>
 #include "TiposBasicos.h"
+#include "sqlite3.h"
 
-class PersisteceControler : public PercistenceProtocol {
-private:
-    sqlite3 *bd;
+class PersistenceControler : public PercistenceProtocol {
 public:
-    //faz a conceçao
-    PercistenceControler();
-
-    //finaliza a conecçao
-    ~PercistenceControler();
-
     //executa
     void executar(ACommand*);
-
 };
 
-class Result {
-private:
-
-public:
-
-};
+inline void PercistenceControler(ACommand *command) {
+    command->execute();
+}
 
 class ACommand {
 protected:
+    char *sql, *end;
+    int retval, i;
+    int q_cnt = 5, q_size = 150;
+    char **queries;
+    char valida_name[11];
+    // definindo ponteiros
+    sqlite3_stmt *stmt;
+    sqlite3 *handle;
+    void conect();
+    void desconect();
 
-    IReciever *pReciever_;
 public:
-
-    ACommand(IReciever *reciever)
-    : pReciever_(reciever) {
-    }
-    virtual void Execute() = 0;
+    virtual void execute() = 0;
 };
 
 //Usuário
 
 class UserCommand : protected ACommand {
 protected:
-    User *user;
-    std::list<User> mylist;
-    list users = mylist;
-public:
-    void setUser(User *user);
-    User* getUser();
-    list getList();
+    User user;
+    list users = list<User>;
 
+public:
+    void setUser(User user);
+    User getUser();
+    list getList();
 };
 
-inline void UserCommand::setUser(User *user) {
+inline void UserCommand::setUser(User user) {
     this->user = user;
 }
 
@@ -64,213 +57,148 @@ inline list UserCommand::getList() {
     return this->users;
 }
 
-class CadastraUser : public UserCommand {
+
+
+
+class PostCommand : protected ACommand {
+protected:
+    Post post;
+    list posts = list<Post>;
+
 public:
-
-    CadastrarUser(IReciever *reciever)
-    : ACommand(reciever) {
-
-    }
-
-    int Execute() {
-        pReciever_->SetAction(TYPES::ACTION_LIST::CADASTRAUSER);
-        return pReciever_->GetResult();
-    }
+    void setUser(Post post);
+    Post getUser();
+    list getList();
 };
 
-class UpdateUser : public ACommand {
+inline void PostCommand::setUser(Post post) {
+    this->post = post;
+}
+
+inline Post PostCommand::getUser() {
+    return this->post;
+}
+
+inline list PostCommand::getList() {
+    return this->posts;
+}
+
+
+
+
+class ComentCommand : protected ACommand {
+protected:
+    Coment coment;
+    list coments = list<User>;
+
 public:
-
-    UpdateUser(IReciever *reciever)
-    : ACommand(reciever) {
-
-    }
-
-    int Execute() {
-        pReciever_->SetAction(TYPES::ACTION_LIST::UPDATEUSER);
-        return pReciever_->GetResult();
-    }
+    void setComent(Coment coment);
+    Coment getComent();
+    list getList();
 };
 
-class DeleteUser : public ACommand {
+inline void ComentCommand::setComent(Coment coment) {
+    this->coment = coment;
+}
+
+inline Coment ComentCommand::getComent() {
+    return this->coment;
+}
+
+inline list ComentCommand::getList() {
+    return this->coments;
+}
+
+
+
+
+class CommandCreateUser : public UserCommand {
 public:
-
-    DeleteUser(IReciever *reciever)
-    : ACommand(reciever) {
-
-    }
-
-    int Execute() {
-        pReciever_->SetAction(TYPES::ACTION_LIST::DELETEUSER);
-        return pReciever_->GetResult();
-    }
+    void execute();
 };
 
-class FindUserN : public ACommand {
+class CommandFindUser : public UserCommand {
 public:
-
-    FindUserN(IReciever *reciever)
-    : ACommand(reciever) {
-
-    }
-
-    int Execute() {
-        pReciever_->SetAction(TYPES::ACTION_LIST::FINDUSERN);
-        return pReciever_->GetResult();
-    }
+    void execute();
 };
 
-class FindUserID : public ACommand {
+class CommandFindUsers : public UserCommand {
 public:
-
-    FindUserID(IReciever *reciever)
-    : ACommand(reciever) {
-
-    }
-
-    int Execute() {
-        pReciever_->SetAction(TYPES::ACTION_LIST::FINDUSERID);
-        return pReciever_->GetResult();
-    }
+    void execute();
 };
+
+class CommandUpdateUser : public UserCommand {
+public:
+    void execute();
+};
+
+class CommandDeleteUser : public UserCommand {
+public:
+    void execute();
+};
+
+
+
+
+class CommandCreatePost : public ComentCommand {
+public:
+    void execute();
+};
+
+class CommandUpdatePost : public ComentCommand {
+public:
+    void execute();
+};
+
+class CommandDeletePost : public ComentCommand {
+public:
+    void execute();
+};
+
+class CommandFindPost : public ACommand {
+public:
+    void execute();
+};
+
+class CommandFindAllPost : public ACommand {
+public:
+    void execute();
+};
+
+class CommandFindUserPost : public ACommand {
+public:
+    void execute();
+};
+
+
 //Comentários
 
-class CadastraComent : public ACommand {
+class CommandCreateComent : public ComentCommand {
 public:
+    void execute();
 
-    CadastraComent(IReciever *reciever)
-    : ACommand(reciever) {
-
-    }
-
-    int Execute() {
-        pReciever_->SetAction(TYPES::ACTION_LIST::CADASTRACOMENT);
-        return pReciever_->GetResult();
-    }
 };
 
-class UpdateComent : public ACommand {
+class CommandUpdateComent : public ComentCommand {
 public:
-
-    UpdateComent(IReciever *reciever)
-    : ACommand(reciever) {
-
-    }
-
-    int Execute() {
-        pReciever_->SetAction(TYPES::ACTION_LIST::UPDATECOMENT);
-        return pReciever_->GetResult();
-    }
+    void execute();
 };
 
-class DeleteComent : public ACommand {
+class CommandDeleteComent : public ComentCommand {
 public:
-
-    DeleteComent(IReciever *reciever)
-    : ACommand(reciever) {
-
-    }
-
-    int Execute() {
-        pReciever_->SetAction(TYPES::ACTION_LIST::DELETECOMENT);
-        return pReciever_->GetResult();
-    }
+    void execute();
 };
 
-class FindComent : public ACommand {
+class CommandFindComent : public ComentCommand {
 public:
+    void execute();
 
-    FindComent(IReciever *reciever)
-    : ACommand(reciever) {
+}; //POst
 
-    }
-
-    int Execute() {
-        pReciever_->SetAction(TYPES::ACTION_LIST::FINDCOMENT);
-        return pReciever_->GetResult();
-    }
-};
-//POst
-
-class CadastraPost : public ACommand {
+class CommandFindPostComents : public ComentCommand {
 public:
+    void execute();
 
-    CadastraPost(IReciever *reciever)
-    : ACommand(reciever) {
-
-    }
-
-    int Execute() {
-        pReciever_->SetAction(TYPES::ACTION_LIST::CADASTRAPOST);
-        return pReciever_->GetResult();
-    }
-};
-
-class UpdatePost : public ACommand {
-public:
-
-    UpdatePost(IReciever *reciever)
-    : ACommand(reciever) {
-
-    }
-
-    int Execute() {
-        pReciever_->SetAction(TYPES::ACTION_LIST::UPDATEPOST);
-        return pReciever_->GetResult();
-    }
-};
-
-class DeletePost : public ACommand {
-public:
-
-    DeletePost(IReciever *reciever)
-    : ACommand(reciever) {
-
-    }
-
-    int Execute() {
-        pReciever_->SetAction(TYPES::ACTION_LIST::DELETEPOST);
-        return pReciever_->GetResult();
-    }
-};
-
-class FindPost : public ACommand {
-public:
-
-    FindPost(IReciever *reciever)
-    : ACommand(reciever) {
-
-    }
-
-    int Execute() {
-        pReciever_->SetAction(TYPES::ACTION_LIST::FINDPOST);
-        return pReciever_->GetResult();
-    }
 };
 
 #endif
-
-#ifndef OPERANDS
-#define OPERANDS
-
-#include "TiposBasicos.h"
-#include "Entidades.h"
-#include "sqlite3.h"
-
-/*  \file   Operacoes.h 
-    \brief  Este e o cabecalho resposavel por gerenciar os comandos BD nas tabelas: 
-    \n Os comandos são na ordem da classe:\n 
-    Criar um novo usário\n
-    Atualizar um usuário\n
-    Deletar um usuario\n                      
-    Procurar um nome na tabela user\n
-    Procurar um id na tabela user\n
-    Criar um novo comentárion
-    Atualizar um comentário\n
-    Deletar um comentário\n
-    Procurar um id na tabela coment\n
-    Criar um novo post\n
-    Atualizar um post\\n
-    Deletar um post\n
-    Procurar um id na tabela post\n            
- */

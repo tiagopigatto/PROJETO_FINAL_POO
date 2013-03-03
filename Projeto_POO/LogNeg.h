@@ -8,10 +8,10 @@ class LNUser : UserProtocol {
     private:
         PercistenceProtocol percistence;
 public:
-    void autenticar(User *) = 0;
-    void cadastrar(User *) = 0;
-    void update(User *) = 0;
-    void deletar(User *) = 0;
+    bool autenticar(User) = 0;
+    void cadastrar(User) = 0;
+    void update(User) = 0;
+    void deletar(User) = 0;
     list Listar() = 0;
 
     void setPercistence(PercistenceProtocol *) = 0;
@@ -25,11 +25,11 @@ public:
 
 class LNPost : ComentProtocol {
 public:
-    void novo(Post *) = 0;
-    void update(Post *) = 0;
-    void deleta(Post *) = 0;
-    list listar(Identify *) = 0;
-    list listarPorUser(Identify *) = 0;
+    void novo(Post) = 0;
+    void update(Post) = 0;
+    void deleta(Post) = 0;
+    list listar(Identify) = 0;
+    list listarPorUser(Identify) = 0;
 
     void setPercistence(PercistenceProtocol *) = 0;
 

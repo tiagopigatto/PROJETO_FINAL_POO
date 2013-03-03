@@ -1,28 +1,53 @@
 #ifndef TESTEUSU
 #include "LogNeg.h"
 
-void LNUser::autenticar(User* usuario)
-{
-    try{
-        
-    UserCommand command = new CommandPegaUser(usuario);
-    percistence->exec(command);
-    
-    catch(Invalid_Argument e)
-    {
-        
+bool LNUser::autenticar(User usuario) {
+    User bancoUser;
+    UserCommand *command;
+    try {
+        command = new CommandFindUser();
+        command->setUser(usuario);
+        percistence->exec(command);
+        bancoUser = command->getUser();
+    } catch (Invalid_Argument e) {
+
     }
-    
-    
-    
+    if(bancoUser.getName().getValue() == usuario.getName().getValue())
+    {
+       if(bancoUser.getIdentify().getValue() == usuario.getIdentify().getValue())
+       {
+           if(bancoUser.getPassword().getValue() == usuario.getPassword().getValue()){
+               return true;
+           }
+       }
+    }
+    return false;
+
+
 }
 
-void LNUser::cadastrar(User*) {
+void LNUser::cadastrar(User* usuario) {
+    UserCommand *command;
+    try {
+        command = new CommandCreateUser();
+        command->setUser(usuario);
+        percistence->exec(command);
+        bancoUser = command->getUser();
+    } catch (Invalid_Argument e) {
 
+    }
 }
 
-void LNUser::deletar(User*) {
+void LNUser::deletar(User* usuario) {
+    UserCommand *command;
+    try {
+        command = new CommandDeleteUser();
+        command->setUser(usuario);
+        percistence->exec(command);
+        bancoUser = command->getUser();
+    } catch (Invalid_Argument e) {
 
+    }
 }
 
 void LNUser::update(User*) {
@@ -50,7 +75,6 @@ void LNPost::update(Post*) {
 
 Post LNPost::listar(Identify*) {
 }
-
 
 void LNComent::novo(Coment*) {
 

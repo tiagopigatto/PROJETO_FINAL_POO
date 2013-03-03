@@ -16,10 +16,10 @@
 class UserProtocol
 {
 public:
-    virtual void autenticar(User *) = 0;
-    virtual void cadastrar(User *) = 0;
-    virtual void update(User *) = 0;
-    virtual void deletar(User *) = 0;
+    bool void autenticar(User) = 0;
+    virtual void cadastrar(User) = 0;
+    virtual void update(User) = 0;
+    virtual void deletar(User) = 0;
     virtual list Listar() = 0;
     
     virtual void setPercistence(PercistenceProtocol *) = 0;
@@ -30,11 +30,11 @@ public:
 class PostProtocol : public BaseProtocol
 {
 public:
-    virtual void novo(Post *) = 0;
-    virtual void update(Post *) = 0;
-    virtual void deleta(Post *) = 0;
+    virtual void novo(Post) = 0;
+    virtual void update(Post) = 0;
+    virtual void deleta(Post) = 0;
     virtual list listar() = 0;
-    virtual list listar(User *) = 0;
+    virtual list listar(User) = 0;
     
     virtual void setPercistence(PercistenceProtocol *) = 0;
     
@@ -44,11 +44,11 @@ public:
 class ComentProtocol : public BaseProtocol
 {
 public:
-    virtual void novo(Coment *) = 0;
-    virtual void update(Coment *) = 0;
-    virtual void deleta(Coment *) = 0;
-    virtual void pegar(Coment *) = 0;
-    virtual list listar(Post *) = 0;
+    virtual void novo(Coment) = 0;
+    virtual void update(Coment) = 0;
+    virtual void deleta(Coment) = 0;
+    virtual void pegar(Coment) = 0;
+    virtual list listar(Post) = 0;
     
     virtual void setPercistence(PercistenceProtocol *) = 0;
     virtual ~ProtocoloComent(){};
