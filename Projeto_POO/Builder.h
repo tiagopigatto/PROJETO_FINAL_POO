@@ -51,15 +51,15 @@ public:
 #endif
 
 inline IUUserProtocol* Builder::startIUUserProtocol() {
-    return new IUUserProtocol();
+    return new UserControler();
 }
 
 inline IUComentProtocol* Builder::startIUComentProtocol() {
-    return new IUComentProtocol();
+    return new ComentControler();
 };
 
 inline IUPostProtocol* Builder::startIUPostProtocol() {
-    return new IUPostProtocol();
+    return new PostControler();
 };
 
 inline UserProtocol* Builder::startUserProtocol() {

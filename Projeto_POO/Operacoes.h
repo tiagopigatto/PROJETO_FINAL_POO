@@ -5,6 +5,38 @@
 #include "TiposBasicos.h"
 #include "Entidades.h"
 #include "sqlite3.h"
+/*namespace TYPES
+{
+	enum ACTION_LIST
+	{
+        CADASTRAUSER,
+        UPDATEUSER,
+        DELETEUSER,
+        FINDUSERN,
+        FINDUSERID,
+
+        CADASTRACOMENT,
+        UPDATECOMENT,
+        DELETECOMENT,
+        FINDCOMENT,
+
+        CADASTRAPOST,
+        UPDATEPOST,
+        DELETEPOST,
+        FINDPOST
+	};
+};
+
+class IReciever
+{
+public:
+	virtual void SetAction(TYPES::ACTION_LIST action) = 0;
+	virtual int GetResult() = 0;
+};
+
+using namespace std;
+*/
+
 
 /*  \file   Operacoes.h 
     \brief  Este e o cabecalho resposavel por gerenciar os comandos BD nas tabelas: 

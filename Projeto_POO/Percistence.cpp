@@ -65,7 +65,7 @@ void CommandFindUser::execute() {
     }
 }
 
-void CommandDeleteUser::execute(){
+void CommandDeleteUser::execute() {
     strcpy(sql, "UPDATE user SET name = '");
     strcat(sql, user.getName().getValue());
     strcpy(sql, ", password = '");
@@ -80,33 +80,43 @@ void CommandDeleteUser::execute(){
     }
 }
 
-void CommandFindUsers::execute(){}
+void CommandFindUsers::execute() {
+}
 
-void CommandUpdateUser::execute(){}
+void CommandUpdateUser::execute() {
+}
 
+void CommandCreatePost::execute() {
+};
 
+void CommandUpdatePost::execute() {
+};
 
-void CommandCreatePost::execute(){};
+void CommandDeletePost::execute() {
+};
 
-void CommandUpdatePost::execute(){};
+void CommandFindAllPost::execute() {
+};
 
-void CommandDeletePost::execute(){};
+void CommandFindUserPost::execute() {
+};
 
-void CommandFindAllPost::execute(){};
+void CommandFindPost::execute() {
+};
 
-void CommandFindUserPost::execute(){};
+void CommandCreateComent::execute() {
+};
 
-void CommandFindPost::execute(){};
+void CommandUpdateComent::execute() {
+};
 
+void CommandDeleteComent::execute() {
+};
 
-void CommandCreateComent::execute(){};
+void CommandFindPostComents::execute() {
+};
 
-void CommandUpdateComent::execute(){};
-
-void CommandDeleteComent::execute(){};
-
-void CommandFindPostComents::execute(){};
-
-void CommandFindComent::execute(){};
+void CommandFindComent::execute() {
+};
 
 
