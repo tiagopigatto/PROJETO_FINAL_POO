@@ -52,6 +52,100 @@ public:
     void exec();
 };
 
+class UserControler : public IUUserProtocol {
+private:
+    User *user = NULL;
+
+    //SEM LOGAR
+    static const unsigned int N_LOGIN = 1;
+    static const unsigned int N_CADASTRO = 2;
+
+    //LOGADO
+    static const unsigned int N_MODIFICAR = 1;
+    static const unsigned int N_DELETAR = 2;
+    static const unsigned int N_DESLOGAR = 3;
+
+    //SEMPRE
+    static const unsigned int N_LIST_USUARIOS = 4;
+    static const unsigned int N_SAIR = 5;
+
+    //METODOS
+    void showScreen();
+    void verOptions();
+    
+    //METODOS A IMPLEMTAR / PEGAR PIGATTO
+    void logar();
+    void cadastrar();
+    void showList();
+    void deletar();
+    void modificar();
+    
+public:
+    void exec();
+
+};
+
+class PostControler : public IUPostProtocol {
+private:
+    User *user = NULL;
+    Post *post = NULL;
+    //LOGADO
+    static const unsigned int N_LISTAMEUSPOSTS = 1;
+    static const unsigned int N_MODIFICAPOST = 2;
+    static const unsigned int N_DELETAPOST = 3;
+    static const unsigned int N_CRIAPOST = 4;
+    static const unsigned int N_AVALIAPOST = 5;
+
+    //SEMPRE
+    static const unsigned int N_LISTATODOSPOSTS = 6;
+    static const unsigned int N_VERPOSTSDETALHADO = 7;
+    static const unsigned int N_SAIR = 8;
+
+    //METODOS
+    void showScreen();
+    void verOptions();
+    
+    //METODOS A IMPLEMTAR / PEGAR PIGATTO
+    listaMeus();
+    modifica();
+    deleta();
+    cria();
+    avalia();
+    showlist();
+    mostra();
+    
+public:
+    void exec();
+};
+
+class ComentControler : public IUComentProtocol {
+private:
+    User *user = NULL;
+    Post *post = NULL;
+
+    //LOGADO
+    static const unsigned int N_DELETACOMENT = 1;
+    static const unsigned int N_MODIFICACOMENT = 2;
+    static const unsigned int N_FAZCOMENT = 3;
+
+    //SEMPRE
+    static const unsigned int N_LISTACOMENT = 4;
+    static const unsigned int N_MOSTRACOMENT = 5;
+    static const unsigned int N_SAIR = 6;
+
+    //METODOS
+    void showScreen();
+    void verOptions();
+    
+public:
+    deleta();
+    modifica();
+    cria();
+    lista();
+    show();
+    void exec();
+};
+
 inline void InitialIUControler::setUserControler(IUUserProtocol* userProto) {
     this->userProto = userProto;
 }
@@ -63,72 +157,6 @@ inline void InitialIUControler::setPostControler(IUPostProtocol* postProto) {
 inline void InitialIUControler::setUserControler(IUComentProtocol* comentProto) {
     this->comentProto = comentProto;
 }
-
-class UserControler : public IUUserProtocol {
-private:
-    User User;
-
-    static const unsigned int N_OPCOES = 7;
-    //SEM LOGAR
-    static const unsigned int N_LOGIN = 1;
-    static const unsigned int N_CADASTRO = 2;
-
-    //LOGADO
-    static const unsigned int N_MODIFICAR = 3;
-    static const unsigned int N_DELETAR = 4;
-    static const unsigned int N_DESLOGAR = 5;
-
-    //SEMPRE
-    static const unsigned int N_LIST_USUARIOS = 6;
-    static const unsigned int N_SAIR = 7;
-
-    //METODOS
-    void showScreen();
-    void verOptions();
-
-};
-
-class PostControler : public IUPostProtocol {
-private:
-    User user;
-    Post post;
-    static const unsigned int N_OPCOES = 5;
-    //LOGADO
-    static const unsigned int N_LISTASMEUSPOSTS = 1;
-    static const unsigned int N_MODIFICAPOST = 2;
-    static const unsigned int N_DELETAPOST = 3;
-    static const unsigned int N_CRIAPOST = 4;
-    static const unsigned int N_AVALIAPOST = 5;
-
-    //SEMPRE
-    static const unsigned int N_LISTATODOSPOSTS = 4;
-    static const unsigned int N_VERPOSTSDETALHADO = 4;
-    static const unsigned int N_SAIR = 5;
-
-    //METODOS
-    void showScreen();
-    void verOptions();
-};
-
-class ComentControler : public IUComentProtocol {
-private:
-    static const unsigned int N_OPCOES = 3;
-
-    //LOGADO
-    static const unsigned int N_DELETACOMMET = 1;
-    static const unsigned int N_MODIFICACOMENT = 2;
-    static const unsigned int N_FAZCOMENT = 2;
-
-    //SEMPRE
-    static const unsigned int N_LISTACOMENT = 2;
-    static const unsigned int N_MOSTRACOMENT = 2;
-    static const unsigned int N_SAIR = 3;
-
-    //METODOS
-    void showScreen();
-    void verOptions();
-};
-
 
 
 #endif	/* INTERFACEUSUARIO_H */

@@ -29,7 +29,9 @@ public:
 
 class IUComentProtocol : BaseProtocol{
 public:
-    virtual void exec() = 0;    
+    virtual void exec() = 0;
+    virtual void setUser(User) = 0;
+    virtual void setPost(Post) = 0;
     virtual void setLogicProtocol(ComentProtocol *) = 0;
     virtual ~IUComentProtocol() = 0;
 };
@@ -38,6 +40,7 @@ class IUPostProtocol : BaseProtocol{
 public:
     virtual void exec() = 0;
     virtual void setUser(User) = 0;
+    virtual Post getPost() = 0;
     virtual void setLogicProtocol(PostProtocol *) = 0;
     virtual void ~IUPostProtocol() = 0;
 };
