@@ -9,10 +9,12 @@
 #define	INTERFACEUSUARIO_H
 
 #include "ProtocoloLN.h"
+#include "Errors.h"
 #include <iostream>
 #include <string>
 #include <stdio.h>
 #include <list>
+
 
 using namespace std;
 #define LIMPATELA system("cls");
@@ -55,6 +57,7 @@ public:
 class UserControler : public IUUserProtocol {
 private:
     User *user = NULL;
+    UserProtocol *protocol;
 
     //SEM LOGAR
     static const unsigned int N_LOGIN = 1;
@@ -72,18 +75,25 @@ private:
     //METODOS
     void showScreen();
     void verOptions();
-    
-    //METODOS A IMPLEMTAR / PEGAR PIGATTO
     void logar();
     void cadastrar();
+    
+    //METODOS A IMPLEMTAR / PEGAR PIGATTO
     void showList();
     void deletar();
     void modificar();
+    setLogicProtocol(UserProtocol * protocol) = 0;
     
 public:
     void exec();
 
 };
+
+inline void UserControler :: setLogicProtocol(UserProtocol *protocol)
+{
+    this->protocol = protocol;
+}
+
 
 class PostControler : public IUPostProtocol {
 private:
@@ -137,12 +147,14 @@ private:
     void showScreen();
     void verOptions();
     
-public:
+    //METODOS /implementar
     deleta();
     modifica();
     cria();
     lista();
     show();
+    
+public:
     void exec();
 };
 
