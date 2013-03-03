@@ -54,36 +54,6 @@ using namespace std;
 
 //Variaveis Globais
 
-//Declaracoes de Classes
-namespace TYPES {
-
-    enum ACTION_LIST {
-        CADASTRAUSER,
-        UPDATEUSER,
-        DELETEUSER,
-        FINDUSERN,
-        FINDUSERID,
-
-        CADASTRACOMENT,
-        UPDATECOMENT,
-        DELETECOMENT,
-        FINDCOMENT,
-
-        CADASTRAPOST,
-        UPDATEPOST,
-        DELETEPOST,
-        FINDPOST
-    };
-};
-
-class IReciever {
-public:
-    virtual void SetAction(TYPES::ACTION_LIST action) = 0;
-    virtual int GetResult() = 0;
-};
-
-
-
 /** \class BasicType
  *  \brief Essa e a classe responsavel por ser um padrao de classe para clases tipos basicos       \n
  *      tendo os metodos obrigratorios para todas essas e os mentodos mais gerais ja implemtados\n
