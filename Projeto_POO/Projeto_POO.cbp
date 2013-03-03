@@ -32,23 +32,32 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Controler.cpp" />
-		<Unit filename="Controler.h" />
+		<Unit filename="Builder.cpp" />
+		<Unit filename="Builder.h" />
 		<Unit filename="Entidades.cpp" />
 		<Unit filename="Entidades.h" />
+		<Unit filename="Errors.h" />
+		<Unit filename="IUProtocols.h" />
 		<Unit filename="InterUsu.cpp" />
 		<Unit filename="InterUsu.h" />
 		<Unit filename="LogNeg.cpp" />
 		<Unit filename="LogNeg.h" />
-		<Unit filename="PerComent.cpp" />
-		<Unit filename="PerComent.h" />
-		<Unit filename="PerPost.cpp" />
-		<Unit filename="PerPost.h" />
-		<Unit filename="PerUsu.cpp" />
-		<Unit filename="PerUsu.h" />
+		<Unit filename="Operacoes.cpp" />
+		<Unit filename="Operacoes.h" />
+		<Unit filename="Percistence.cpp" />
+		<Unit filename="PercistenceProtocol.h" />
+		<Unit filename="Percistencia.h" />
+		<Unit filename="Protocolo.cpp" />
+		<Unit filename="ProtocoloLN.h" />
+		<Unit filename="StubLN.cpp" />
+		<Unit filename="Testes.h" />
 		<Unit filename="TiposBasicos.cpp" />
 		<Unit filename="TiposBasicos.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="sqlite3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sqlite3.h" />
 		<Unit filename="testestipos.cpp" />
 		<Unit filename="testestipos.h" />
 		<Extensions>

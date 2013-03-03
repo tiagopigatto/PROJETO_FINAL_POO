@@ -1,6 +1,7 @@
 #include "InterUsu.h"
 
-void InitialIUControler::showOptions() {
+void InitialIUControler::showOptions()
+{
 
     cout << "**********************************" << endl;
     cout << "********** SISTEMA BLOG **********" << endl;
@@ -11,47 +12,55 @@ void InitialIUControler::showOptions() {
 
 }
 
-void InitialIUControler::exec() {
+void InitialIUControler::exec()
+{
 
     short int option;
-    while (1) {
+    while (1)
+    {
         this->showOptions();
         cin >> option;
 
-        switch (option) {
-            case OPCAO_USUARIO:
-                userProto->setUser(user);
-                userProto.exec();
-                user = userProto.getUser();
-            case OPCAO_POSTAGEM:
-                postProto->setUser(user);
-                this->user = postProto->exec();
-                post = postProto->getPost();
+        switch (option)
+        {
+        case OPCAO_USUARIO:
+            userProto->setUser(user);
+            userProto.exec();
+            user = userProto.getUser();
+        case OPCAO_POSTAGEM:
+            postProto->setUser(user);
+            this->user = postProto->exec();
+            post = postProto->getPost();
 
-                if (post != NULL) {
-                    comentProto->setUser(user);
-                    comentProto->setPost(post);
-                    comentProto->exec();
-                }
+            if (post != NULL)
+            {
+                comentProto->setUser(user);
+                comentProto->setPost(post);
+                comentProto->exec();
+            }
 
-            case OPCAO_ENCERRAR:
-                return;
-            default:
-                cout << "Digite um opcao valida";
+        case OPCAO_ENCERRAR:
+            return;
+        default:
+            cout << "Digite uma opcao valida";
         }
 
     }
 }
 
-void UserControler::showScreen() {
+void UserControler::showScreen()
+{
     int i = 1;
     cout << "**********************************" << endl;
     cout << "********** SISTEMA BLOG **********" << endl;
     cout << "**********************************" << endl;
-    if (user == NULL) {
+    if (user == NULL)
+    {
         cout << i++ << ". Login." << endl;
-        cout << i++ << " Cadastrar" << endl;
-    } else {
+        cout << i++ << ". Cadastrar" << endl;
+    }
+    else
+    {
         cout << i++ << ". Modificar." << endl;
         cout << i++ << ". Deletar" << endl;
         cout << i++ << ". Deslogar." << endl;
@@ -61,47 +70,58 @@ void UserControler::showScreen() {
 
 }
 
-void UserControler::exec() {
+void UserControler::exec()
+{
     int option;
-    while (1) {
+    while (1)
+    {
         LIMPATELA
         showScreen();
         cin >> option;
-        if (user == NULL) {
-            switch (option) {
-                case N_LOGIN:
-                    this->logar();
-                case N_CADASTRO:
-                    this->cadastrar();
-                case (N_LIST_USUARIOS - 1):
-                    this->showList();
-                case (N_SAIR - 1):
-                    return;
-                default:
-                    cout << "Digite Uma Opçao valida";
+        if (user == NULL)
+        {
+            switch (option)
+            {
+            case N_LOGIN:
+                this->logar();
+                break;
+            case N_CADASTRO:
+                this->cadastrar();
+                break;
+            case (N_LIST_USUARIOS - 1):
+                this->showList();
+                break;
+            case (N_SAIR - 1):
+                return;
+            default:
+                cout << "Digite Uma Opçao valida";
             }
-        } else {
-            switch (option) {
-                case N_MODIFICAR:
-                    this->modificar();
-                case N_DELETAR:
-                    this->deletar();
-                    return;
-                case N_DESLOGAR:
-                    deletar();
-                    return;
-                case N_LIST_USUARIOS:
-                    this->showList();
-                case N_SAIR - 1:
-                    return;
-                default:
-                    cout << "Digite Uma Opçao valida";
+        }
+        else
+        {
+            switch (option)
+            {
+            case N_MODIFICAR:
+                this->modificar();
+            case N_DELETAR:
+                this->deletar();
+                return;
+            case N_DESLOGAR:
+                deletar();
+                return;
+            case N_LIST_USUARIOS:
+                this->showList();
+            case N_SAIR - 1:
+                return;
+            default:
+                cout << "Digite Uma Opçao valida";
             }
         }
     }
 }
 
-void UserControler::logar() {
+void UserControler::logar()
+{
     string nome;
     string senha;
     string id;
@@ -113,7 +133,8 @@ void UserControler::logar() {
     Identify identify;
 
     User user;
-    while (1) {
+    while (1)
+    {
         cout << "**********************************" << endl;
         cout << "********** SISTEMA BLOG **********" << endl;
         cout << "**********************************" << endl;
@@ -121,14 +142,17 @@ void UserControler::logar() {
         cin >> id;
         cout << "Digite o seu nome de usuario" << endl;
         cin >> nome;
-        cout << "Digite o seu nome de usuario" << endl;
+        cout << "Digite a sua senha" << endl;
         cin >> senha;
 
-        try {
+        try
+        {
             username.setValue(nome);
-            password.setValue(password);
-            identify.setValue(identify);
-        } catch (invalid_argument e) {
+            password.setValue(senha);
+            identify.setValue(id);
+        }
+        catch (invalid_argument e)
+        {
             cout << "Nome de Usuario, senha ou identificador Incorreto";
 
             cout << "Deseja Tentar Novamente(s, n)" << endl;
@@ -142,9 +166,11 @@ void UserControler::logar() {
         user.setName(username);
         user.setIdentify(identify);
         user.setPassword(password);
-        try {
+        try
+        {
             protocol.autenticar(user);
-        } catch (LogicError time) //nao bateu
+        }
+        catch (LogicError time)   //nao bateu
         {
             cout << "Nome de Usuario, senha ou identificador Incorreto";
 
@@ -154,7 +180,8 @@ void UserControler::logar() {
                 continue;
             else
                 return;
-        } catch (PercistenceError time) //erro no banco de dados
+        }
+        catch (PercistenceError time)   //erro no banco de dados
         {
             cout << time.what();
 
@@ -171,7 +198,8 @@ void UserControler::logar() {
     }
 }
 
-void UserControler::cadastrar() {
+void UserControler::cadastrar()
+{
     string nome;
     string senha;
     string id;
@@ -183,7 +211,8 @@ void UserControler::cadastrar() {
     Identify identify;
 
     User user;
-    while (1) {
+    while (1)
+    {
         cout << "**********************************" << endl;
         cout << "********** SISTEMA BLOG **********" << endl;
         cout << "**********************************" << endl;
@@ -191,14 +220,17 @@ void UserControler::cadastrar() {
         cin >> id;
         cout << "Digite o seu nome de usuario que deseja" << endl;
         cin >> nome;
-        cout << "Digite o seu nome de usuario que deseja" << endl;
+        cout << "Digite a senha que deseja" << endl;
         cin >> senha;
 
-        try {
+        try
+        {
             username.setValue(nome);
-            password.setValue(password);
-            identify.setValue(identify);
-        } catch (invalid_argument e) {
+            password.setValue(senha);
+            identify.setValue(id);
+        }
+        catch (invalid_argument e)
+        {
             cout << e.what();
 
             cout << "Deseja Tentar Novamente(s, n)" << endl;
@@ -212,9 +244,11 @@ void UserControler::cadastrar() {
         user.setName(username);
         user.setIdentify(identify);
         user.setPassword(password);
-        try {
+        try
+        {
             protocol.cadastrar(user);
-        } catch (PercistenceError time) //erro no banco de dados
+        }
+        catch (PercistenceError time)   //erro no banco de dados
         {
             cout << time.what();
 
@@ -231,31 +265,96 @@ void UserControler::cadastrar() {
     }
 }
 
-void UserControler::showList() {
+void UserControler::showList()
+{
 
 }
 
-void UserControler::deletar() {
-    try {
+void UserControler::deletar()
+{
+    try
+    {
         protocol->deletar(user);
         delete user;
         user = NULL;
-    } catch (PercistenceError time) //erro no banco de dados
+    }
+    catch (PercistenceError time)   //erro no banco de dados
     {
         cout << time.what();
     }
 }
 
-void UserControler::modificar() {
+void UserControler::modificar()
+{
+    string nome;
+    string senha;
+    string id;
 
+    char option;
+
+    UserName username;
+    Password password;
+    Identify identify;
+
+    User user;
+    while (1)
+    {
+        cout << "**********************************" << endl;
+        cout << "********** SISTEMA BLOG **********" << endl;
+        cout << "**********************************" << endl;
+        cout << "Digite o seu novo nome de usuario que deseja" << endl;
+        cin >> nome;
+        cout << "Digite a sua nova senha que deseja" << endl;
+        cin >> senha;
+        user = this->user;
+        try
+        {
+            username.setValue(nome);
+            password.setValue(senha);
+        }
+        catch (invalid_argument e)
+        {
+            cout << e.what();
+
+            cout << "Deseja Tentar Novamente(s, n)" << endl;
+            cin << option;
+            if (option == 's' || option == 'S')
+                continue;
+            else
+                return;
+        }
+
+        user.setName(username);
+        user.setPassword(password);
+        try
+        {
+            protocol.update(user);
+        }
+        catch (PercistenceError time)   //erro no banco de dados
+        {
+            cout << time.what();
+
+            cout << "Deseja Tentar Novamente(s, n)" << endl;
+            cin << option;
+            if (option == 's' || option == 'S')
+                continue;
+            else
+                return;
+
+        }
+        this->user = user;
+        return;
+    }
 }
 
-void PostControler::showScreen() {
+void PostControler::showScreen()
+{
     int i = 1;
     cout << "**********************************" << endl;
     cout << "********** SISTEMA BLOG **********" << endl;
     cout << "**********************************" << endl;
-    if (user != NULL) {
+    if (user != NULL)
+    {
         cout << i++ << ". Lista meus Posts." << endl;
         cout << i++ << ". Modifica Post" << endl;
         cout << i++ << ". Deleta Post" << endl;
@@ -268,84 +367,100 @@ void PostControler::showScreen() {
 
 }
 
-void PostControler::exec() {
+void PostControler::exec()
+{
     int option;
-    while (1) {
+    while (1)
+    {
         LIMPATELA
         showScreen();
         cin >> option;
-        if (user != NULL) {
-            switch (option) {
-                case N_LISTAMEUSPOSTS:
-                    this->listaMeus();
-                case N_MODIFICAPOST:
-                    this->modifica();
-                case N_DELETAPOST:
-                    this->deleta();
-                case N_CRIAPOST:
-                    this->cria();
-                case N_AVALIAPOST:
-                    this->avalia();
-                case N_LISTATODOSPOSTS:
-                    this->showlist();
-                case N_VERPOSTSDETALHADO:
-                    this->mostra();
-                    return;
-                case N_SAIR:
-                    return;
-                default:
-                    cout << "Digite Uma Opçao valida";
+        if (user != NULL)
+        {
+            switch (option)
+            {
+            case N_LISTAMEUSPOSTS:
+                this->listaMeus();
+            case N_MODIFICAPOST:
+                this->modifica();
+            case N_DELETAPOST:
+                this->deleta();
+            case N_CRIAPOST:
+                this->cria();
+            case N_AVALIAPOST:
+                this->avalia();
+            case N_LISTATODOSPOSTS:
+                this->showlist();
+            case N_VERPOSTSDETALHADO:
+                this->mostra();
+                return;
+            case N_SAIR:
+                return;
+            default:
+                cout << "Digite Uma Opçao valida";
             }
-        } else {
-            switch (option) {
-                case (N_LISTATODOSPOSTS - 5):
-                    this->showlist();
-                case (N_VERPOSTSDETALHADO - 5):
-                    this->mostra();
-                    return;
-                case (N_SAIR - 5):
-                    return;
-                default:
-                    cout << "Digite Uma Opçao valida";
+        }
+        else
+        {
+            switch (option)
+            {
+            case (N_LISTATODOSPOSTS - 5):
+                this->showlist();
+            case (N_VERPOSTSDETALHADO - 5):
+                this->mostra();
+                return;
+            case (N_SAIR - 5):
+                return;
+            default:
+                cout << "Digite Uma Opçao valida";
             }
         }
     }
 }
 
-void PostControler::listaMeus() {
+void PostControler::listaMeus()
+{
 
 }
 
-void PostControler::modifica() {
+void PostControler::modifica()
+{
 
 }
 
-void PostControler::deleta() {
+void PostControler::deleta()
+{
 
 }
 
-void PostControler::cria() {
+void PostControler::cria()
+{
 
 }
 
-void PostControler::avalia() {
+void PostControler::avalia()
+{
 
 }
 
-void PostControler::showlist() {
+void PostControler::showlist()
+{
 
 }
 
-void PostControler::mostra() {
+void PostControler::mostra()
+{
 
 }
 
-void ComentControler::showScreen() {
+void ComentControler::showScreen()
+{
     int i = 1;
     cout << "**********************************" << endl;
     cout << "********** SISTEMA BLOG **********" << endl;
     cout << "**********************************" << endl;
-    if (user != NULL) {
+    if (user != NULL)
+    {
         cout << i++ << ". Deleta comentario." << endl;
         cout << i++ << ". Modifica comentario" << endl;
         cout << i++ << ". Faz comentario" << endl;
@@ -356,60 +471,72 @@ void ComentControler::showScreen() {
 
 }
 
-void ComentControler::exec() {
+void ComentControler::exec()
+{
     int option;
-    while (1) {
+    while (1)
+    {
         LIMPATELA
         showScreen();
         cin >> option;
-        if (user != NULL) {
-            switch (option) {
-                case N_DELETACOMENT:
-                    this->deleta();
-                case N_MODIFICACOMENT:
-                    this->modifica();
-                case N_FAZCOMENT:
-                    this->cria();
-                case N_LISTACOMENT:
-                    this->lista();
-                case N_MOSTRACOMENT:
-                    this->show();
-                case N_SAIR:
-                    return;
-                default:
-                    cout << "Digite Uma Opçao valida";
+        if (user != NULL)
+        {
+            switch (option)
+            {
+            case N_DELETACOMENT:
+                this->deleta();
+            case N_MODIFICACOMENT:
+                this->modifica();
+            case N_FAZCOMENT:
+                this->cria();
+            case N_LISTACOMENT:
+                this->lista();
+            case N_MOSTRACOMENT:
+                this->show();
+            case N_SAIR:
+                return;
+            default:
+                cout << "Digite Uma Opçao valida";
             }
-        } else {
-            switch (option) {
-                case (N_LISTACOMENT - 3):
-                    this->lista();
-                case (N_MOSTRACOMENT - 3):
-                    this->show();
-                case (N_SAIR - 3):
-                    return;
-                default:
-                    cout << "Digite Uma Opçao valida";
+        }
+        else
+        {
+            switch (option)
+            {
+            case (N_LISTACOMENT - 3):
+                this->lista();
+            case (N_MOSTRACOMENT - 3):
+                this->show();
+            case (N_SAIR - 3):
+                return;
+            default:
+                cout << "Digite Uma Opçao valida";
             }
         }
     }
 }
 
-void ComentControler::deleta() {
+void ComentControler::deleta()
+{
 
 }
 
-void ComentControler::modifica() {
+void ComentControler::modifica()
+{
 
 }
 
-void ComentControler::cria() {
+void ComentControler::cria()
+{
 
 }
 
-void ComentControler::lista() {
+void ComentControler::lista()
+{
 
 }
 
-void ComentControler::show() {
+void ComentControler::show()
+{
 
 }
