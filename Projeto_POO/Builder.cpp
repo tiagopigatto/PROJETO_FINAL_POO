@@ -29,9 +29,9 @@ Builder::Builder() {
     this->initialIUControler = this->startIUControler();
 
     //setando os protocolos das outras interfaces
-    this->initialIUControler->setUserControler((BaseProtocol *)this->iuUserProtocol);
-    this->initialIUControler->setComentControler((BaseProtocol *)this->iuUserProtocol);
-    this->initialIUControler->setPostControler((BaseProtocol *)this->iuUserProtocol);
+    this->initialIUControler->setUserControler(this->iuUserProtocol);
+    this->initialIUControler->setComentControler(this->iuUserProtocol);
+    this->initialIUControler->setPostControler(this->iuUserProtocol);
 
     //comencando
 
