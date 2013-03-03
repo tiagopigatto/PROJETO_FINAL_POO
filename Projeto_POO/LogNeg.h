@@ -1,53 +1,55 @@
 #ifndef LOGICA_NEGOCIO_H
 #define	LOGICA_NEGOCIO_H
 
-/*
-#ifdef WIN32 || _WIN32  /*Parece que a MS gosta muito de usar o prefixo _ 
-    #include <direct.h>
-#else 
-    #include <sys/stat.h>
-#endif
-*/
-
 #include "Entidades.h"
 #include "ProtocoloLN.h"
 
-class LNProjeto : ProtocoloUsuario
-{
+class LNUser : UserProtocol {
+    private:
+        PercistenceProtocol percistence;
 public:
-	void cadastrar(User *);
-        void update(User *);        
-        void deleta(Identify *);
-        User pesquisa(Identify *);
-        User pesquisa(UserName *);
+    void autenticar(User *) = 0;
+    void cadastrar(User *) = 0;
+    void update(User *) = 0;
+    void deletar(User *) = 0;
+    list Listar() = 0;
 
-        LNProjeto(){};
-        ~LNProjeto(){};
+    void setPercistence(PercistenceProtocol *) = 0;
 
+    LNProjeto() {
+    };
+
+    ~LNProjeto() {
+    };
 };
 
-class LNComent : ProtocoloComent
-{
+class LNPost : ComentProtocol {
 public:
-    void cadastrar(Coment *);
-    void update(Coment *);
-    void deleta(Identify *);
-    Coment pesquisa(Identify *);
+    void novo(Post *) = 0;
+    void update(Post *) = 0;
+    void deleta(Post *) = 0;
+    list listar(Identify *) = 0;
+    list listarPorUser(Identify *) = 0;
+
+    void setPercistence(PercistenceProtocol *) = 0;
 
     LNComent();
     ~LNComent();
 
 };
 
-class LNPost : ProtocoloPost{
+class LNComent : PostProtocol {
 public:
-	void cadastrar(Post *);
-	void update(Post *);
-	void deleta(Identify *);
-	Post pesquisa(Identify *);
+    void novo(Coment *) = 0;
+    void update(Coment *) = 0;
+    void deleta(Coment *) = 0;
+    void pegar(Coment *) = 0;
+    list listar(Post *) = 0;
 
-	LNPost();
-	~LNPost();
+    virtual void setPercistence(PercistenceProtocol *) = 0;
+
+    LNPost();
+    ~LNPost();
 
 };
 

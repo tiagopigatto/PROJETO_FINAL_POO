@@ -1,27 +1,58 @@
 #ifndef TESTEUSU
 #include "LogNeg.h"
 
-void LNProjeto::cadastrar(User*) {
+void LNUser::autenticar(User* usuario)
+{
+    try{
+        
+    UserCommand command = new CommandPegaUser(usuario);
+    percistence->exec(command);
+    
+    catch(Invalid_Argument e)
+    {
+        
+    }
+    
+    
+    
+}
+
+void LNUser::cadastrar(User*) {
 
 }
 
-void LNProjeto::deleta(Identify*) {
+void LNUser::deletar(User*) {
 
 }
 
-void LNProjeto::update(User*) {
+void LNUser::update(User*) {
 
 }
 
-User LNProjeto::pesquisa(Identify*) {
+list LNUser::Listar(Identify*) {
 
 }
 
-User LNProjeto::pesquisa(UserName*) {
+void LNUser::setPercistence(PercistenceProtocol *percistence) {
+    this->percistence = percistence;
+}
+
+void LNPost::novo(Post*) {
 
 }
 
-void LNComent::cadastrar(Coment*) {
+void LNPost::deleta(Identify*) {
+}
+
+void LNPost::update(Post*) {
+
+}
+
+Post LNPost::listar(Identify*) {
+}
+
+
+void LNComent::novo(Coment*) {
 
 }
 
@@ -33,21 +64,8 @@ void LNComent::update(Coment*) {
 
 }
 
-Coment LNComent::pesquisa(Identify*) {
+Coment LNComent::listar(Identify*) {
 
 }
 
-void LNPost::cadastrar(Post*) {
-
-}
-
-void LNPost::deleta(Identify*) {
-}
-
-void LNPost::update(Post*) {
-
-}
-
-Post LNPost::pesquisa(Identify*) {
-}
 #endif

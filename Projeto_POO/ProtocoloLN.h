@@ -8,51 +8,53 @@
 #ifndef PROTOCOLOS_H
 #define	PROTOCOLOS_H
 
-#include "TiposBasicos.h"
-#include "BaseProtocol.h"
+#include "Entidades.h"
 #include "PercistenceProtocol.h"
+#include <list>
 
-class UserProtocol : public BaseProtocol
+
+class UserProtocol
 {
 public:
+    virtual void autenticar(User *) = 0;
     virtual void cadastrar(User *) = 0;
     virtual void update(User *) = 0;
-    virtual void deleta(Identify *) = 0;
-    virtual User pesquisa(Identify *) = 0;
-    virtual User pesquisa(UserName *) = 0;
-    virtual void setPercistence(PercistenceProtocol *) = 0;
-
-    ProtocoloUsuario(){}
-    ~ProtocoloUsuario(){}
-
-};
-
-class ComentProtocol : public BaseProtocol
-{
-public:
-    virtual void cadastrar(Coment *) = 0;
-    virtual void update(Coment *) = 0;
-    virtual void deleta(Identify *) = 0;
-    virtual Coment pesquisa(Identify *) = 0;
+    virtual void deletar(User *) = 0;
+    virtual list Listar() = 0;
+    
     virtual void setPercistence(PercistenceProtocol *) = 0;
     
-    ProtocoloComent(){};
-    ~ProtocoloComent(){};
-
+    virtual ~ProtocoloUsuario(){}
 };
 
 class PostProtocol : public BaseProtocol
 {
 public:
-    virtual void cadastrar(Post *) = 0;
+    virtual void novo(Post *) = 0;
     virtual void update(Post *) = 0;
-    virtual void deleta(Identify *) = 0;
-    virtual Post pesquisa(Identify *) = 0;
+    virtual void deleta(Post *) = 0;
+    virtual list listar() = 0;
+    virtual list listar(User *) = 0;
+    
     virtual void setPercistence(PercistenceProtocol *) = 0;
     
-    ProtocoloPost(){};
-    ~ProtocoloPost(){};
+    virtual ~ProtocoloPost(){};
 };
+
+class ComentProtocol : public BaseProtocol
+{
+public:
+    virtual void novo(Coment *) = 0;
+    virtual void update(Coment *) = 0;
+    virtual void deleta(Coment *) = 0;
+    virtual void pegar(Coment *) = 0;
+    virtual list listar(Post *) = 0;
+    
+    virtual void setPercistence(PercistenceProtocol *) = 0;
+    virtual ~ProtocoloComent(){};
+
+};
+
         
 
 #endif	/* CONTROLER_H */
