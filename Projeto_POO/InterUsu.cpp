@@ -103,6 +103,33 @@ void UserControler::exec() {
     }
 }
 
+void UserControler :: logar()
+{
+    
+}
+
+void UserControler :: cadastrar()
+{
+    
+}
+
+void UserControler :: showList()
+{
+    
+}
+
+void UserControler :: deletar()
+{
+    
+}
+
+void UserControler :: modificar()
+{
+    
+}
+
+
+
 void PostControler::showScreen() {
     int i = 1;
     cout << "**********************************" << endl;
@@ -165,6 +192,44 @@ void PostControler::exec() {
     }
 }
 
+void PostControler :: listaMeus()
+{
+    
+}
+
+void PostControler :: modifica()
+{
+    
+}
+
+void PostControler :: deleta()
+{
+    
+}
+
+void  PostControler :: cria()
+{
+    
+}
+
+void PostControler :: avalia()
+{
+    
+}
+
+void PostControler :: showlist()
+{
+    
+}
+
+void PostControler :: mostra()
+{
+    
+}
+
+
+
+
 void ComentControler::showScreen() {
     int i = 1;
     cout << "**********************************" << endl;
@@ -217,4 +282,30 @@ void ComentControler::exec() {
             }
         }
     }
+}
+
+void ComentControler :: deleta()
+{
+    
+}
+
+void ComentControler :: modifica()
+{
+    
+}
+
+
+void ComentControler :: cria()
+{
+    
+}
+
+void ComentControler :: lista()
+{
+    
+}
+
+void ComentControler :: show()
+{
+    
 }
