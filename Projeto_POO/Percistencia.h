@@ -1,30 +1,73 @@
 #ifndef COMANDS
 #define COMANDS
 
-#pragma once
-
+#include <list>
 #include "TiposBasicos.h"
+
+class PersisteceControler : public PercistenceProtocol {
+private:
+    sqlite3 *bd;
+public:
+    //faz a conceçao
+    PercistenceControler();
+
+    //finaliza a conecçao
+    ~PercistenceControler();
+
+    //executa
+    void executar(ACommand*);
+
+};
+
+class Result {
+private:
+
+public:
+
+};
 
 class ACommand {
 protected:
 
     IReciever *pReciever_;
-
 public:
 
     ACommand(IReciever *reciever)
     : pReciever_(reciever) {
     }
-
-    virtual int Execute() = 0;
+    virtual void Execute() = 0;
 };
 
 //Usuário
 
-class CadastraUser : public ACommand {
+class UserCommand : protected ACommand {
+protected:
+    User *user;
+    std::list<User> mylist;
+    list users = mylist;
+public:
+    void setUser(User *user);
+    User* getUser();
+    list getList();
+
+};
+
+inline void UserCommand::setUser(User *user) {
+    this->user = user;
+}
+
+inline User UserCommand::getUser() {
+    return this->user;
+}
+
+inline list UserCommand::getList() {
+    return this->users;
+}
+
+class CadastraUser : public UserCommand {
 public:
 
-    CadastraUser(IReciever *reciever)
+    CadastrarUser(IReciever *reciever)
     : ACommand(reciever) {
 
     }

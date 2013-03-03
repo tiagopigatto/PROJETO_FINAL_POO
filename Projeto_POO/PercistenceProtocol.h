@@ -8,11 +8,13 @@
 #ifndef PERCISTENCEPROTOCOL_H
 #define	PERCISTENCEPROTOCOL_H
 
+#include "Percistencia.h"
+
 class PercistenceProtocol
 {
 public:
     virtual ~PercistenceProtocol(){};
-    virtual void exec(/*Comand*/);
+    virtual void exec(ACommand *);
 };
 
 
