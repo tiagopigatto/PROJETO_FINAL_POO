@@ -161,9 +161,13 @@ void CommandCreatePost::execute() {
     strcat(sql, (post.getPostText()).getValue());
     strcat(sql, "','");
     strcat(sql, (post.getDate()).getValue());
-    strcat(sql, "',NULL,'");
+    strcat(sql, "','");
+    strcat(sql, (post.getEvaluation()).getValue());
+    strcat(sql, "','");
     strcat(sql, (post.getAuthorIdentify()).getValue());
-    strcat(sql, "',0)");
+    strcat(sql, "','");
+    strcat(sql, (post.getEvaluation()).getVoteNumber());
+    strcat(sql, "')");
     // executa nosso comando no banco 
     retval = sqlite3_exec(handle, sql, 0, 0, 0);
     if (retval) {
@@ -238,15 +242,20 @@ void CommandFindAllPost::execute() {
             free(val);
             
             const char *val = (const char*) sqlite3_column_text(stmt, 3);
-            Evaluation
-            post_.setEvaluation(val);
+            eval.setValue(val);
             free(val);
             
             const char *val = (const char*) sqlite3_column_text(stmt, 4);
-            post_.setAuthorIdentify(val);
+            id.setValue(val)
+            post.setAuthorIdentify(id);
             free(val);
             
-            mylist.push_back(user);
+            const char *val = (const char*) sqlite3_column_text(stmt, 4);
+            eval.setVoteNumber(atoi(val));
+            post.setAuthorIdentify(eval);
+            free(val);
+            
+            mylist.push_back(post);
         } else if (retval == SQLITE_DONE) {
             break;
         }
