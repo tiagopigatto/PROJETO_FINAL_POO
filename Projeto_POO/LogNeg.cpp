@@ -106,23 +106,118 @@ void LNPost::update(Post post) {
     }
 }
 
-Post LNPost::listar(Identify*) {
+Post LNPost::pegar(Post post) {
+    Post BDpost;
+    PostCommand *command;
+    try {
+        command = new CommandFindPost();
+        command->setPost(post);
+        percistence->exec(command);
+        BDpost = command->getPost();
+    } catch (PercistenceError e) {
+        throw e;
+    }
+    return BDpost;
 }
 
-void LNComent::novo(Coment*) {
-
+list LNPost::listarPorUser(Post post) {
+    PostCommand *command;
+    list time = list<Post>;
+    try {
+        command = new CommandFindUserPost();
+        command->setPost(post);
+        percistence->exec(command);
+        time = command->getList();
+    } catch (PercistenceError e) {
+        throw e;
+    }
+    return time;
 }
 
-void LNComent::deleta(Identify*) {
-
+list LNPost::listar() {
+    UserCommand *command;
+    list time = list<Post>;
+    try {
+        command = new CommandFindAllPost();
+        percistence->exec(command);
+        time = command->getList();
+    } catch (PercistenceError e) {
+        throw e;
+    }
+    return time;
 }
 
-void LNComent::update(Coment*) {
-
+void LNPost::setPercistence(PercistenceProtocol *percistence) {
+    this->percistence = percistence;
 }
 
-Coment LNComent::listar(Identify*) {
-
+void LNComent::novo(Coment coment) {
+    ComentCommand *command;
+    try {
+        command = new CommandCreateComent();
+        command->setComent(coment);
+        percistence->exec(command);
+    } catch (PercistenceError e) {
+        throw e;
+    }
 }
+
+void LNComent::deleta(Coment coment) {
+    ComentCommand *command;
+    try {
+        command = new CommandDeleteComent();
+        command->setComent(coment);
+        percistence->exec(command);
+    } catch (PercistenceError e) {
+        throw e;
+    }
+}
+
+void LNComent::update(Coment coment) {
+
+    ComentCommand *command;
+    try {
+        command = new CommandUpdateComent();
+        command->setComent(coment);
+        percistence->exec(command);
+    } catch (PercistenceError e) {
+        throw e;
+    }
+}
+
+Coment LNComent::pegar(Coment coment) {
+
+    ComentCommand *command;
+    Coment coment;
+    try {
+        command = new CommandUpdateComent();
+        percistence->exec(command);
+        coment = command->getComent();
+    } catch (PercistenceError e) {
+        throw e;
+    }
+    return coment;
+}
+
+list LNComent::listar(Coment coment) {
+    ComentCommand *command;
+    list time = list<Coment>;
+    try {
+        command = new CommandFindPostComents;
+        command->setComent(coment);
+        percistence->exec(command);
+        time = command->getList();
+    } catch (PercistenceError e) {
+        throw e;
+    }
+    return time;
+}
+
+
+
+void LNComent::setPercistence(PercistenceProtocol *percistence) {
+    this->percistence = percistence;
+}
+
 
 #endif

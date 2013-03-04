@@ -87,12 +87,12 @@ public:
      *  \brief Método responsável por listar todas as postagens
      *  \param Post =  objeto de um post
      */
-    list listar(Identify);
+    list listar();
     /*! \fn listarPorUser(Post)
      *  \brief Método responsável por listar as postagens por usuário 
      *  \param Post =  objeto de um post
      */
-    list listarPorUser(Identify);
+    list listarPorUser(User usuario);
     /*! \fn pegar(Post)
      *  \brief Método responsável por pegar uma postagens
      *  \param Post =  objeto de um post
