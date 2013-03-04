@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="Entidades.h" open="1" top="0" tabpos="4">
+		<Cursor position="2964" topLine="81" />
+	</File>
+	<File name="Errors.h" open="1" top="0" tabpos="5">
+		<Cursor position="0" topLine="7" />
+	</File>
+	<File name="InterUsu.cpp" open="1" top="1" tabpos="7">
+		<Cursor position="10686" topLine="351" />
+	</File>
+	<File name="InterUsu.h" open="1" top="0" tabpos="3">
+		<Cursor position="2336" topLine="62" />
+	</File>
+	<File name="ProtocoloLN.h" open="1" top="0" tabpos="6">
+		<Cursor position="335" topLine="0" />
+	</File>
+	<File name="TiposBasicos.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="416" topLine="0" />
+	</File>
+	<File name="TiposBasicos.h" open="1" top="0" tabpos="2">
+		<Cursor position="11630" topLine="245" />
+	</File>
+</CodeBlocks_layout_file>
