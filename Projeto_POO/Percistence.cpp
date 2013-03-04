@@ -200,21 +200,82 @@ void CommandDeletePost::execute() {
 };
 
 void CommandFindAllPost::execute() {
-    
+
     int ind = 0;
     std::list<Post> mylist;
-    
+
     Post post;
-    
+
     Identify id;
     PostText text;
     Date date;
     Evaluation eval;
-    
-    
-    
-    strcpy(sql, "SELECT * FROM post WHERE postIdentify = '");
-    strcat(sql, (post.getPostIdentify()).getValue());
+
+
+
+    strcpy(sql, "SELECT * FROM post WHERE *");
+    retval = sqlite3_prepare_v2(handle, queries[ind - 1], -1, &stmt, 0);
+    // caso de erro
+    if (retval) {
+        printf("db selecionado com erro\n");
+        return -1;
+    }
+    //Status
+    retval = sqlite3_step(stmt);
+    while (1) {
+        if (retval == SQLITE_ROW) {
+            const char *val = (const char*) sqlite3_column_text(stmt, 0);
+            id.setValue(val)
+            post.setPostIdentify(id);
+            free(val);
+
+            const char *val = (const char*) sqlite3_column_text(stmt, 1);
+            text.setValue()
+            post.setPostText(text);
+            free(val);
+
+            const char *val = (const char*) sqlite3_column_text(stmt, 2);
+            date.setValue(val)
+            post.setDate(date);
+            free(val);
+
+            const char *val = (const char*) sqlite3_column_text(stmt, 3);
+            eval.setValue(val);
+            free(val);
+
+            const char *val = (const char*) sqlite3_column_text(stmt, 4);
+            id.setValue(val)
+            post.setAuthorIdentify(id);
+            free(val);
+
+            const char *val = (const char*) sqlite3_column_text(stmt, 4);
+            eval.setVoteNumber(atoi(val));
+            post.setAuthorIdentify(eval);
+            free(val);
+
+            mylist.push_back(post);
+        } else if (retval == SQLITE_DONE) {
+            break;
+        }
+    }
+    posts = mylist;
+};
+
+void CommandFindUserPost::execute() {
+    int ind = 0;
+    std::list<Post> mylist;
+
+    Post post;
+
+    Identify id;
+    PostText text;
+    Date date;
+    Evaluation eval;
+
+
+
+    strcpy(sql, "SELECT * FROM post WHERE User_Identify = '");
+    strcat(sql, (post.getAuthorIdentify()).getValue());
     strcat(sql, "'");
     retval = sqlite3_prepare_v2(handle, queries[ind - 1], -1, &stmt, 0);
     // caso de erro
@@ -230,42 +291,98 @@ void CommandFindAllPost::execute() {
             id.setValue(val)
             post.setPostIdentify(id);
             free(val);
-            
+
             const char *val = (const char*) sqlite3_column_text(stmt, 1);
             text.setValue()
             post.setPostText(text);
             free(val);
-            
+
             const char *val = (const char*) sqlite3_column_text(stmt, 2);
             date.setValue(val)
             post.setDate(date);
             free(val);
-            
+
             const char *val = (const char*) sqlite3_column_text(stmt, 3);
             eval.setValue(val);
             free(val);
-            
+
             const char *val = (const char*) sqlite3_column_text(stmt, 4);
             id.setValue(val)
             post.setAuthorIdentify(id);
             free(val);
-            
+
             const char *val = (const char*) sqlite3_column_text(stmt, 4);
             eval.setVoteNumber(atoi(val));
             post.setAuthorIdentify(eval);
             free(val);
-            
+
             mylist.push_back(post);
         } else if (retval == SQLITE_DONE) {
             break;
         }
     }
-};
-
-void CommandFindUserPost::execute() {
+    posts = mylist;
 };
 
 void CommandFindPost::execute() {
+    int ind = 0;
+
+    Post post;
+
+    Identify id;
+    PostText text;
+    Date date;
+    Evaluation eval;
+
+
+
+    strcpy(sql, "SELECT * FROM post WHERE User_Identify = '");
+    strcat(sql, (post.getAuthorIdentify()).getValue());
+    strcat(sql, "'");
+    retval = sqlite3_prepare_v2(handle, queries[ind - 1], -1, &stmt, 0);
+    // caso de erro
+    if (retval) {
+        printf("db selecionado com erro\n");
+        return -1;
+    }
+    //Status
+    retval = sqlite3_step(stmt);
+    while (1) {
+        if (retval == SQLITE_ROW) {
+            const char *val = (const char*) sqlite3_column_text(stmt, 0);
+            id.setValue(val)
+            post.setPostIdentify(id);
+            free(val);
+
+            const char *val = (const char*) sqlite3_column_text(stmt, 1);
+            text.setValue()
+            post.setPostText(text);
+            free(val);
+
+            const char *val = (const char*) sqlite3_column_text(stmt, 2);
+            date.setValue(val)
+            post.setDate(date);
+            free(val);
+
+            const char *val = (const char*) sqlite3_column_text(stmt, 3);
+            eval.setValue(val);
+            free(val);
+
+            const char *val = (const char*) sqlite3_column_text(stmt, 4);
+            id.setValue(val)
+            post.setAuthorIdentify(id);
+            free(val);
+
+            const char *val = (const char*) sqlite3_column_text(stmt, 4);
+            eval.setVoteNumber(atoi(val));
+            post.setAuthorIdentify(eval);
+            free(val);
+
+        } else if (retval == SQLITE_DONE) {
+            break;
+        }
+    }
+    this->post = post;
 };
 
 void CommandCreateComent::execute() {
@@ -294,7 +411,8 @@ void CommandUpdateComent::execute() {
     strcpy(sql, ", date = '");
     strcat(sql, (coment.getDate()).getValue());
     strcat(sql, "' WHERE comentIdentify = '");
-    strcat(sql, (coment.getComentIdentify()).getValue());
+    strcat(sql,
+            (coment.getComentIdentify()).getValue());
     strcat(sql, "'");
     // executa nosso comando no banco 
     retval = sqlite3_exec(handle, sql, 0, 0, 0);
@@ -313,6 +431,62 @@ void CommandDeleteComent::execute() {
 };
 
 void CommandFindPostComents::execute() {
+    int ind = 0;
+    std::list<Coment> mylist;
+
+    Coment coment;
+
+    Identify id;
+    ComentText text;
+    Date date;
+
+    int ind = 0;
+    strcpy(sql, "SELECT * FROM coment WHERE comentIdentify = '");
+    strcat(sql, (coment.getComentIdentify()).getValue());
+    strcat(sql, "'");
+    
+    queries[ind++] = sql;
+    retval = sqlite3_prepare_v2(handle, queries[ind - 1], -1, &stmt, 0);
+    // caso de erro
+    if (retval) {
+        printf("db selecionado com erro\n");
+        return -1;
+    }
+    //Status
+    retval = sqlite3_step(stmt);
+    while (1) {
+        if (retval == SQLITE_ROW) {
+            const char *val = (const char*) sqlite3_column_text(stmt, 0);
+            id.getValue(val)
+            coment.setComentIdentify(id);
+            free(val);
+            
+            const char *val = (const char*) sqlite3_column_text(stmt, 1);
+            text.setValue(val);
+            coment.setComentText(text);
+            free(val);
+            
+            const char *val = (const char*) sqlite3_column_text(stmt, 2);
+            date.setValue(val);
+            coment.setDate(date);
+            free(val);
+            
+            const char *val = (const char*) sqlite3_column_text(stmt, 3);
+            id.setValue(val);
+            coment.setAuthorIdentify(val);
+            free(val);
+            
+            const char *val = (const char*) sqlite3_column_text(stmt, 4);
+            id.setValue(val);
+            coment.setPostIdentify(id);
+            free(val);
+            
+            mylist.push_back(coment);
+        } else if (retval == SQLITE_DONE) {
+            break;
+        }
+    }
+    coments = mylist;
 };
 
 void CommandFindComent::execute() {
