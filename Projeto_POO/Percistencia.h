@@ -163,7 +163,9 @@ inline list ComentCommand::getList() {
 
 
 
-
+/** \class CommandCreateUser
+ *  \brief Classe que irá procurar se já existe um id ou um nome ,igual ao do objeto, no bd, se esse não existir irá adicionar o obj. 
+ */
 class CommandCreateUser : public UserCommand {
 public:
     /*! \fn execute()
@@ -171,7 +173,9 @@ public:
     */
     void execute();
 };
-
+/** \class CommandFindUser
+ *  \brief Classe que irá procurar um usuário pelo id e o colocara no objeto. 
+ */
 class CommandFindUser : public UserCommand {
 public:
     /*! \fn execute()
@@ -179,7 +183,9 @@ public:
     */
     void execute();
 };
-
+/** \class  CommandFindUsers
+ *  \brief Classe que irá listar todos os usuários. 
+ */
 class CommandFindUsers : public UserCommand {
 public:
     /*! \fn execute()
@@ -187,7 +193,9 @@ public:
     */
     void execute();
 };
-
+/** \class  CommandUpdateUser
+ *  \brief Classe que irá atualizar um usuário no banco de dados, caso esse exista. 
+ */
 class CommandUpdateUser : public UserCommand {
 public:
     /*! \fn execute()
@@ -195,7 +203,9 @@ public:
     */
     void execute();
 };
-
+/** \class  CommandDeleteUser
+ *  \brief Classe que irá deletar um usuário no banco de dados, caso esse exista. 
+ */
 class CommandDeleteUser : public UserCommand {
 public:
     /*! \fn execute()
@@ -206,7 +216,9 @@ public:
 
 
 
-
+/** \class CommandCreatePost
+ *  \brief Classe que irá procurar se já existe um id,igual ao do objeto, no bd, se esse não existir irá adicionar o obj. 
+ */
 class CommandCreatePost : public PostCommand {
 public:
     /*! \fn execute()
@@ -214,7 +226,9 @@ public:
     */
     void execute();
 };
-
+/** \class CommandUpdatePost
+ *  \brief Classe que irá atualizar um post no banco de dados, caso esse exista. 
+ */
 class CommandUpdatePost : public PostCommand {
 public:
     /*! \fn execute()
@@ -222,7 +236,9 @@ public:
     */
     void execute();
 };
-
+/** \class CommandDeletePost
+ *  \brief Classe que irá deletar um post no banco de dados, caso esse exista. 
+ */
 class CommandDeletePost : public PostCommand {
 public:
     /*! \fn execute()
@@ -230,7 +246,9 @@ public:
     */
     void execute();
 };
-
+/** \class CommandFindPost
+ *  \brief Classe que irá procurar um post pelo id, se encontrar o coloca em um objeto Post. 
+ */
 class CommandFindPost : public ACommand {
 public:
     /*! \fn execute()
@@ -238,7 +256,9 @@ public:
     */
     void execute();
 };
-
+/** \class CommandFindAllPost
+ *  \brief Classe que irá listar todos os posts. 
+ */
 class CommandFindAllPost : public ACommand {
 public:
     /*! \fn execute()
@@ -246,7 +266,9 @@ public:
     */
     void execute();
 };
-
+/** \class CommandFindUserPost
+ *  \brief Classe que retorna os posts de um usário que estão no banco de dados.
+ */
 class CommandFindUserPost : public ACommand {
 public:
     /*! \fn execute()
@@ -257,7 +279,9 @@ public:
 
 
 //Comentários
-
+/** \class CommandCreateComent
+ *  \brief Classe que irá procurar se já existe um id,igual ao do objeto, no bd, se esse não existir irá adicionar o obj. 
+ */
 class CommandCreateComent : public ComentCommand {
 public:
     /*! \fn execute()
@@ -266,7 +290,9 @@ public:
     void execute();
 
 };
-
+/** \class CommandUpdateComent
+ *  \brief Classe que irá atualizar um comentário no banco de dados, caso esse exista. 
+ */
 class CommandUpdateComent : public ComentCommand {
 public:
     /*! \fn execute()
@@ -274,7 +300,9 @@ public:
     */
     void execute();
 };
-
+/** \class CommandDeleteComent
+ *  \brief Classe que irá deletar um comentário no banco de dados, caso esse exista. 
+ */
 class CommandDeleteComent : public ComentCommand {
 public:
     /*! \fn execute()
@@ -282,7 +310,9 @@ public:
     */
     void execute();
 };
-
+/** \class CommandFindComent
+ *  \brief Classe que irá procurar um cometário pelo id, se encontrar o coloca em um objeto Coment. 
+ */
 class CommandFindComent : public ComentCommand {
 public:
     /*! \fn execute()
@@ -292,6 +322,9 @@ public:
 
 }; //POst
 
+/** \class CommandFindPostComents
+ *  \brief Classe que irá procurar os comentários de um post, se encontrar os coloca em um lista de objetos Coment. 
+ */
 class CommandFindPostComents : public ComentCommand {
 public:
     /*! \fn execute()
