@@ -441,8 +441,8 @@ void CommandFindPostComents::execute() {
     Date date;
 
     int ind = 0;
-    strcpy(sql, "SELECT * FROM coment WHERE comentIdentify = '");
-    strcat(sql, (coment.getComentIdentify()).getValue());
+    strcpy(sql, "SELECT * FROM coment WHERE Post_post_Identify = '");
+    strcat(sql, (coment.getPostIdentify()).getValue());
     strcat(sql, "'");
     
     queries[ind++] = sql;
@@ -490,6 +490,59 @@ void CommandFindPostComents::execute() {
 };
 
 void CommandFindComent::execute() {
+    int ind = 0;
+
+    Coment coment;
+
+    Identify id;
+    ComentText text;
+    Date date;
+
+    int ind = 0;
+    strcpy(sql, "SELECT * FROM coment WHERE comentIdentify = '");
+    strcat(sql, (coment.getComentIdentify()).getValue());
+    strcat(sql, "'");
+    
+    queries[ind++] = sql;
+    retval = sqlite3_prepare_v2(handle, queries[ind - 1], -1, &stmt, 0);
+    // caso de erro
+    if (retval) {
+        printf("db selecionado com erro\n");
+        return -1;
+    }
+    //Status
+    retval = sqlite3_step(stmt);
+    while (1) {
+        if (retval == SQLITE_ROW) {
+            const char *val = (const char*) sqlite3_column_text(stmt, 0);
+            id.getValue(val)
+            coment.setComentIdentify(id);
+            free(val);
+            
+            const char *val = (const char*) sqlite3_column_text(stmt, 1);
+            text.setValue(val);
+            coment.setComentText(text);
+            free(val);
+            
+            const char *val = (const char*) sqlite3_column_text(stmt, 2);
+            date.setValue(val);
+            coment.setDate(date);
+            free(val);
+            
+            const char *val = (const char*) sqlite3_column_text(stmt, 3);
+            id.setValue(val);
+            coment.setAuthorIdentify(val);
+            free(val);
+            
+            const char *val = (const char*) sqlite3_column_text(stmt, 4);
+            id.setValue(val);
+            coment.setPostIdentify(id);
+            free(val);
+        } else if (retval == SQLITE_DONE) {
+            break;
+        }
+    }
+    this->coment = coment;
 };
 
 

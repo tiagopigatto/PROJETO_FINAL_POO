@@ -35,6 +35,7 @@ public:
     virtual void deleta(Post) = 0;
     virtual list listar() = 0;
     virtual list listar(User) = 0;
+    virtual Post pega(Post) = 0;
     
     virtual void setPercistence(PercistenceProtocol *) = 0;
     
@@ -49,6 +50,7 @@ public:
     virtual void deleta(Coment) = 0;
     virtual void pegar(Coment) = 0;
     virtual list listar(Post) = 0;
+    virtual Coment pega(Coment) = 0;
     
     virtual void setPercistence(PercistenceProtocol *) = 0;
     virtual ~ProtocoloComent(){};
