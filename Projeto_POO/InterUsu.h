@@ -123,6 +123,9 @@ private:
     setLogicProtocol(UserProtocol * protocol) = 0;
     
 public:
+    /*! \fn exec()
+     *  \brief Método responsável por inicializar a interface
+     */    
     void exec();
 
 };
@@ -135,64 +138,111 @@ inline void UserControler :: setLogicProtocol(UserProtocol *protocol)
 
 class PostControler : public IUPostProtocol {
 private:
-    User *user = NULL;
-    Post *post = NULL;
+    User *user = NULL;  /**< Variável que armazena é responsável por armazenar um objeto de usuário*/
+    Post *post = NULL;  /**< Variável que armazena é responsável por armazenar um objeto de post*/ 
     PostProtocol *protocol;
     //LOGADO
-    static const unsigned int N_LISTAMEUSPOSTS = 1;
-    static const unsigned int N_MODIFICAPOST = 2;
-    static const unsigned int N_DELETAPOST = 3;
-    static const unsigned int N_CRIAPOST = 4;
-    static const unsigned int N_AVALIAPOST = 5;
+    static const unsigned int N_LISTAMEUSPOSTS = 1;     /**< Variavel que armazena o valor da opção de apresentar a lista de posts*/
+    static const unsigned int N_MODIFICAPOST = 2;       /**< Variavel que armazena o valor da opção de modificar um post*/
+    static const unsigned int N_DELETAPOST = 3;         /**< Variavel que armazena o valor da opção de deletar um post*/
+    static const unsigned int N_CRIAPOST = 4;           /**< Variavel que armazena o valor da opção de criar um post*/
+    static const unsigned int N_AVALIAPOST = 5;         /**< Variavel que armazena o valor da opção de avaliar um post*/
 
     //SEMPRE
-    static const unsigned int N_LISTATODOSPOSTS = 6;
-    static const unsigned int N_VERPOSTSDETALHADO = 7;
-    static const unsigned int N_SAIR = 8;
+    static const unsigned int N_LISTATODOSPOSTS = 6;        /**< Variavel que armazena o valor da opção de listar os posts*/
+    static const unsigned int N_VERPOSTSDETALHADO = 7;      /**< Variavel que armazena o valor da opção de ver um post detalhadamente*/
+    static const unsigned int N_SAIR = 8;                   /**< Variavel que armazena o valor da opção de sair*/
 
     //METODOS
+    /*! \fn showScreen()
+     *  \brief Método responsável por apresentar a interface de post para o usuário
+     */ 
     void showScreen();
     
-    //METODOS A IMPLEMTAR / PEGAR PIGATTO
+    /*! \fn listaMeus()
+     *  \brief Método responsável por apresentar os posts de um usuário na tela
+     */     
     listaMeus();
+    /*! \fn modifica()
+     *  \brief Método responsável por apresentar os comandos necessários para modificar um comentário
+     */ 
     modifica();
+    /*! \fn deleta()
+     *  \brief Método responsável por apresentar os comandos necessários para deletar um post
+     */ 
     deleta();
+    /*! \fn cria()
+     *  \brief Método responsável por apresentar os comandos necessários para realizar criar um novo post
+     */ 
     cria();
+    /*! \fn avalia()
+     *  \brief Método responsável por apresentar os comandos necessários para avaliar um post
+     */ 
     avalia();
+    /*! \fn showlist()
+     *  \brief Método responsável por apresentar uma lista com todos os posts de todos os usuários
+     */ 
     showlist();
+    /*! \fn mostra()
+     *  \brief Método responsável por mostrar um post na tela
+     */ 
     mostra();
     
 public:
+    /*! \fn exec()
+     *  \brief Método responsável por inicializar a interface
+     */    
     void exec();
 };
 
 class ComentControler : public IUComentProtocol {
 private:
-    User user;
-    Post post;
+    User user;  /**< Variável que armazena é responsável por armazenar um objeto de usuário*/
+    Post post;  /**< Variável que armazena é responsável por armazenar um objeto de post*/
 
 
     //LOGADO
-    static const unsigned int N_DELETACOMENT = 1;
-    static const unsigned int N_MODIFICACOMENT = 2;
-    static const unsigned int N_FAZCOMENT = 3;
+    static const unsigned int N_DELETACOMENT = 1;   /**< Variavel que armazena o valor da opção deletar um comentário*/
+    static const unsigned int N_MODIFICACOMENT = 2; /**< Variavel que armazena o valor da opção de modificar um comentário*/
+    static const unsigned int N_FAZCOMENT = 3;      /**< Variavel que armazena o valor da opção de criar um comentário*/
 
     //SEMPRE
-    static const unsigned int N_LISTACOMENT = 4;
-    static const unsigned int N_MOSTRACOMENT = 5;
-    static const unsigned int N_SAIR = 6;
+    static const unsigned int N_LISTACOMENT = 4;    /**< Variavel que armazena o valor da opção de listar os comentários de um post*/
+    static const unsigned int N_MOSTRACOMENT = 5;   /**< Variavel que armazena o valor da opção de apresentar o comentário*/
+    static const unsigned int N_SAIR = 6;           /**< Variavel que armazena o valor da opção de sair*/
 
     //METODOS
+    /*! \fn showScreen()
+     *  \brief Método responsável por apresentar a interface de comentário para o usuário
+     */ 
     void showScreen();
     
     //METODOS /implementar
+    /*! \fn deleta()
+     *  \brief Método responsável por apresentar os comandos necessários para deletar um comentário
+     */ 
     deleta();
+    /*! \fn modifica()
+     *  \brief Método responsável por apresentar os comandos necessários para modificar um comentário
+     */ 
     modifica();
+    /*! \fn cria()
+     *  \brief Método responsável por apresentar os comandos necessários para realizar criar um novo comentário
+     */ 
     cria();
+    /*! \fn lista()
+     *  \brief Método responsável por apresentar uma lista com todos os comentários de um post
+     */ 
     lista();
+    /*! \fn show()
+     *  \brief Método responsável por mostrar um comentário na tela
+     */ 
     show();
     
 public:
+    /*! \fn exec()
+     *  \brief Método responsável por inicializar a interface
+     */    
     void exec();
 };
 
