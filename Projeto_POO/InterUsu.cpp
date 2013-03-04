@@ -444,7 +444,7 @@ void PostControler::cria() {
                 return;
 
         }
-        this->postagem = postagem;
+        this->post = postagem;
         return;
     }
 }
