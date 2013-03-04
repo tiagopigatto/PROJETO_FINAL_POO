@@ -1,0 +1,63 @@
+# Project: PROJETO_PRONTO_DEV
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Builder.o Comand.o Entidades.o InterUsu.o LogNeg.o main.o Percistence.o Protocolo.o sqlite3.o StubLN.o testestipos.o TiposBasicos.o $(RES)
+LINKOBJ  = Builder.o Comand.o Entidades.o InterUsu.o LogNeg.o main.o Percistence.o Protocolo.o sqlite3.o StubLN.o testestipos.o TiposBasicos.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = PROJETO_PRONTO_DEV.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before PROJETO_PRONTO_DEV.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "PROJETO_PRONTO_DEV.exe" $(LIBS)
+
+Builder.o: Builder.cpp
+	$(CPP) -c Builder.cpp -o Builder.o $(CXXFLAGS)
+
+Comand.o: Comand.cpp
+	$(CPP) -c Comand.cpp -o Comand.o $(CXXFLAGS)
+
+Entidades.o: Entidades.cpp
+	$(CPP) -c Entidades.cpp -o Entidades.o $(CXXFLAGS)
+
+InterUsu.o: InterUsu.cpp
+	$(CPP) -c InterUsu.cpp -o InterUsu.o $(CXXFLAGS)
+
+LogNeg.o: LogNeg.cpp
+	$(CPP) -c LogNeg.cpp -o LogNeg.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Percistence.o: Percistence.cpp
+	$(CPP) -c Percistence.cpp -o Percistence.o $(CXXFLAGS)
+
+Protocolo.o: Protocolo.cpp
+	$(CPP) -c Protocolo.cpp -o Protocolo.o $(CXXFLAGS)
+
+sqlite3.o: sqlite3.c
+	$(CPP) -c sqlite3.c -o sqlite3.o $(CXXFLAGS)
+
+StubLN.o: StubLN.cpp
+	$(CPP) -c StubLN.cpp -o StubLN.o $(CXXFLAGS)
+
+testestipos.o: testestipos.cpp
+	$(CPP) -c testestipos.cpp -o testestipos.o $(CXXFLAGS)
+
+TiposBasicos.o: TiposBasicos.cpp
+	$(CPP) -c TiposBasicos.cpp -o TiposBasicos.o $(CXXFLAGS)

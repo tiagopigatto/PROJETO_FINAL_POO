@@ -1,5 +1,4 @@
-#ifdef TESTE
-#include "LogNeg.h"
+ude "LogNeg.h"
 
 class LNStubUser : UserProtocol
 {

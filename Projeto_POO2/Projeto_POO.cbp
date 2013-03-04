@@ -34,6 +34,8 @@
 		</Compiler>
 		<Unit filename="Builder.cpp" />
 		<Unit filename="Builder.h" />
+		<Unit filename="Comand.cpp" />
+		<Unit filename="Comand.h" />
 		<Unit filename="Entidades.cpp" />
 		<Unit filename="Entidades.h" />
 		<Unit filename="Errors.h" />
@@ -42,13 +44,18 @@
 		<Unit filename="InterUsu.h" />
 		<Unit filename="LogNeg.cpp" />
 		<Unit filename="LogNeg.h" />
-		<Unit filename="Operacoes.cpp" />
-		<Unit filename="Operacoes.h" />
+		<Unit filename="MR_POO.png" />
+		<Unit filename="POO" />
 		<Unit filename="Percistence.cpp" />
 		<Unit filename="PercistenceProtocol.h" />
 		<Unit filename="Percistencia.h" />
+		<Unit filename="Projeto_POO.cbp" />
+		<Unit filename="Projeto_POO.depend" />
+		<Unit filename="Projeto_POO.layout" />
 		<Unit filename="Protocolo.cpp" />
 		<Unit filename="ProtocoloLN.h" />
+		<Unit filename="Smoke_Test.docx" />
+		<Unit filename="Smoke_Test.pdf" />
 		<Unit filename="StubLN.cpp" />
 		<Unit filename="Testes.h" />
 		<Unit filename="TiposBasicos.cpp" />
