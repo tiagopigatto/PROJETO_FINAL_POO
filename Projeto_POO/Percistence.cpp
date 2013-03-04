@@ -172,11 +172,26 @@ void CommandCreatePost::execute() {
 };
 
 void CommandUpdatePost::execute() {
+    strcpy(sql, "UPDATE post SET postText = '");
+    strcat(sql, (post.getPostText()).getValue());
+    strcpy(sql, ", date = '");
+    strcat(sql, (post.getDate()).getValue());;
+    strcat(sql, "' WHERE postIdentify = '");
+    strcat(sql, (post.getPostIdentify()).getValue());
+    strcat(sql, "'");
+    // executa nosso comando no banco 
+    retval = sqlite3_exec(handle, sql, 0, 0, 0);
+    if (retval) {
+        /** Atualizar ID q n existe **/
+    }
 
 };
 
 void CommandDeletePost::execute() {
-
+        strcpy(sql, "DELETE FROM post WHERE postIdentify = '");
+        strcat(sql, (post.getPostIdentify()).getValue());
+        strcat(sql, "'");
+        retval = sqlite3_exec(handle, sql, 0, 0, 0);
 };
 
 void CommandFindAllPost::execute() {
