@@ -92,7 +92,7 @@ void CommandDeleteUser::execute() {
 
 void CommandFindUsers::execute() {
     int ind = 0;
-    std::list<int> mylist;
+    std::list<User> mylist;
 
     UserName nome;
     Password senha;
@@ -175,7 +175,8 @@ void CommandUpdatePost::execute() {
     strcpy(sql, "UPDATE post SET postText = '");
     strcat(sql, (post.getPostText()).getValue());
     strcpy(sql, ", date = '");
-    strcat(sql, (post.getDate()).getValue());;
+    strcat(sql, (post.getDate()).getValue());
+    ;
     strcat(sql, "' WHERE postIdentify = '");
     strcat(sql, (post.getPostIdentify()).getValue());
     strcat(sql, "'");
@@ -188,13 +189,68 @@ void CommandUpdatePost::execute() {
 };
 
 void CommandDeletePost::execute() {
-        strcpy(sql, "DELETE FROM post WHERE postIdentify = '");
-        strcat(sql, (post.getPostIdentify()).getValue());
-        strcat(sql, "'");
-        retval = sqlite3_exec(handle, sql, 0, 0, 0);
+    strcpy(sql, "DELETE FROM post WHERE postIdentify = '");
+    strcat(sql, (post.getPostIdentify()).getValue());
+    strcat(sql, "'");
+    retval = sqlite3_exec(handle, sql, 0, 0, 0);
 };
 
 void CommandFindAllPost::execute() {
+    
+    int ind = 0;
+    std::list<Post> mylist;
+    
+    Post post;
+    
+    Identify id;
+    PostText text;
+    Date date;
+    Evaluation eval;
+    
+    
+    
+    strcpy(sql, "SELECT * FROM post WHERE postIdentify = '");
+    strcat(sql, (post.getPostIdentify()).getValue());
+    strcat(sql, "'");
+    retval = sqlite3_prepare_v2(handle, queries[ind - 1], -1, &stmt, 0);
+    // caso de erro
+    if (retval) {
+        printf("db selecionado com erro\n");
+        return -1;
+    }
+    //Status
+    retval = sqlite3_step(stmt);
+    while (1) {
+        if (retval == SQLITE_ROW) {
+            const char *val = (const char*) sqlite3_column_text(stmt, 0);
+            id.setValue(val)
+            post.setPostIdentify(id);
+            free(val);
+            
+            const char *val = (const char*) sqlite3_column_text(stmt, 1);
+            text.setValue()
+            post.setPostText(text);
+            free(val);
+            
+            const char *val = (const char*) sqlite3_column_text(stmt, 2);
+            date.setValue(val)
+            post.setDate(date);
+            free(val);
+            
+            const char *val = (const char*) sqlite3_column_text(stmt, 3);
+            Evaluation
+            post_.setEvaluation(val);
+            free(val);
+            
+            const char *val = (const char*) sqlite3_column_text(stmt, 4);
+            post_.setAuthorIdentify(val);
+            free(val);
+            
+            mylist.push_back(user);
+        } else if (retval == SQLITE_DONE) {
+            break;
+        }
+    }
 };
 
 void CommandFindUserPost::execute() {
