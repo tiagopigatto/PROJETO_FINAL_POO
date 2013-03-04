@@ -72,7 +72,9 @@ public:
      */    
     void exec();
 };
-
+/*! \class UserControler 
+ *  \brief Essa é a classe que cria a interface de comandos de usuário
+ */
 class UserControler : public IUUserProtocol {
 private:
     User *user = NULL;  /**< Variável que armazena é responsável por armazenar um objeto de usuário*/                 
@@ -135,12 +137,14 @@ inline void UserControler :: setLogicProtocol(UserProtocol *protocol)
     this->protocol = protocol;
 }
 
-
+/*! \class PostControler
+ *  \brief Essa é a classe que cria a interface de comandos de post
+ */
 class PostControler : public IUPostProtocol {
 private:
     User *user = NULL;  /**< Variável que armazena é responsável por armazenar um objeto de usuário*/
     Post *post = NULL;  /**< Variável que armazena é responsável por armazenar um objeto de post*/ 
-    PostProtocol *protocol;
+    PostProtocol *protocol; /**< Variável que armazena o protocolo post*/ 
     //LOGADO
     static const unsigned int N_LISTAMEUSPOSTS = 1;     /**< Variavel que armazena o valor da opção de apresentar a lista de posts*/
     static const unsigned int N_MODIFICAPOST = 2;       /**< Variavel que armazena o valor da opção de modificar um post*/
@@ -194,12 +198,14 @@ public:
      */    
     void exec();
 };
-
+/*! \class ComentControler
+ *  \brief Essa é a classe que cria a interface de comandos de comentário
+ */
 class ComentControler : public IUComentProtocol {
 private:
     User user;  /**< Variável que armazena é responsável por armazenar um objeto de usuário*/
     Post post;  /**< Variável que armazena é responsável por armazenar um objeto de post*/
-
+    ComentProtocol *protocol;   /**< Variável que armazena o protocolo comentário*/ 
 
     //LOGADO
     static const unsigned int N_DELETACOMENT = 1;   /**< Variavel que armazena o valor da opção deletar um comentário*/
