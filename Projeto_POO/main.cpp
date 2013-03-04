@@ -8,7 +8,7 @@
 #include <iostream>
 #include <string>
 #include <stdio.h>
-#include "InterUsu.h"
+#include "Builder.h"
 #include "testestipos.h"
 
 using namespace std;
@@ -17,38 +17,7 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-    cout << "Realizacao de testes com argumentos validos e invalidos" << endl;
-
-    //Teste do tipo básico NomeUsuario
-    TesteTBUserName nomeusuario;
-    nomeusuario.run();
-
-    //Teste do tipo básico Senha
-    TesteTBPassword senha;
-    senha.run();
-
-    //Teste do tipo básico Ident
-    TesteTBIdentify ident;
-    ident.run();
-
-    //Teste do tipo básico Post
-    TesteTBPostText post;
-    post.run();
-
-    //Teste do tipo básico Comment
-    TesteTBComentText comment;
-    comment.run();
-
-    //Teste do tipo básico Date
-    TesteTBDate date;
-    date.run();
-
-    //Teste dp tipo básico Avalia
-    TesteTBEvaluation avalia;
-    avalia.run();
-
-    cout << "Todos os testes foram realizados com sucesso!" << endl;
-    cin.get();
-    return 0;
+    Builder *builder;
+    builder = new Builder();
 }
 

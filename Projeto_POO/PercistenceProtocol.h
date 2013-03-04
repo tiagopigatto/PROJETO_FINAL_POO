@@ -8,13 +8,14 @@
 #ifndef PERCISTENCEPROTOCOL_H
 #define	PERCISTENCEPROTOCOL_H
 
-#include "Percistencia.h"
+#include "Comand.h"
+#include "Errors.h"
 
 class PercistenceProtocol
 {
 public:
-    virtual ~PercistenceProtocol(){};
-    virtual void exec(ACommand *);
+    virtual void exec(ACommand *) throw (PercistenceError) = 0;
+    virtual ~PercistenceProtocol(){}
 };
 
 

@@ -1,7 +1,7 @@
-#ifndef TESTEUSU
 #include "LogNeg.h"
+using namespace std;
 
-bool LNUser::autenticar(User usuario) {
+void LNUser::autenticar(User usuario) {
     User bancoUser;
     UserCommand *command;
     try {
@@ -19,7 +19,7 @@ bool LNUser::autenticar(User usuario) {
             }
         }
     }
-    throw new LogicError();
+    throw new LogicError("nao logo");
 }
 
 void LNUser::cadastrar(User usuario) {
@@ -55,9 +55,9 @@ void LNUser::update(User usuario) {
     }
 }
 
-list LNUser::Listar() {
+list<User> LNUser::Listar() {
     UserCommand *command;
-    list time = list<User>;
+    list<User> time;
     try {
         command = new CommandFindUsers();
         percistence->exec(command);
@@ -120,9 +120,9 @@ Post LNPost::pegar(Post post) {
     return BDpost;
 }
 
-list LNPost::listarPorUser(Post post) {
+list<Post> LNPost::listarPorUser(Post post) {
     PostCommand *command;
-    list time = list<Post>;
+    std::list<Post> time;
     try {
         command = new CommandFindUserPost();
         command->setPost(post);
@@ -134,9 +134,9 @@ list LNPost::listarPorUser(Post post) {
     return time;
 }
 
-list LNPost::listar() {
-    UserCommand *command;
-    list time = list<Post>;
+list<Post> LNPost::listar() {
+    PostCommand *command;
+    std::list<Post> time;
     try {
         command = new CommandFindAllPost();
         percistence->exec(command);
@@ -188,7 +188,6 @@ void LNComent::update(Coment coment) {
 Coment LNComent::pegar(Coment coment) {
 
     ComentCommand *command;
-    Coment coment;
     try {
         command = new CommandUpdateComent();
         percistence->exec(command);
@@ -199,11 +198,11 @@ Coment LNComent::pegar(Coment coment) {
     return coment;
 }
 
-list LNComent::listar(Coment coment) {
+list<Coment> LNComent::listar(Coment coment) {
     ComentCommand *command;
-    list time = list<Coment>;
+    std::list<Coment> time;
     try {
-        command = new CommandFindPostComents;
+        command = new CommandFindPostComents();
         command->setComent(coment);
         percistence->exec(command);
         time = command->getList();
@@ -218,6 +217,3 @@ list LNComent::listar(Coment coment) {
 void LNComent::setPercistence(PercistenceProtocol *percistence) {
     this->percistence = percistence;
 }
-
-
-#endif

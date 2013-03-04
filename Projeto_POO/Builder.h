@@ -11,6 +11,9 @@
 #include "IUProtocols.h"
 
 #include "InterUsu.h"
+#include "LogNeg.h"
+#include "Percistencia.h"
+
 /** \class Builder
  *  \brief Essa e a classe responsavel por ser linkar as classes do programa.
  */
@@ -95,19 +98,19 @@ inline IUPostProtocol* Builder::startIUPostProtocol() {
 };
 
 inline UserProtocol* Builder::startUserProtocol() {
-    return new UserProtocol();
+    return new LNUser();
 }
 
 inline PostProtocol* Builder::startPostProtocol() {
-    return new PostProtocol();
+    return new LNPost();
 }
 
-inline ComentProtocol* Builder::startPostProtocol() {
-    return new ComentProtocol();
+inline ComentProtocol* Builder::startComentProtocol() {
+    return new LNComent();
 }
 
 inline PercistenceProtocol* Builder::startPercistenceProtocol() {
-    return new PercistenceProtocol();
+    return new PersistenceControler();
 }
 
 inline InitialIUControler* Builder::startIUControler() {

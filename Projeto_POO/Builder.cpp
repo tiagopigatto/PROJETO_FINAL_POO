@@ -22,16 +22,16 @@ Builder::Builder() {
 
     //setando os protocolos de logica na iu
     this->iuUserProtocol->setLogicProtocol(this->usersProtocol);
-    this->iuComentProtocol->setLogicProtocol(this->postsProtocol);
-    this->iuPostProtocol->setLogicProtocol(this->comentsProtocol);
+    this->iuComentProtocol->setLogicProtocol(this->comentsProtocol);
+    this->iuPostProtocol->setLogicProtocol(this->postsProtocol);
 
     //startando a controladora
     this->initialIUControler = this->startIUControler();
 
     //setando os protocolos das outras interfaces
-    this->initialIUControler->setUserControler(this->iuUserProtocol);
-    this->initialIUControler->setComentControler(this->iuUserProtocol);
-    this->initialIUControler->setPostControler(this->iuUserProtocol);
+    this->initialIUControler->setUserProtocol(this->iuUserProtocol);
+    this->initialIUControler->setComentProtocol(this->iuComentProtocol);
+    this->initialIUControler->setPostProtocol(this->iuPostProtocol);
 
     //comencando
 

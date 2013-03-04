@@ -262,11 +262,11 @@ public:
      */
     void setVoteNumber(const int voteNumber) throw (invalid_argument);
 
-    void getVoteNumber();
+    int getVoteNumber();
 };
 
 //Metodos Inline
-inline void Evaluation::getVoteNumber()
+inline int Evaluation::getVoteNumber()
 {
     return this->voteNumber;
 }

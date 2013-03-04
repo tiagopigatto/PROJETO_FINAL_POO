@@ -32,7 +32,7 @@ inline PercistenceError::PercistenceError(string erro) {
     this->erro = erro;
 }
 
-inline string PercistenceError::what(string erro) {
+inline string PercistenceError::what() {
     return this->erro;
 }
 /** \class LogicError
@@ -56,7 +56,7 @@ inline LogicError::LogicError(string erro) {
     this->erro = erro;
 }
 
-inline string LogicError::what(string erro) {
+inline string LogicError::what() {
     return this->erro;
 }
 

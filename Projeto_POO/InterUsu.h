@@ -9,14 +9,19 @@
 #define INTERFACEUSUARIO_H
 
 #include "ProtocoloLN.h"
+#include "IUProtocols.h"
+#include "PercistenceProtocol.h"
+
+#include "Entidades.h"
+
 #include "Errors.h"
+
 #include <iostream>
 #include <string>
 #include <stdio.h>
 #include <list>
-
-
 using namespace std;
+
 #define LIMPATELA system("cls");
 
 //login aqui
@@ -41,8 +46,8 @@ private:
     IUComentProtocol *comentProto;  /**< Variavel que contém o  protocolo da interface de usuário Comentário*/
 
     //Usuario / postagem
-    User *user = NULL;  /**< Variável que armazena é responsável por armazenar um objeto de usuário*/
-    Post *post = NULL;  /**< Variável que armazena é responsável por armazenar um objeto de post*/ 
+    User *user;  /**< Variável que armazena é responsável por armazenar um objeto de usuário*/
+    Post *post;  /**< Variável que armazena é responsável por armazenar um objeto de post*/ 
 
     //metodos
     /*! \fn void showOptions()
@@ -51,22 +56,27 @@ private:
     void showOptions();
 
 public:
+    InitialIUControler()
+    {
+        user = NULL;
+        post = NULL;
+    }
     //metodos
     /*! \fn void setUserControler(IUUserProtocol *userProto)
      *  \brief Método responsável por abrir a interface de usuário
      *  \param userProto: protocolo da interface de usuário
      */        
-    void setUserControler(IUUserProtocol *userProto);
+    void setUserProtocol(IUUserProtocol *userProto);
     /*! \fn void setPostControler(IUPostProtocol *postProto)
      *  \brief Método responsável por abrir a interface de post
      *  \param postProto: protocolo da interface de post
      */     
-    void setPostControler(IUPostProtocol *postProto);
+    void setPostProtocol(IUPostProtocol *postProto);
     /*! \fn void setComentControler(IUComentProtocol *comentProto)
      *  \brief Método responsável por abrir a interface de comentário
      *  \param comentProto: protocolo da interface de comentário
      */     
-    void setComentControler(IUComentProtocol *comentProto);
+    void setComentProtocol(IUComentProtocol *comentProto);
     /*! \fn void exec()
      *  \brief Método responsável por inicializar a interface
      */    
@@ -77,7 +87,7 @@ public:
  */
 class UserControler : public IUUserProtocol {
 private:
-    User *user = NULL;  /**< Variável que armazena é responsável por armazenar um objeto de usuário*/                 
+    User *user;  /**< Variável que armazena é responsável por armazenar um objeto de usuário*/                 
     UserProtocol *protocol;     /**< Variavel que contém o protocolo da interface de usuário User*/
 
     //SEM LOGAR
@@ -119,19 +129,44 @@ private:
      *  \brief Método responsável por apresentar os comandos necessários para realizar modificar um usuário
      */          
     void modificar();
-    /*! \fn setLogicProtocol(UserProtocol * protocol)
+                
+public:
+     /*! \fn void setLogicProtocol(UserProtocol * protocol)
      *  \brief Método responsável por acionar o protocolo da camada lógica
      *  \param protocol = Protocolo da camada.
-     */             
-    setLogicProtocol(UserProtocol * protocol) = 0;
+     */ 
+    void setLogicProtocol(UserProtocol * protocol);
     
-public:
+    UserControler();
+    
+        
     /*! \fn void exec()
      *  \brief Método responsável por inicializar a interface
-     */    
+     */
     void exec();
+    
+    void setUser(User*);
+    User* getUser();
+    
 
 };
+
+inline UserControler :: UserControler()
+{
+    user = NULL;
+}
+
+
+inline void UserControler :: setUser(User* user)
+{
+    this -> user = user;
+}
+
+inline User* UserControler :: getUser()
+{
+    return this -> user;
+}
+
 
 inline void UserControler :: setLogicProtocol(UserProtocol *protocol)
 {
@@ -143,8 +178,8 @@ inline void UserControler :: setLogicProtocol(UserProtocol *protocol)
  */
 class PostControler : public IUPostProtocol {
 private:
-    User *user = NULL;  /**< Variável que armazena é responsável por armazenar um objeto de usuário*/
-    Post *post = NULL;  /**< Variável que armazena é responsável por armazenar um objeto de post*/ 
+    User *user;  /**< Variável que armazena é responsável por armazenar um objeto de usuário*/
+    Post *post;  /**< Variável que armazena é responsável por armazenar um objeto de post*/ 
     PostProtocol *protocol; /**< Variável que armazena o protocolo post*/ 
     //LOGADO
     static const unsigned int N_LISTAMEUSPOSTS = 1;     /**< Variavel que armazena o valor da opção de apresentar a lista de posts*/
@@ -164,48 +199,75 @@ private:
      */ 
     void showScreen();
     
-    /*! \fn listaMeus()
+    /*! \fn void  listaMeus()
      *  \brief Método responsável por apresentar os posts de um usuário na tela
      */     
-    listaMeus();
-    /*! \fn modifica()
+    void listaMeus();
+    /*! \fn void modifica()
      *  \brief Método responsável por apresentar os comandos necessários para modificar um comentário
      */ 
-    modifica();
-    /*! \fn deleta()
+    void modifica();
+    /*! \fn void deleta()
      *  \brief Método responsável por apresentar os comandos necessários para deletar um post
      */ 
-    deleta();
-    /*! \fn cria()
+    void deleta();
+    /*! \fn void cria()
      *  \brief Método responsável por apresentar os comandos necessários para realizar criar um novo post
      */ 
-    cria();
-    /*! \fn avalia()
+    void cria();
+    /*! \fn void avalia()
      *  \brief Método responsável por apresentar os comandos necessários para avaliar um post
      */ 
-    avalia();
-    /*! \fn showlist()
+    void avalia();
+    /*! \fn void showlist()
      *  \brief Método responsável por apresentar uma lista com todos os posts de todos os usuários
      */ 
-    showlist();
-    /*! \fn mostra()
+    void showlist();
+    /*! \fn void mostra()
      *  \brief Método responsável por mostrar um post na tela
      */ 
-    mostra();
+    void mostra();
     
 public:
+    PostControler();
     /*! \fn void exec()
      *  \brief Método responsável por inicializar a interface
      */    
     void exec();
+    
+    void setUser(User*);
+    Post* getPost();
+    void setLogicProtocol(PostProtocol *);
 };
+
+inline void PostControler :: setLogicProtocol(PostProtocol *protocol)
+{
+    this->protocol = protocol;
+}
+
+inline PostControler :: PostControler()
+{
+    user = NULL;
+    post = NULL;
+}
+
+inline void PostControler :: setUser(User* user)
+{
+    this -> user = user;
+}
+
+inline Post* PostControler :: getPost()
+{
+    return this -> post;
+}
+
 /*! \class ComentControler
  *  \brief Essa é a classe que cria a interface de comandos de comentário
  */
 class ComentControler : public IUComentProtocol {
 private:
-    User user;  /**< Variável que armazena é responsável por armazenar um objeto de usuário*/
-    Post post;  /**< Variável que armazena é responsável por armazenar um objeto de post*/
+    User *user;  /**< Variável que armazena é responsável por armazenar um objeto de usuário*/
+    Post *post;  /**< Variável que armazena é responsável por armazenar um objeto de post*/
     ComentProtocol *protocol;   /**< Variável que armazena o protocolo comentário*/ 
 
     //LOGADO
@@ -225,43 +287,64 @@ private:
     void showScreen();
     
     //METODOS /implementar
-    /*! \fn deleta()
+    /*! \fn void deleta()
      *  \brief Método responsável por apresentar os comandos necessários para deletar um comentário
      */ 
-    deleta();
-    /*! \fn modifica()
+    void deleta();
+    /*! \fn void modifica()
      *  \brief Método responsável por apresentar os comandos necessários para modificar um comentário
      */ 
-    modifica();
-    /*! \fn cria()
+    void modifica();
+    /*! \fn void cria()
      *  \brief Método responsável por apresentar os comandos necessários para realizar criar um novo comentário
      */ 
-    cria();
-    /*! \fn lista()
+    void cria();
+    /*! \fn void lista()
      *  \brief Método responsável por apresentar uma lista com todos os comentários de um post
      */ 
-    lista();
-    /*! \fn show()
+    void lista();
+    /*! \fn void show()
      *  \brief Método responsável por mostrar um comentário na tela
      */ 
-    show();
+    void show();
     
 public:
     /*! \fn void exec()
      *  \brief Método responsável por inicializar a interface
-     */    
+     */
     void exec();
+    void setUser(User*);
+    void setPost(Post*);
+    void setLogicProtocol(ComentProtocol *);
+    
 };
 
-inline void InitialIUControler::setUserControler(IUUserProtocol* userProto) {
+inline void ComentControler :: setLogicProtocol(ComentProtocol *protocol)
+{
+    this->protocol = protocol;
+}
+
+inline void ComentControler :: setUser(User* user)
+{
+    this -> user = user;
+}
+
+inline void ComentControler :: setPost(Post* post)
+{
+    this -> post = post;
+}
+
+
+
+inline void InitialIUControler::setUserProtocol(IUUserProtocol* userProto) {
     this->userProto = userProto;
 }
 
-inline void InitialIUControler::setPostControler(IUPostProtocol* postProto) {
+inline void InitialIUControler::setPostProtocol(IUPostProtocol* postProto) {
     this->postProto = postProto;
 }
 
-inline void InitialIUControler::setUserControler(IUComentProtocol* comentProto) {
+inline void InitialIUControler::setComentProtocol(IUComentProtocol* comentProto) {
     this->comentProto = comentProto;
 }
 
