@@ -11,7 +11,7 @@
 class PersistenceControler : public PercistenceProtocol {
 public:
     //executa
-    /*! \fn executar(ACommand*)
+    /*! \fn void executar(ACommand*)
      *  \brief Método responsável por iniciar a execuçaõ da classe
      *  \param ACommand = Command Abstrato
      */    
@@ -34,17 +34,17 @@ protected:
     // definindo ponteiros
     sqlite3_stmt *stmt;     /**< Variavel que armazena algo escrito*/
     sqlite3 *handle;        /**< Variavel que armazena o o banco de dados*/
-    /*! \fn conect()
+    /*! \fn void conect();
      *  \brief Método responsável por conectar do banco de dados
      */ 
     void conect();
-    /*! \fn desconect()
+    /*! \fn void desconect()
      *  \brief Método responsável por desconectar do banco de dados
      */ 
     void desconect();
 
 public:
-    /*! \fn execute()
+    /*! \fn virtual void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */   
     virtual void execute() = 0;
@@ -59,16 +59,16 @@ protected:
     list users = list<User>;    /**< Variavel que contém uma lista de objetos de usuários*/
 
 public:
-   /*! \fn setUser(User)
+   /*! \fn void setUser(User user)
      *  \brief Método responsável por adicionar um usuário no banco de dados
      *  \param User = Objeto de um usuário
      */     
     void setUser(User user);
-   /*! \fn getUser()
+   /*! \fn User getUser()
      *  \brief Método responsável pegar um usuário do banco de dados
      */   
     User getUser();
-   /*! \fn getList()
+   /*! \fn list getList()
      *  \brief Método responsável receber uma lista com os usuários de um banco de dados
      */  
     list getList();
@@ -96,16 +96,16 @@ protected:
     list posts = list<Post>;    /**< Variavel que contém uma lista de objetos de postagens*/
 
 public:
-   /*! \fn setPost(Post)
+   /*! \fn void setPost(Post post)
      *  \brief Método responsável por adicionar um post no banco de dados
      *  \param Post = Objeto de um post
      */      
     void setPost(Post post);
-   /*! \fn getPost()
+   /*! \fn Post getPost()
      *  \brief Método responsável por pegar um post do banco de dados
      */  
     Post getPost();
-   /*! \fn getList()
+   /*! \fn list getList()
      *  \brief Método responsável gerar uma lista com os posts do banco de dados
      */  
     list getList();
@@ -134,16 +134,16 @@ protected:
     list coments = list<User>;  /**< Variavel que contém uma lista de objetos de comentários*/      
 
 public:
-   /*! \fn setComent(Coment)
+   /*! \fn void setComent(Coment coment)
      *  \brief Método responsável por adicionar um comentário no banco de dados
      *  \param Coment = Objeto de um comentário
      */    
     void setComent(Coment coment);  
-   /*! \fn getComent()
+   /*! \fn Coment getComent()
      *  \brief Método responsável por adicionar um comentário no banco de dados
      */    
     Coment getComent();
-   /*! \fn getList()
+   /*! \fn list getList()
      *  \brief Método responsável por listar os comentários de um post do banco de dados
      */    
     list getList();
@@ -168,7 +168,7 @@ inline list ComentCommand::getList() {
  */
 class CommandCreateUser : public UserCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();
@@ -178,7 +178,7 @@ public:
  */
 class CommandFindUser : public UserCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();
@@ -188,7 +188,7 @@ public:
  */
 class CommandFindUsers : public UserCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();
@@ -198,7 +198,7 @@ public:
  */
 class CommandUpdateUser : public UserCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();
@@ -208,7 +208,7 @@ public:
  */
 class CommandDeleteUser : public UserCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();
@@ -221,7 +221,7 @@ public:
  */
 class CommandCreatePost : public PostCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();
@@ -231,7 +231,7 @@ public:
  */
 class CommandUpdatePost : public PostCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();
@@ -241,7 +241,7 @@ public:
  */
 class CommandDeletePost : public PostCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();
@@ -251,7 +251,7 @@ public:
  */
 class CommandFindPost : public PostCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();
@@ -261,7 +261,7 @@ public:
  */
 class CommandFindAllPost : public PostCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();
@@ -271,7 +271,7 @@ public:
  */
 class CommandFindUserPost : public PostCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();
@@ -284,7 +284,7 @@ public:
  */
 class CommandCreateComent : public ComentCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();
@@ -295,7 +295,7 @@ public:
  */
 class CommandUpdateComent : public ComentCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();
@@ -305,7 +305,7 @@ public:
  */
 class CommandDeleteComent : public ComentCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();
@@ -315,7 +315,7 @@ public:
  */
 class CommandFindComent : public ComentCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */    
    void execute();
@@ -327,7 +327,7 @@ public:
  */
 class CommandFindPostComents : public ComentCommand {
 public:
-    /*! \fn execute()
+    /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
     */
     void execute();

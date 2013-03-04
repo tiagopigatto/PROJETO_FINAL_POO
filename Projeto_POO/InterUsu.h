@@ -45,29 +45,29 @@ private:
     Post *post = NULL;  /**< Variável que armazena é responsável por armazenar um objeto de post*/ 
 
     //metodos
-    /*! \fn showOptions()
+    /*! \fn void showOptions()
      *  \brief Método responsável por apresentar na tela as opções que o usuário possui
      */    
     void showOptions();
 
 public:
     //metodos
-    /*! \fn (IUUserProtocol *userProto)
+    /*! \fn void setUserControler(IUUserProtocol *userProto)
      *  \brief Método responsável por abrir a interface de usuário
      *  \param userProto: protocolo da interface de usuário
      */        
     void setUserControler(IUUserProtocol *userProto);
-    /*! \fn (IUPostProtocol *postProto)
+    /*! \fn void setPostControler(IUPostProtocol *postProto)
      *  \brief Método responsável por abrir a interface de post
      *  \param postProto: protocolo da interface de post
      */     
     void setPostControler(IUPostProtocol *postProto);
-    /*! \fn setComentControler(IUComentProtocol *comentProto)
+    /*! \fn void setComentControler(IUComentProtocol *comentProto)
      *  \brief Método responsável por abrir a interface de comentário
      *  \param comentProto: protocolo da interface de comentário
      */     
     void setComentControler(IUComentProtocol *comentProto);
-    /*! \fn exec()
+    /*! \fn void exec()
      *  \brief Método responsável por inicializar a interface
      */    
     void exec();
@@ -94,38 +94,39 @@ private:
     static const unsigned int N_SAIR = 5;           /**< Variavel que armazena o valor da opção de sair*/
 
     //METODOS
-    /*! \fn showScreen()
+    /*! \fn void showScreen()
      *  \brief Método responsável por apresentar a interface de usuário para o usuário
      */      
     void showScreen();
 
-    /*! \fn logar()
+    /*! \fn void logar()
      *  \brief Método responsável por apresentar os comandos necessários para realizar um login
      */      
     void logar();
-    /*! \fn cadastrar()
+    /*! \fn void cadastrar()
      *  \brief Método responsável por apresentar os comandos necessários para realizar um cadastro
      */      
     void cadastrar();
-    /*! \fn cadastrar()
+    /*! \fn void showList()
      *  \brief Método responsável por apresentar as listas com todos os usuários
      */          
     void showList();
-    /*! \fn cadastrar()
+    /*! \fn void deletar()
      *  \brief Método responsável por apresentar os comandos necessários para realizar deletar um usuário
      */          
     void deletar();
-    /*! \fn cadastrar()
+    /*! \fn void modificar()
      *  \brief Método responsável por apresentar os comandos necessários para realizar modificar um usuário
      */          
     void modificar();
-    /*! \fn cadastrar()
-     *  \brief Método responsável por apresentar os comandos necessários para realizar modificar um usuário
+    /*! \fn setLogicProtocol(UserProtocol * protocol)
+     *  \brief Método responsável por acionar o protocolo da camada lógica
+     *  \param protocol = Protocolo da camada.
      */             
     setLogicProtocol(UserProtocol * protocol) = 0;
     
 public:
-    /*! \fn exec()
+    /*! \fn void exec()
      *  \brief Método responsável por inicializar a interface
      */    
     void exec();
@@ -158,7 +159,7 @@ private:
     static const unsigned int N_SAIR = 8;                   /**< Variavel que armazena o valor da opção de sair*/
 
     //METODOS
-    /*! \fn showScreen()
+    /*! \fn void showScreen()
      *  \brief Método responsável por apresentar a interface de post para o usuário
      */ 
     void showScreen();
@@ -193,7 +194,7 @@ private:
     mostra();
     
 public:
-    /*! \fn exec()
+    /*! \fn void exec()
      *  \brief Método responsável por inicializar a interface
      */    
     void exec();
@@ -218,7 +219,7 @@ private:
     static const unsigned int N_SAIR = 6;           /**< Variavel que armazena o valor da opção de sair*/
 
     //METODOS
-    /*! \fn showScreen()
+    /*! \fn void showScreen()
      *  \brief Método responsável por apresentar a interface de comentário para o usuário
      */ 
     void showScreen();
@@ -246,7 +247,7 @@ private:
     show();
     
 public:
-    /*! \fn exec()
+    /*! \fn void exec()
      *  \brief Método responsável por inicializar a interface
      */    
     void exec();
