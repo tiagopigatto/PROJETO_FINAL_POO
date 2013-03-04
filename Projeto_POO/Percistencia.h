@@ -249,7 +249,7 @@ public:
 /** \class CommandFindPost
  *  \brief Classe que irá procurar um post pelo id, se encontrar o coloca em um objeto Post. 
  */
-class CommandFindPost : public ACommand {
+class CommandFindPost : public PostCommand {
 public:
     /*! \fn execute()
      *  \brief Método responsável por iniciar a execução da classe
@@ -259,7 +259,7 @@ public:
 /** \class CommandFindAllPost
  *  \brief Classe que irá listar todos os posts. 
  */
-class CommandFindAllPost : public ACommand {
+class CommandFindAllPost : public PostCommand {
 public:
     /*! \fn execute()
      *  \brief Método responsável por iniciar a execução da classe
@@ -269,7 +269,7 @@ public:
 /** \class CommandFindUserPost
  *  \brief Classe que retorna os posts de um usário que estão no banco de dados.
  */
-class CommandFindUserPost : public ACommand {
+class CommandFindUserPost : public PostCommand {
 public:
     /*! \fn execute()
      *  \brief Método responsável por iniciar a execução da classe
