@@ -98,19 +98,28 @@ private:
     void showScreen();
 
     /*! \fn logar()
-     *  \brief Método responsável por realizar as tarefas necessárias para a realização de um login pelas camadas inferiores
+     *  \brief Método responsável por apresentar os comandos necessários para realizar um login
      */      
     void logar();
     /*! \fn cadastrar()
-     *  \brief Método responsável por realizar as tarefas necessárias para realizar o cadastro pelas camadas inferiores
+     *  \brief Método responsável por apresentar os comandos necessários para realizar um cadastro
      */      
     void cadastrar();
     /*! \fn cadastrar()
-     *  \brief Método responsável por realizar as tarefas necessárias para realizar o cadastro pelas camadas inferiores
+     *  \brief Método responsável por apresentar as listas com todos os usuários
      */          
     void showList();
+    /*! \fn cadastrar()
+     *  \brief Método responsável por apresentar os comandos necessários para realizar deletar um usuário
+     */          
     void deletar();
+    /*! \fn cadastrar()
+     *  \brief Método responsável por apresentar os comandos necessários para realizar modificar um usuário
+     */          
     void modificar();
+    /*! \fn cadastrar()
+     *  \brief Método responsável por apresentar os comandos necessários para realizar modificar um usuário
+     */             
     setLogicProtocol(UserProtocol * protocol) = 0;
     
 public:
