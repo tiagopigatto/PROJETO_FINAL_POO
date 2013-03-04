@@ -6,36 +6,36 @@ class LNStubUser : UserProtocol
 private:
     PercistenceProtocol percistence;
 public:
-    /*! \fn autenticar(User)
+    /*! \fn void autenticar(User)
      *  \brief Método responsável por autenticar um usuário
      *  \param User =  objeto de um usuário
      */
-    void autenticar(User) = 0;
-    /*! \fn cadastrar(User)
+    void autenticar(User);
+    /*! \fn void cadastrar(User)
      *  \brief Método responsável por cadastar um usuário
      *  \param User =  objeto de um usuário
      */
-    void cadastrar(User) = 0;
-    /*! \fn update(User)
+    void cadastrar(User);
+    /*! \fn void update(User)
      *  \brief Método responsável por atualizar um usuário
      *  \param User =  objeto de um usuário
      */
-    void update(User) = 0;
-    /*! \fn deletar(User)
+    void update(User);
+    /*! \fn void deletar(User)
      *  \brief Método responsável por deletar um usuário
      *  \param User =  objeto de um usuário
      */
-    void deletar(User) = 0;
-    /*! \fn Listar()
+    void deletar(User);
+    /*! \fn list Listar()
      *  \brief Método responsável por listar os usuários
      */
-    list Listar() = 0;
+    list Listar();
 
-    /*! \fn setPercistence(PercistenceProtocol *)
+    /*! \fn void setPercistence(PercistenceProtocol *)
      *  \brief Método responsável por ativar um protocolo de persitência
      *  \param PercistenceProtocol = protocolo de persitência
      */
-    void setPercistence(PercistenceProtocol *) = 0;
+    void setPercistence(PercistenceProtocol *);
     /*! \fn LNUser
      *  \brief Método responsável por construir a classe
      */
@@ -88,36 +88,35 @@ list Listar()
 class LNStubPost : ComentProtocol
 {
 public:
-    /*! \fn novo(Post)
+    /*! \fn void novo(Post)
      *  \brief Método responsável por criar uma postagem
      *  \param Post =  objeto de um post
      */
-    void novo(Post) = 0;
-    /*! \fn update(Post)
+    void novo(Post);
+    /*! \fn void update(Post)
      *  \brief Método responsável por atualizar uma postagem
      *  \param Post =  objeto de um post
      */
-    void update(Post) = 0;
-    /*! \fn deleta(Post)
+    void update(Post);
+    /*! \fn  void deleta(Post)
      *  \brief Método responsável por deletar uma postagem
      *  \param Post =  objeto de um post
      */
-    void deleta(Post) = 0;
-    /*! \fn listar(Post)
+    void deleta(Post);
+    /*! \fn list listar()
      *  \brief Método responsável por listar todas as postagens
-     *  \param Post =  objeto de um post
      */
-    list listar() = 0;
-    /*! \fn listarPorUser(Post)
+    list listar();
+    /*! \fn list listarPorUser(Post)
      *  \brief Método responsável por listar as postagens por usuário
      *  \param Post =  objeto de um post
      */
-    list listarPorUser(Identify) = 0;
+    list listarPorUser(Post);
     /*! \fn setPercistence(PercistenceProtocol *)
      *  \brief Método responsável por ativar um protocolo de persitência
      *  \param PercistenceProtocol = protocolo de persitência
      */
-    void setPercistence(PercistenceProtocol *) = 0;
+    void setPercistence(PercistenceProtocol *);
     /*! \fn LNComent()
      *  \brief Método responsável por construir a classe
      */
@@ -157,36 +156,35 @@ list listar()
 class LNStubComent : PostProtocol
 {
 public:
-    /*! \fn novo(Coment)
+    /*! \fn void novo(Coment)
     *  \brief Método responsável por criar uma comentário
     *  \param Coment =  objeto de um comentário
     */
-    void novo(Coment) = 0;
-    /*! \fn update(Coment)
+    void novo(Coment);
+    /*! \fn void update(Coment)
     *  \brief Método responsável por atualizar um comentário
     *  \param Coment =  objeto de um comentário
     */
-    void update(Coment) = 0;
-    /*! \fn deleta(Coment)
+    void update(Coment);
+    /*! \fn void deleta(Coment)
     *  \brief Método responsável por deletar uma comentário
     *  \param Coment =  objeto de um comentário
     */
-    void deleta(Coment) = 0;
-    /*! \fn pegar(Coment)
+    void deleta(Coment);
+    /*! \fn void pegar(Coment)
     *  \brief Método responsável por pegar uma comentário
     *  \param Coment =  objeto de um comentário
     */
-    void pegar(Coment) = 0;
-    /*! \fn listar(Post)
+    void pegar(Coment);
+    /*! \fn  list listar(
     *  \brief Método responsável por listar todos os comentários de um post
-    *  \param Coment =  objeto de um comentário
     */
-    list listar(Post) = 0;
-    /*! \fn setPercistence(PercistenceProtocol *)
+    list listar();
+    /*! \fn virtual void setPercistence(PercistenceProtocol *)
      *  \brief Método responsável por ativar um protocolo de persitência
      *  \param PercistenceProtocol = protocolo de persitência
      */
-    virtual void setPercistence(PercistenceProtocol *) = 0;
+    virtual void setPercistence(PercistenceProtocol *);
     /*! \fn LNPost()
      *  \brief Método responsável por construir a classe
      */
