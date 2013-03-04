@@ -1,8 +1,6 @@
-/* 
- * File:   main.cpp
- * Author: Vitor
- *
- * Created on 15 de Dezembro de 2012, 22:14
+/**
+ * \file   main.cpp
+ * \brief Esta é a função principal do programa
  */
 
 #include <iostream>
@@ -13,9 +11,11 @@
 
 using namespace std;
 
-/*
- * 
- */
+/*! \fn int main(int argc, char** argv)
+     *  \brief Método responsável por começar o programa
+     *  \param argc =  parametro do arquivo
+     *  \param argv =  parametro de arquivos
+     */
 int main(int argc, char** argv) {
     Builder *builder;
     builder = new Builder();

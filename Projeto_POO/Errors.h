@@ -1,8 +1,6 @@
-/* 
- * File:   Errors.h
- * Author: Vitor
- *
- * Created on 3 de Março de 2013, 13:43
+/**
+ * \file   Errors.h
+ * \brief  Este é o módulo responsável por realizar verificações de erro.
  */
 
 #ifndef ERRORS_H

@@ -1,8 +1,6 @@
-/*
- * File:   InterfaceUsuario.h
- * Author: Vitor
- *
- * Created on 13 de Fevereiro de 2013, 12:36
+/**
+ * \file   InterUsu.h
+ * \brief  Este é o módulo responsável por criar as interfaces que serão utilizadas pelo usuário
  */
 
 #ifndef INTERFACEUSUARIO_H
@@ -56,6 +54,10 @@ private:
     void showOptions();
 
 public:
+    //metodos
+    /*! \fn InitialIUControler()
+     *  \brief Método responsável por construir a classe
+     */    
     InitialIUControler()
     {
         user = NULL;
@@ -136,7 +138,9 @@ public:
      *  \param protocol = Protocolo da camada.
      */ 
     void setLogicProtocol(UserProtocol * protocol);
-    
+    /*! \fn UserControler()
+     *  \brief Método responsável por construir a classe
+     */     
     UserControler();
     
         
@@ -144,8 +148,15 @@ public:
      *  \brief Método responsável por inicializar a interface
      */
     void exec();
-    
+
+    /*! \fn void setUser(User*);
+     *  \brief Método setar um Usuário
+    *   \param User = Objeto de um usuário
+     */    
     void setUser(User*);
+    /*! \fn User* getUser();
+     *  \brief Método responsável por ipegar um Usuário
+     */
     User* getUser();
     
 
@@ -229,14 +240,28 @@ private:
     void mostra();
     
 public:
+        /*! \fn PostControler();
+     *  \brief Método responsável por construir a classe
+     */    
     PostControler();
     /*! \fn void exec()
      *  \brief Método responsável por inicializar a interface
      */    
     void exec();
     
-    void setUser(User*);
-    Post* getPost();
+    /*! \fn void setUser(Post*);
+     *  \brief Método setar um Usuário
+    *   \param Post = Objeto de um post
+     */    
+    void setUser(Post*);
+    /*! \fn User* getUser();
+     *  \brief Método responsável por pegar um Post
+     */
+    Post* getUser();
+    /*! \fn void setLogicProtocol(PostProtocol *);
+     *  \brief Método responsável por habilitar o protocolo da camada lógica
+     *  \param PostProtocol = protocolo de um post;
+     */    
     void setLogicProtocol(PostProtocol *);
 };
 
@@ -313,8 +338,20 @@ public:
      *  \brief Método responsável por inicializar a interface
      */
     void exec();
+        /*! \fn void setUser(User*);
+     *  \brief Método setar um Usuário
+    *   \param User = Objeto de um user
+     */    
     void setUser(User*);
+       /*! \fn void setPost(Post*);
+     *  \brief Método setar um post
+    *   \param Post = Objeto de um post
+     */       
     void setPost(Post*);
+    /*! \fn void setLogicProtocol(PostProtocol *);
+     *  \brief Método responsável por habilitar o protocolo da camada lógica
+     *  \param PostProtocol = protocolo de um post;
+     */    
     void setLogicProtocol(ComentProtocol *);
     
 };

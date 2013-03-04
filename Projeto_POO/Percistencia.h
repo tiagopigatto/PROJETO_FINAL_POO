@@ -1,3 +1,7 @@
+/**
+ * \file   Percistencia.h
+ * \brief  Este é o módulo responsável por criar a camada de persistência
+ */
 #ifndef COMANDS
 #define COMANDS
 
@@ -12,7 +16,7 @@
 class PersistenceControler : public PercistenceProtocol {
 public:
     //executa
-    /*! \fn void executar(ACommand*)
+    /*! \fn void exec(ACommand*) throw (PercistenceError)
      *  \brief Método responsável por iniciar a execuçaõ da classe
      *  \param ACommand = Command Abstrato
      */    

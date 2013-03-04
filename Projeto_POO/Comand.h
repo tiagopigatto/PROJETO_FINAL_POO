@@ -1,8 +1,7 @@
-/* 
- * File:   Comand.h
- * Author: Vitor
- *
- * Created on 4 de Março de 2013, 02:07
+/**
+ * \file   Comand.h
+ * \brief  Este e o cabecalho do modulo das classe Comand que será 
+ * \n responsável por realizar os comandos de gerenciamento no banco de dados \n
  */
 
 #ifndef COMAND_H
