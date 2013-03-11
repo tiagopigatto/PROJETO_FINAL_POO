@@ -1,0 +1,137 @@
+\hypertarget{class_basic_type}{\section{Basic\-Type Class Reference}
+\label{class_basic_type}\index{Basic\-Type@{Basic\-Type}}
+}
+
+
+Essa e a classe responsavel por ser um padrao de classe para clases tipos basicos \par
+ tendo os metodos obrigratorios para todas essas e os mentodos mais gerais ja implemtados\par
+ inline garantindo uma economia de memoria.  
+
+
+
+
+{\ttfamily \#include $<$Tipos\-Basicos.\-h$>$}
+
+
+
+Inheritance diagram for Basic\-Type\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_type__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_basic_type_a94da6e04e150bbfc35072df5897e8e21}{set\-Value} (const string \&\hyperlink{class_basic_type_af9b2c5cc32647df01083a6802e913dbf}{value})  throw (invalid\-\_\-argument)
+\begin{DoxyCompactList}\small\item\em Da set no valor do compo nome do usuario. \end{DoxyCompactList}\item 
+string \hyperlink{class_basic_type_af0b6be797220a64bc975744cd65c93ab}{get\-Value} () const 
+\begin{DoxyCompactList}\small\item\em Pega o valor armazendo value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_basic_type_a0990f4e2537208845f85f0f8f638123b}{validate} (const string \&\hyperlink{class_basic_type_af9b2c5cc32647df01083a6802e913dbf}{value})=0  throw (invalid\-\_\-argument)
+\begin{DoxyCompactList}\small\item\em Validar os argumentos antes que estes sejam setados nas classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_basic_type_af9b2c5cc32647df01083a6802e913dbf}{value}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Essa e a classe responsavel por ser um padrao de classe para clases tipos basicos \par
+ tendo os metodos obrigratorios para todas essas e os mentodos mais gerais ja implemtados\par
+ inline garantindo uma economia de memoria. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_basic_type_af0b6be797220a64bc975744cd65c93ab}{\index{Basic\-Type@{Basic\-Type}!get\-Value@{get\-Value}}
+\index{get\-Value@{get\-Value}!BasicType@{Basic\-Type}}
+\subsubsection[{get\-Value}]{\setlength{\rightskip}{0pt plus 5cm}string Basic\-Type\-::get\-Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_basic_type_af0b6be797220a64bc975744cd65c93ab}
+
+
+Pega o valor armazendo value. 
+
+\begin{DoxyReturn}{Returns}
+O o string que pode variar de conteudo a partir de que classe se usa. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_basic_type_af0b6be797220a64bc975744cd65c93ab_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_basic_type_a94da6e04e150bbfc35072df5897e8e21}{\index{Basic\-Type@{Basic\-Type}!set\-Value@{set\-Value}}
+\index{set\-Value@{set\-Value}!BasicType@{Basic\-Type}}
+\subsubsection[{set\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\-Type\-::set\-Value (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{value}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_basic_type_a94da6e04e150bbfc35072df5897e8e21}
+
+
+Da set no valor do compo nome do usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \-: o nome do Usuario. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\-::invalid\-\_\-argument} & o argumeto e invalido \\
+\hline
+\end{DoxyExceptions}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_type_a94da6e04e150bbfc35072df5897e8e21_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_basic_type_a0990f4e2537208845f85f0f8f638123b}{\index{Basic\-Type@{Basic\-Type}!validate@{validate}}
+\index{validate@{validate}!BasicType@{Basic\-Type}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\-Type\-::validate (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{value}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{class_basic_type_a0990f4e2537208845f85f0f8f638123b}
+
+
+Validar os argumentos antes que estes sejam setados nas classes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \-: e o valor a ser validado \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\-::invalid\-\_\-argument} & o argumeto e invalido \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_basic_type_af9b2c5cc32647df01083a6802e913dbf}{\index{Basic\-Type@{Basic\-Type}!value@{value}}
+\index{value@{value}!BasicType@{Basic\-Type}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}string Basic\-Type\-::value\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_basic_type_af9b2c5cc32647df01083a6802e913dbf}
+Esta string e usada para armazenar as informaçoes repassadas de cada classe apos a validaçao destas 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Vitor/\-Desktop/\-Work\-Space/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-F\-I\-N\-A\-L\-\_\-\-P\-O\-O/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-D\-E\-V/\-P\-R\-O\-J\-E\-T\-O/\-Projeto\-\_\-codeblocks/\hyperlink{_tipos_basicos_8h}{Tipos\-Basicos.\-h}\end{DoxyCompactItemize}

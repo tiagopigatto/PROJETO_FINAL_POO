@@ -1,0 +1,51 @@
+<map id="CommandFindPost" name="CommandFindPost">
+<area shape="rect" id="node2" href="$class_post_command.html" title="Classe que possui todos os comandos que podem ser realizados para um post." alt="" coords="1209,172,1317,199"/>
+<area shape="rect" id="node4" href="$class_a_command.html" title="Essa é a classe abstrata de comandos da persistência." alt="" coords="936,233,1027,260"/>
+<area shape="rect" id="node6" href="$structsqlite3.html" title="sqlite3" alt="" coords="729,808,789,835"/>
+<area shape="rect" id="node8" href="$struct_mem.html" title="Mem" alt="" coords="1237,935,1288,961"/>
+<area shape="rect" id="node14" href="$struct_vdbe.html" title="Vdbe" alt="" coords="1974,764,2026,791"/>
+<area shape="rect" id="node20" href="$struct_btree.html" title="Btree" alt="" coords="955,791,1008,817"/>
+<area shape="rect" id="node41" href="$struct_v_table.html" title="VTable" alt="" coords="950,685,1013,712"/>
+<area shape="rect" id="node53" href="$struct_key_info.html" title="KeyInfo" alt="" coords="949,595,1014,621"/>
+<area shape="rect" id="node75" href="$struct_row_set.html" title="RowSet" alt="" coords="948,1157,1015,1184"/>
+<area shape="rect" id="node11" href="$struct_vdbe_frame.html" title="VdbeFrame" alt="" coords="1761,853,1850,880"/>
+<area shape="rect" id="node29" href="$struct_vdbe_op.html" title="VdbeOp" alt="" coords="1517,249,1587,276"/>
+<area shape="rect" id="node18" href="$struct_btree_mutex_array.html" title="BtreeMutexArray" alt="" coords="1341,832,1461,859"/>
+<area shape="rect" id="node58" href="$struct_vdbe_cursor.html" title="VdbeCursor" alt="" coords="1507,652,1597,679"/>
+<area shape="rect" id="node60" href="$struct_bt_cursor.html" title="BtCursor" alt="" coords="1226,705,1299,732"/>
+<area shape="rect" id="node160" href="$struct_db.html" title="Db" alt="" coords="1786,713,1825,740"/>
+<area shape="rect" id="node26" href="$struct_sub_program.html" title="SubProgram" alt="" coords="1758,275,1853,301"/>
+<area shape="rect" id="node32" href="$struct_coll_seq.html" title="CollSeq" alt="" coords="471,520,537,547"/>
+<area shape="rect" id="node122" href="$struct_expr.html" title="Expr" alt="" coords="1527,1475,1577,1501"/>
+<area shape="rect" id="node34" href="$struct_vdbe_func.html" title="VdbeFunc" alt="" coords="601,112,682,139"/>
+<area shape="rect" id="node36" href="$struct_func_def.html" title="FuncDef" alt="" coords="254,304,325,331"/>
+<area shape="rect" id="node90" href="$struct_func_def_hash.html" title="FuncDefHash" alt="" coords="454,713,554,740"/>
+<area shape="rect" id="node38" href="$struct_func_destructor.html" title="FuncDestructor" alt="" coords="6,304,117,331"/>
+<area shape="rect" id="node109" href="$struct_table.html" title="Table" alt="" coords="1236,1297,1289,1324"/>
+<area shape="rect" id="node45" href="$struct_module.html" title="Module" alt="" coords="727,569,791,596"/>
+<area shape="rect" id="node47" href="$structsqlite3__module.html" title="sqlite3_module" alt="" coords="449,324,559,351"/>
+<area shape="rect" id="node49" href="$structsqlite3__vtab.html" title="sqlite3_vtab" alt="" coords="713,393,804,420"/>
+<area shape="rect" id="node66" href="$structsqlite3__vtab__cursor.html" title="sqlite3_vtab_cursor" alt="" coords="1051,427,1184,453"/>
+<area shape="rect" id="node78" href="$struct_row_set_chunk.html" title="RowSetChunk" alt="" coords="707,1277,811,1304"/>
+<area shape="rect" id="node81" href="$struct_row_set_entry.html" title="RowSetEntry" alt="" coords="455,1349,553,1376"/>
+<area shape="rect" id="node87" href="$struct_savepoint.html" title="Savepoint" alt="" coords="465,803,543,829"/>
+<area shape="rect" id="node93" href="$struct_lookaside.html" title="Lookaside" alt="" coords="463,904,545,931"/>
+<area shape="rect" id="node95" href="$struct_lookaside_slot.html" title="LookasideSlot" alt="" coords="237,1079,341,1105"/>
+<area shape="rect" id="node98" href="$structsqlite3__mutex.html" title="sqlite3_mutex" alt="" coords="453,853,555,880"/>
+<area shape="rect" id="node100" href="$structsqlite3__vfs.html" title="sqlite3_vfs" alt="" coords="463,993,545,1020"/>
+<area shape="rect" id="node103" href="$structsqlite3_1_1sqlite3_init_info.html" title="sqlite3::sqlite3InitInfo" alt="" coords="433,612,575,639"/>
+<area shape="rect" id="node105" href="$struct_busy_handler.html" title="BusyHandler" alt="" coords="456,663,552,689"/>
+<area shape="rect" id="node111" href="$struct_schema.html" title="Schema" alt="" coords="1517,1120,1587,1147"/>
+<area shape="rect" id="node140" href="$struct_f_key.html" title="FKey" alt="" coords="1973,1672,2027,1699"/>
+<area shape="rect" id="node155" href="$struct_index.html" title="Index" alt="" coords="1779,1172,1832,1199"/>
+<area shape="rect" id="node146" href="$struct_trigger.html" title="Trigger" alt="" coords="1775,1317,1836,1344"/>
+<area shape="rect" id="node114" href="$struct_hash.html" title="Hash" alt="" coords="478,1157,530,1184"/>
+<area shape="rect" id="node116" href="$struct_hash_1_1__ht.html" title="Hash::_ht" alt="" coords="250,1145,329,1172"/>
+<area shape="rect" id="node118" href="$struct_hash_elem.html" title="HashElem" alt="" coords="20,1173,103,1200"/>
+<area shape="rect" id="node131" href="$struct_select.html" title="Select" alt="" coords="1776,1565,1835,1592"/>
+<area shape="rect" id="node137" href="$struct_column.html" title="Column" alt="" coords="1772,1399,1839,1425"/>
+<area shape="rect" id="node124" href="$struct_agg_info.html" title="AggInfo" alt="" coords="1230,1485,1295,1512"/>
+<area shape="rect" id="node126" href="$struct_expr_list.html" title="ExprList" alt="" coords="946,1537,1017,1564"/>
+<area shape="rect" id="node142" href="$struct_f_key_1_1s_col_map.html" title="FKey::sColMap" alt="" coords="1749,1761,1861,1788"/>
+<area shape="rect" id="node165" href="$class_post.html" title="Essa e a classe que repensenta os post dos Usuarios no contexto do Sistema." alt="" coords="957,183,1006,209"/>
+</map>

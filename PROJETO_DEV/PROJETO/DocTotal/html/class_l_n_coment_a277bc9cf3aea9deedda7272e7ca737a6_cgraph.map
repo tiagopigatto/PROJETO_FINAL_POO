@@ -1,0 +1,4 @@
+<map id="LNComent::listar" name="LNComent::listar">
+<area shape="rect" id="node3" href="$class_coment_command.html#a7dcbcf61c4dcbb080881535ba1093711" title="Método responsável por adicionar um comentário no banco de dados." alt="" coords="173,5,371,32"/>
+<area shape="rect" id="node5" href="$class_coment_command.html#a2e31acac5682b142fdff5dc5ebee7e93" title="Método responsável por listar os comentários de um post do banco de dados." alt="" coords="185,56,359,83"/>
+</map>

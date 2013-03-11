@@ -1,18 +1,19 @@
 /**
  * \file   Builder.h
- * \brief  Este e o cabecalho do modulo das classe Builder que será 
+ * \brief  Este e o cabecalho do modulo das classe Builder que será
  * \n responsável por realizar a intengração de todas as classes do programa \n
  */
+
 #ifndef BUILDER
 #define BUILDER
 
-#include "ProtocoloLN.h"
-#include "PercistenceProtocol.h"
+
+
 #include "IUProtocols.h"
 
 #include "InterUsu.h"
-#include "LogNeg.h"
-#include "Percistencia.h"
+#include "StubLN.cpp"
+
 
 /** \class Builder
  *  \brief Essa e a classe responsavel por ser linkar as classes do programa.
@@ -22,42 +23,42 @@ private:
     //Functions
     //Start Protocolo IU
 
-    /*! \fn startIUUserProtocol()
+    /*! \fn IUUserProtocol* startIUUserProtocol()
      *  \brief Funcao contrutora responsável por incializar a controladora de usuário que poderá ser controlada pelo protocolo de controle de usuário
      */
     IUUserProtocol* startIUUserProtocol();
-    /*! \fn startIUComentProtocol()
+    /*! \fn IUComentProtocol* startIUComentProtocol()
      *  \brief Funcao contrutora responsável por incializar a controladora de comentário que poderá ser controlada pelo protocolo de controle de comentário
-     */    
+     */
     IUComentProtocol* startIUComentProtocol();
-    /*! \fn startIUPostProtocol()
+    /*! \fn IUPostProtocol startIUPostProtocol()
      *  \brief Funcao contrutora responsável por incializar a controladora de post que poderá ser controlada pelo protocolo de controle de post
      */
     IUPostProtocol* startIUPostProtocol();
 
     //Star Protocolos LN
-    /*! \fn startUserProtocol()
+    /*! \fn UserProtocol* startUserProtocol()
      *  \brief Função contrutora da camada lógica de negócio de usuário
      */
     UserProtocol* startUserProtocol();
-    /*! \fn startComentProtocol()
+    /*! \fn ComentProtocol* startComentProtocol()
      *  \brief Função contrutora da camada lógica de negócio de comentário
      */
     ComentProtocol* startComentProtocol();
-    /*! \fn startPostProtocol()
+    /*! \fn PostProtocol* startPostProtocol()
      *  \brief Função contrutora da camada lógica de negócio de post
      */
     PostProtocol* startPostProtocol();
 
     //Start Protocol de Percistence
-    /*! \fn startPercistenceProtocol()
-     *  \brief Funcao contrutora responsável por incializar a camda de persistência 
-     */    
+    /*! \fn PercistenceProtocol* startPercistenceProtocol()
+     *  \brief Funcao contrutora responsável por incializar a camda de persistência
+     */
     PercistenceProtocol* startPercistenceProtocol();
 
     //controladoras
-    /*! \fn startIUControler()
-     *  \brief Funcao responsável por iniciar a classe que irá controlar as interfaces 
+    /*! \fn InitialIUControler* startIUControler()
+     *  \brief Funcao responsável por iniciar a classe que irá controlar as interfaces
      */
     InitialIUControler* startIUControler();
 
@@ -69,11 +70,10 @@ private:
 
     //protocolos de Logica de Negocio
     UserProtocol *usersProtocol;        /**< Variavel que contém o protocolo da lógica de negócio User*/
-    ComentProtocol *comentsProtocol;    /**< Variavel que contém o protocolo da lógica de negócio Coment*/    
+    ComentProtocol *comentsProtocol;    /**< Variavel que contém o protocolo da lógica de negócio Coment*/
     PostProtocol *postsProtocol;        /**< Variavel que contém o protocolo da lógica de negócio Post*/
 
     //protocolos de Percistencia
-    PercistenceProtocol *percistenceProtocol;    /**< Variavel que contém o protocolo da camada de persistência*/
 
     //Controladoras de Interface Usuario
     InitialIUControler *initialIUControler;     /**< Variavel que contém o protocolo da interface de usuário principal*/

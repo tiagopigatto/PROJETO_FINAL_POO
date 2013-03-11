@@ -1,0 +1,9 @@
+<map id="TesteBasico" name="TesteBasico">
+<area shape="rect" id="node3" href="$class_teste_t_b_coment_text.html" title="Classe que herda a classe TesteBasico e realiza os testes do tipo básico Comment." alt="" coords="150,5,290,32"/>
+<area shape="rect" id="node5" href="$class_teste_t_b_date.html" title="Classe que herda a classe TesteBasico e realiza os testes do tipo básico Date." alt="" coords="171,56,269,83"/>
+<area shape="rect" id="node7" href="$class_teste_t_b_evaluation.html" title="Classe que herda a classe TesteBasico e realiza os testes do tipo básico Avalia." alt="" coords="155,107,285,133"/>
+<area shape="rect" id="node9" href="$class_teste_t_b_identify.html" title="Classe que herda a classe TesteBasico e realiza os testes do tipo básico Ident." alt="" coords="165,157,275,184"/>
+<area shape="rect" id="node11" href="$class_teste_t_b_password.html" title="Classe que herda a classe TesteBasico e realiza os testes do tipo básico Senha." alt="" coords="157,208,283,235"/>
+<area shape="rect" id="node13" href="$class_teste_t_b_post_text.html" title="Classe que herda a classe TesteBasico e realiza os testes do tipo básico Post." alt="" coords="159,259,281,285"/>
+<area shape="rect" id="node15" href="$class_teste_t_b_user_name.html" title="Classe que herda a classe TesteBasico e realiza os testes do tipo básico NomeUsuario." alt="" coords="155,309,285,336"/>
+</map>

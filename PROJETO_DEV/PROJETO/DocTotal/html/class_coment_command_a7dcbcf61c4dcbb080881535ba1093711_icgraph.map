@@ -1,0 +1,6 @@
+<map id="ComentCommand::setComent" name="ComentCommand::setComent">
+<area shape="rect" id="node3" href="$class_l_n_coment.html#a0c4839930f9a6d65f6200845fdab9750" title="Método responsável por criar uma comentário." alt="" coords="257,5,375,32"/>
+<area shape="rect" id="node5" href="$class_l_n_coment.html#abf2ff1565521a03e001ff907eeec7fe9" title="Método responsável por deletar uma comentário." alt="" coords="253,56,379,83"/>
+<area shape="rect" id="node7" href="$class_l_n_coment.html#acefe80ac606f9258093f22eca0759cb0" title="Método responsável por atualizar um comentário." alt="" coords="251,107,381,133"/>
+<area shape="rect" id="node9" href="$class_l_n_coment.html#a277bc9cf3aea9deedda7272e7ca737a6" title="Método responsável por listar todos os comentários de um post." alt="" coords="257,157,375,184"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="CommandUpdatePost::execute" name="CommandUpdatePost::execute">
+<area shape="rect" id="node3" href="$class_a_command.html#a7ef6229ca895b6c264d4e466c08fe331" title="Método responsável por conectar do banco de dados." alt="" coords="214,5,351,32"/>
+<area shape="rect" id="node5" href="$class_post.html#ab9ea6345952d8f7436aebb10e73b5545" title="Pega o valor armazenado no compo do texto do post." alt="" coords="219,56,346,83"/>
+<area shape="rect" id="node7" href="$class_post.html#a66926dfefe3d5b0cc127506719eb8732" title="Pega o valor armazenado no compo da data." alt="" coords="231,107,334,133"/>
+<area shape="rect" id="node9" href="$class_post.html#a69aa08a4b5f53bc66664010fba928880" title="Pega o valor armazenado no compo do identificador do post." alt="" coords="211,157,354,184"/>
+</map>

@@ -1,0 +1,157 @@
+\hypertarget{class_evaluation}{\section{Evaluation Class Reference}
+\label{class_evaluation}\index{Evaluation@{Evaluation}}
+}
+
+
+Essa e a classe responsavel por reprensentatar as avaliaçaoes geradas pelos usuarios para determinada classe.  
+
+
+
+
+{\ttfamily \#include $<$Tipos\-Basicos.\-h$>$}
+
+
+
+Inheritance diagram for Evaluation\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{class_evaluation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Evaluation\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{class_evaluation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_evaluation_af7b959b9a214ba6bd0ecc65324d9fe12}{\hyperlink{class_evaluation_af7b959b9a214ba6bd0ecc65324d9fe12}{Evaluation} ()  throw (invalid\-\_\-argument)}\label{class_evaluation_af7b959b9a214ba6bd0ecc65324d9fe12}
+
+\begin{DoxyCompactList}\small\item\em Funcao contrutora da Avaliaçao quando nao ha paramentros, essa apenas inicia uma nova Avaliaca \par
+ com todos os termos iquais a null 
+\begin{DoxyExceptions}{Exceptions}
+{\em std\-::invalid\-\_\-argument} & quando a classe nao pode ser vazia. \\
+\hline
+\end{DoxyExceptions}
+\end{DoxyCompactList}\item 
+\hyperlink{class_evaluation_a501dddc6a3042f057dd442adb8553b7e}{Evaluation} (const string \&\hyperlink{class_basic_type_af9b2c5cc32647df01083a6802e913dbf}{value}, int vote\-Number)  throw (invalid\-\_\-argument)
+\begin{DoxyCompactList}\small\item\em Funcao contrutora da avaliacao quando todos os termos sao passados no momento da criacao \par
+ essa ira setar todos o termos passados. \end{DoxyCompactList}\item 
+void \hyperlink{class_evaluation_a9852df114e2c40397b880d9eebf20a46}{set\-Value} (const string \&\hyperlink{class_basic_type_af9b2c5cc32647df01083a6802e913dbf}{value})  throw (invalid\-\_\-argument)
+\begin{DoxyCompactList}\small\item\em setar o valor de um novo voto \end{DoxyCompactList}\item 
+void \hyperlink{class_evaluation_a4da735c41fa2b62f03b3d16ff6224d53}{set\-Vote\-Number} (const int vote\-Number)  throw (invalid\-\_\-argument)
+\begin{DoxyCompactList}\small\item\em setar o numero de votos \end{DoxyCompactList}\item 
+\hypertarget{class_evaluation_a359913e2472191b026487f0b9dc59b51}{int {\bfseries get\-Vote\-Number} ()}\label{class_evaluation_a359913e2472191b026487f0b9dc59b51}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Essa e a classe responsavel por reprensentatar as avaliaçaoes geradas pelos usuarios para determinada classe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_evaluation_a501dddc6a3042f057dd442adb8553b7e}{\index{Evaluation@{Evaluation}!Evaluation@{Evaluation}}
+\index{Evaluation@{Evaluation}!Evaluation@{Evaluation}}
+\subsubsection[{Evaluation}]{\setlength{\rightskip}{0pt plus 5cm}Evaluation\-::\-Evaluation (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{value, }
+\item[{int}]{vote\-Number}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument)}}\label{class_evaluation_a501dddc6a3042f057dd442adb8553b7e}
+
+
+Funcao contrutora da avaliacao quando todos os termos sao passados no momento da criacao \par
+ essa ira setar todos o termos passados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \-: valor da media. \\
+\hline
+{\em vote\-Number} & \-: o Numero de votos ate o monneot. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\-::invalid\-\_\-argument} & o argumeto e invalido. \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_evaluation_a9852df114e2c40397b880d9eebf20a46}{\index{Evaluation@{Evaluation}!set\-Value@{set\-Value}}
+\index{set\-Value@{set\-Value}!Evaluation@{Evaluation}}
+\subsubsection[{set\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void Evaluation\-::set\-Value (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{value}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument)}}\label{class_evaluation_a9852df114e2c40397b880d9eebf20a46}
+
+
+setar o valor de um novo voto 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & o valor do voto; \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\-::invalid\-\_\-argument} & o argumeto e invalido. \\
+\hline
+\end{DoxyExceptions}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_evaluation_a9852df114e2c40397b880d9eebf20a46_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_evaluation_a4da735c41fa2b62f03b3d16ff6224d53}{\index{Evaluation@{Evaluation}!set\-Vote\-Number@{set\-Vote\-Number}}
+\index{set\-Vote\-Number@{set\-Vote\-Number}!Evaluation@{Evaluation}}
+\subsubsection[{set\-Vote\-Number}]{\setlength{\rightskip}{0pt plus 5cm}void Evaluation\-::set\-Vote\-Number (
+\begin{DoxyParamCaption}
+\item[{const int}]{vote\-Number}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument)}}\label{class_evaluation_a4da735c41fa2b62f03b3d16ff6224d53}
+
+
+setar o numero de votos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vote\-Number} & o numero de votos \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\-::invalid\-\_\-argument} & o argumeto e invalido. \\
+\hline
+\end{DoxyExceptions}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_evaluation_a4da735c41fa2b62f03b3d16ff6224d53_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Vitor/\-Desktop/\-Work\-Space/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-F\-I\-N\-A\-L\-\_\-\-P\-O\-O/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-D\-E\-V/\-P\-R\-O\-J\-E\-T\-O/\-Projeto\-\_\-codeblocks/\hyperlink{_tipos_basicos_8h}{Tipos\-Basicos.\-h}\item 
+C\-:/\-Users/\-Vitor/\-Desktop/\-Work\-Space/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-F\-I\-N\-A\-L\-\_\-\-P\-O\-O/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-D\-E\-V/\-P\-R\-O\-J\-E\-T\-O/\-Projeto\-\_\-codeblocks/Tipos\-Basicos.\-cpp\end{DoxyCompactItemize}

@@ -1,3 +1,10 @@
+/**
+ * \file   Percistencia.h
+ * \brief  Este e o cabecalho do modulo das classe Persistencia que será
+ * \n responsável por implementar o padrao command \n
+ */
+
+
 #ifndef COMANDS
 #define COMANDS
 
@@ -15,7 +22,7 @@ public:
     /*! \fn void executar(ACommand*)
      *  \brief Método responsável por iniciar a execuçaõ da classe
      *  \param ACommand = Command Abstrato
-     */    
+     */
     void exec(ACommand*) throw (PercistenceError);
 };
 

@@ -3,7 +3,6 @@
 
 Builder::Builder() {
     //startando protocolos de Percistencia
-    this->percistenceProtocol = this->startPercistenceProtocol();
 
     //startando Controladora Base
     this->usersProtocol = this->startUserProtocol();
@@ -11,9 +10,7 @@ Builder::Builder() {
     this->comentsProtocol = this->startComentProtocol();
 
     //setando os protocolos de percistencia na logica
-    this->usersProtocol->setPercistence(this->percistenceProtocol);
-    this->comentsProtocol->setPercistence(this->percistenceProtocol);
-    this->postsProtocol->setPercistence(this->percistenceProtocol);
+
 
     //startando protocolos de IU
     this->iuUserProtocol = this->startIUUserProtocol();

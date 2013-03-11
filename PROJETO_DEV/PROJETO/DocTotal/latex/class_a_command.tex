@@ -1,0 +1,104 @@
+\hypertarget{class_a_command}{\section{A\-Command Class Reference}
+\label{class_a_command}\index{A\-Command@{A\-Command}}
+}
+
+
+Essa é a classe abstrata de comandos da persistência.  
+
+
+
+
+{\ttfamily \#include $<$Comand.\-h$>$}
+
+
+
+Inheritance diagram for A\-Command\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_command__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\-Command\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_command__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_a_command_a94c6a1d25eb0427389e15450019ebad8}{virtual void \hyperlink{class_a_command_a94c6a1d25eb0427389e15450019ebad8}{execute} ()=0}\label{class_a_command_a94c6a1d25eb0427389e15450019ebad8}
+
+\begin{DoxyCompactList}\small\item\em Método responsável por iniciar a execução da classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_a_command_a7ef6229ca895b6c264d4e466c08fe331}{void \hyperlink{class_a_command_a7ef6229ca895b6c264d4e466c08fe331}{conect} ()}\label{class_a_command_a7ef6229ca895b6c264d4e466c08fe331}
+
+\begin{DoxyCompactList}\small\item\em Método responsável por conectar do banco de dados. \end{DoxyCompactList}\item 
+\hypertarget{class_a_command_a07aaf5d1dd0efacfd9512154db5a845e}{void \hyperlink{class_a_command_a07aaf5d1dd0efacfd9512154db5a845e}{desconect} ()}\label{class_a_command_a07aaf5d1dd0efacfd9512154db5a845e}
+
+\begin{DoxyCompactList}\small\item\em Método responsável por desconectar do banco de dados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_a_command_a8047bfd0b2365b5e82cfae6f4a894ce1}{char $\ast$ {\bfseries sql}}\label{class_a_command_a8047bfd0b2365b5e82cfae6f4a894ce1}
+
+\item 
+char $\ast$ \hyperlink{class_a_command_ac36454f9da108ff845c6303c8d7f70ae}{end}
+\item 
+\hypertarget{class_a_command_a435e761a4eb4fa339a0669a53430bd52}{int {\bfseries retval}}\label{class_a_command_a435e761a4eb4fa339a0669a53430bd52}
+
+\item 
+int \hyperlink{class_a_command_aa011a4976cefd5da8bd7e8231809f19d}{i}
+\item 
+\hypertarget{class_a_command_a41a087661bd8e5f7e7ff029ebddb3978}{int {\bfseries q\-\_\-cnt}}\label{class_a_command_a41a087661bd8e5f7e7ff029ebddb3978}
+
+\item 
+int \hyperlink{class_a_command_a769e24f33dec6fbffac667052257d575}{q\-\_\-size}
+\item 
+char $\ast$$\ast$ \hyperlink{class_a_command_a6a34b07a8ab76688ad3a60bfba71c03a}{queries}
+\item 
+char \hyperlink{class_a_command_a92ecbf13bd3238cd74125505954d211f}{valida\-\_\-name} \mbox{[}11\mbox{]}
+\item 
+sqlite3\-\_\-stmt $\ast$ \hyperlink{class_a_command_a7ecdb33c925dc75b9538a4009ff88c6c}{stmt}
+\item 
+\hyperlink{structsqlite3}{sqlite3} $\ast$ \hyperlink{class_a_command_a6f48bd41253cbcc5e766c222776e4931}{handle}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Essa é a classe abstrata de comandos da persistência. 
+
+\subsection{Member Data Documentation}
+\hypertarget{class_a_command_ac36454f9da108ff845c6303c8d7f70ae}{\index{A\-Command@{A\-Command}!end@{end}}
+\index{end@{end}!ACommand@{A\-Command}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ A\-Command\-::end\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_command_ac36454f9da108ff845c6303c8d7f70ae}
+Variavel que armazena o comando a ser realizado em sqp Variavel que serve para finalizar o B\-D \hypertarget{class_a_command_a6f48bd41253cbcc5e766c222776e4931}{\index{A\-Command@{A\-Command}!handle@{handle}}
+\index{handle@{handle}!ACommand@{A\-Command}}
+\subsubsection[{handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf sqlite3}$\ast$ A\-Command\-::handle\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_command_a6f48bd41253cbcc5e766c222776e4931}
+Variavel que armazena o o banco de dados \hypertarget{class_a_command_aa011a4976cefd5da8bd7e8231809f19d}{\index{A\-Command@{A\-Command}!i@{i}}
+\index{i@{i}!ACommand@{A\-Command}}
+\subsubsection[{i}]{\setlength{\rightskip}{0pt plus 5cm}int A\-Command\-::i\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_command_aa011a4976cefd5da8bd7e8231809f19d}
+Variavel que verifica se tudo ocorreu bem Contador \hypertarget{class_a_command_a769e24f33dec6fbffac667052257d575}{\index{A\-Command@{A\-Command}!q\-\_\-size@{q\-\_\-size}}
+\index{q\-\_\-size@{q\-\_\-size}!ACommand@{A\-Command}}
+\subsubsection[{q\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int A\-Command\-::q\-\_\-size\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_command_a769e24f33dec6fbffac667052257d575}
+Variavel que armazena o identificador unico do Usuario Variavel que armazena o identificador unico do Usuario \hypertarget{class_a_command_a6a34b07a8ab76688ad3a60bfba71c03a}{\index{A\-Command@{A\-Command}!queries@{queries}}
+\index{queries@{queries}!ACommand@{A\-Command}}
+\subsubsection[{queries}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ A\-Command\-::queries\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_command_a6a34b07a8ab76688ad3a60bfba71c03a}
+Variavel que armazena as consultas \hypertarget{class_a_command_a7ecdb33c925dc75b9538a4009ff88c6c}{\index{A\-Command@{A\-Command}!stmt@{stmt}}
+\index{stmt@{stmt}!ACommand@{A\-Command}}
+\subsubsection[{stmt}]{\setlength{\rightskip}{0pt plus 5cm}sqlite3\-\_\-stmt$\ast$ A\-Command\-::stmt\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_command_a7ecdb33c925dc75b9538a4009ff88c6c}
+Variavel que armazena algo escrito \hypertarget{class_a_command_a92ecbf13bd3238cd74125505954d211f}{\index{A\-Command@{A\-Command}!valida\-\_\-name@{valida\-\_\-name}}
+\index{valida\-\_\-name@{valida\-\_\-name}!ACommand@{A\-Command}}
+\subsubsection[{valida\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}char A\-Command\-::valida\-\_\-name\mbox{[}11\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_a_command_a92ecbf13bd3238cd74125505954d211f}
+Variavel para validar se um nome já existi 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Vitor/\-Desktop/\-Work\-Space/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-F\-I\-N\-A\-L\-\_\-\-P\-O\-O/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-D\-E\-V/\-P\-R\-O\-J\-E\-T\-O/\-Projeto\-\_\-codeblocks/Comand.\-h\item 
+C\-:/\-Users/\-Vitor/\-Desktop/\-Work\-Space/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-F\-I\-N\-A\-L\-\_\-\-P\-O\-O/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-D\-E\-V/\-P\-R\-O\-J\-E\-T\-O/\-Projeto\-\_\-codeblocks/Comand.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="UserCommand::setUser" name="UserCommand::setUser">
+<area shape="rect" id="node3" href="$class_l_n_user.html#a74c91c7a9e6d8ceaf8ebfed027178221" title="Método responsável por autenticar um usuário." alt="" coords="216,5,347,32"/>
+<area shape="rect" id="node5" href="$class_l_n_user.html#a4702a50096c617aa7a9ea9b25fda3063" title="Método responsável por cadastar um usuário." alt="" coords="218,56,345,83"/>
+<area shape="rect" id="node7" href="$class_l_n_user.html#ac2058724d8d0b2ab8da440b9acc2b80a" title="Método responsável por deletar um usuário." alt="" coords="225,107,337,133"/>
+<area shape="rect" id="node9" href="$class_l_n_user.html#a4093083f84eec431151c7315b5064b88" title="Método responsável por atualizar um usuário." alt="" coords="225,157,337,184"/>
+</map>

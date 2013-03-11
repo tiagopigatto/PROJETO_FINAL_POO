@@ -1,0 +1,8 @@
+<map id="CommandCreatePost::execute" name="CommandCreatePost::execute">
+<area shape="rect" id="node3" href="$class_a_command.html#a7ef6229ca895b6c264d4e466c08fe331" title="Método responsável por conectar do banco de dados." alt="" coords="217,5,354,32"/>
+<area shape="rect" id="node5" href="$class_post.html#ab41c4b25e8256cc820f6805f06eb7dba" title="Pega o valor armazenado no campo avaliacao do post." alt="" coords="218,56,353,83"/>
+<area shape="rect" id="node7" href="$class_post.html#a69aa08a4b5f53bc66664010fba928880" title="Pega o valor armazenado no compo do identificador do post." alt="" coords="214,107,357,133"/>
+<area shape="rect" id="node9" href="$class_post.html#ab9ea6345952d8f7436aebb10e73b5545" title="Pega o valor armazenado no compo do texto do post." alt="" coords="222,157,349,184"/>
+<area shape="rect" id="node11" href="$class_post.html#a66926dfefe3d5b0cc127506719eb8732" title="Pega o valor armazenado no compo da data." alt="" coords="234,208,337,235"/>
+<area shape="rect" id="node13" href="$class_post.html#a57b229252360fa3966d548ffcb83ad11" title="Pega o valor armazenado no compo do identificador do usuario." alt="" coords="208,259,363,285"/>
+</map>

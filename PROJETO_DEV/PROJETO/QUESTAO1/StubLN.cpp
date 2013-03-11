@@ -1,223 +1,291 @@
-#ifdef TESTE
-#include "LogNeg.h"
+#ifndef TIME
+#define TIME
 
-class LNStubUser : UserProtocol
-{
+#include "Entidades.h"
+#include "ProtocoloLN.h"
+#include "Comand.h"
+#include "Errors.h"
+#include <stdexcept>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class LNUser : UserProtocol {
 private:
-    PercistenceProtocol percistence;
+    PercistenceProtocol *percistence;
 public:
     /*! \fn autenticar(User)
-     *  \brief Método responsável por autenticar um usuário
-     *  \param User =  objeto de um usuário
+     *  \brief Mï¿½todo responsï¿½vel por autenticar um usuï¿½rio
+     *  \param User =  objeto de um usuï¿½rio
      */
-    void autenticar(User) = 0;
+    void autenticar(User);
     /*! \fn cadastrar(User)
-     *  \brief Método responsável por cadastar um usuário
-     *  \param User =  objeto de um usuário
+     *  \brief Mï¿½todo responsï¿½vel por cadastar um usuï¿½rio
+     *  \param User =  objeto de um usuï¿½rio
      */
-    void cadastrar(User) = 0;
+    void cadastrar(User);
     /*! \fn update(User)
-     *  \brief Método responsável por atualizar um usuário
-     *  \param User =  objeto de um usuário
+     *  \brief Mï¿½todo responsï¿½vel por atualizar um usuï¿½rio
+     *  \param User =  objeto de um usuï¿½rio
      */
-    void update(User) = 0;
+    void update(User);
     /*! \fn deletar(User)
-     *  \brief Método responsável por deletar um usuário
-     *  \param User =  objeto de um usuário
+     *  \brief Mï¿½todo responsï¿½vel por deletar um usuï¿½rio
+     *  \param User =  objeto de um usuï¿½rio
      */
-    void deletar(User) = 0;
+    void deletar(User);
     /*! \fn Listar()
-     *  \brief Método responsável por listar os usuários
+     *  \brief Mï¿½todo responsï¿½vel por listar os usuï¿½rios
      */
-    list Listar() = 0;
+    list<User> Listar();
 
     /*! \fn setPercistence(PercistenceProtocol *)
-     *  \brief Método responsável por ativar um protocolo de persitência
-     *  \param PercistenceProtocol = protocolo de persitência
+     *  \brief Mï¿½todo responsï¿½vel por ativar um protocolo de persitï¿½ncia
+     *  \param PercistenceProtocol = protocolo de persitï¿½ncia
      */
-    void setPercistence(PercistenceProtocol *) = 0;
-    /*! \fn LNUser
-     *  \brief Método responsável por construir a classe
-     */
-    LNUser()
-    {
+    void setPercistence(PercistenceProtocol *) {
     };
-    /*! \fn ~LNUser()
-     *  \brief Método responsável por descontruir a classe
+
+    /*! \fn LNUser
+     *  \brief Mï¿½todo responsï¿½vel por construir a classe
      */
-    ~LNUser()
-    {
+    LNUser() {
+    };
+
+    /*! \fn ~LNUser()
+     *  \brief Mï¿½todo responsï¿½vel por descontruir a classe
+     */
+    ~LNUser() {
     };
 };
-void autenticar(User user)
-{
+
+void autenticar(User user) {
     string nome;
     UserName usuario;
-    usuario = user.UserName.getName();
-    nome = usuario.getValue();
-    if(nome == "Pedro")
-    {
-        throw new LogicError();
+    nome = user.getName().getValue();
+    if (nome == "Pedro") {
+        throw new LogicError("erro");
     }
 }
 
-void cadastrar(User user) {};
+void cadastrar(User user) {
+};
 
-void update(User user) {};
+void update(User user) {
+};
 
-void deletar(User) {};
+void deletar(User) {
+};
 
-list Listar()
-{
+list<User> Listar() {
     User user;
     int i;
-    std::list<int> lista;
-    for(i=0; i<5; i++)
-    {
-        user.getName().setValue(itoa(i*5));
-        user.getPassword().setValue(itoa(i*4));
-        user.getIdentify().setValue(itoa(i*3));
-        lista.push_back(user);
-    }
+    std::list<User> lista;
+
+    user.getName().setValue("vitor");
+    user.getPassword().setValue("12345");
+    user.getIdentify().setValue("123456");
+    lista.push_back(user);
+
+    user.getName().setValue("vitor1");
+    user.getPassword().setValue("1234534");
+    user.getIdentify().setValue("12345624");
+    lista.push_back(user);
+
+    user.getName().setValue("vito213r");
+    user.getPassword().setValue("12321345");
+    user.getIdentify().setValue("1234543546");
+    lista.push_back(user);
+
+    user.getName().setValue("vito2134214r");
+    user.getPassword().setValue("12321421445");
+    user.getIdentify().setValue("12345621");
+    lista.push_back(user);
+
+    user.getName().setValue("vi4214rdas");
+    user.getPassword().setValue("vit214rsda");
+    user.getIdentify().setValue("12312445");
+    lista.push_back(user);
+
     return lista;
 }
 
 /*! \class LNUser()
- *  \brief Essa é a classe responsável pela lógica de negócios para uma postagems.
+ *  \brief Essa ï¿½ a classe responsï¿½vel pela lï¿½gica de negï¿½cios para uma postagems.
  */
-class LNStubPost : ComentProtocol
-{
+class LNPost : PostProtocol {
 public:
     /*! \fn novo(Post)
-     *  \brief Método responsável por criar uma postagem
+     *  \brief Mï¿½todo responsï¿½vel por criar uma postagem
      *  \param Post =  objeto de um post
      */
-    void novo(Post) = 0;
+    void novo(Post);
     /*! \fn update(Post)
-     *  \brief Método responsável por atualizar uma postagem
+     *  \brief Mï¿½todo responsï¿½vel por atualizar uma postagem
      *  \param Post =  objeto de um post
      */
-    void update(Post) = 0;
+    void update(Post);
     /*! \fn deleta(Post)
-     *  \brief Método responsável por deletar uma postagem
+     *  \brief Mï¿½todo responsï¿½vel por deletar uma postagem
      *  \param Post =  objeto de um post
      */
-    void deleta(Post) = 0;
+    void deleta(Post);
     /*! \fn listar(Post)
-     *  \brief Método responsável por listar todas as postagens
+     *  \brief Mï¿½todo responsï¿½vel por listar todas as postagens
      *  \param Post =  objeto de um post
      */
-    list listar() = 0;
+    list<Post> listar();
     /*! \fn listarPorUser(Post)
-     *  \brief Método responsável por listar as postagens por usuário
+     *  \brief Mï¿½todo responsï¿½vel por listar as postagens por usuï¿½rio
      *  \param Post =  objeto de um post
      */
-    list listarPorUser(Identify) = 0;
+    list<Post> listarPorUser(Post);
     /*! \fn setPercistence(PercistenceProtocol *)
-     *  \brief Método responsável por ativar um protocolo de persitência
-     *  \param PercistenceProtocol = protocolo de persitência
+     *  \brief Mï¿½todo responsï¿½vel por ativar um protocolo de persitï¿½ncia
+     *  \param PercistenceProtocol = protocolo de persitï¿½ncia
      */
-    void setPercistence(PercistenceProtocol *) = 0;
+    void setPercistence(PercistenceProtocol *);
+
     /*! \fn LNComent()
-     *  \brief Método responsável por construir a classe
+     *  \brief Mï¿½todo responsï¿½vel por construir a classe
      */
-    LNComent();
+    LNPost() {
+    };
+
     /*! \fn ~LNComent()
-     *  \brief Método responsável por construir a classe
+     *  \brief Mï¿½todo responsï¿½vel por construir a classe
      */
-    ~LNComent();
+    ~LNPost() {
+    };
 
 };
 
-void novo(Post) {};
-void update(Post) {};
-void deleta(Post) {};
-list listarPorUser(Identify)
-{
-    std::list<int> lista;
+void novo(Post) {
+};
+
+void update(Post) {
+};
+
+void deleta(Post) {
+};
+
+list<Post> listarPorUser(Identify) {
+    std::list<Post> lista;
 
     return lista;
 };
-list listar()
-{
+
+list<Post> LNPost::listar() {
     Post post;
     int i;
-    std::list<int> lista;
-    for(i=0; i<5; i++)
-    {
-        post.getAuthorIdentify().setValue(itoa(i*5));
-        post.getPostText().setValue(itoa(i*4));
-        post.getPostIdentify().setValue(itoa(i*2));
-        lista.push_back(post);
-    }
-    return lista;
+    std::list<Post> lista;
+    post.getAuthorIdentify().setValue("11112222");
+    post.getPostText().setValue("sdasdasdasj");
+    post.getPostIdentify().setValue("12223344");
+    lista.push_back(post);
+
+
+    post.getAuthorIdentify().setValue("111122334");
+    post.getPostText().setValue("112334443254325324");
+    post.getPostIdentify().setValue("213123712");
+    lista.push_back(post);
+
+
+    post.getAuthorIdentify().setValue("23123123");
+    post.getPostText().setValue("23123123");
+    post.getPostIdentify().setValue("23123123");
+    lista.push_back(post);
+
+
+    post.getAuthorIdentify().setValue("231231233123");
+    post.getPostText().setValue("231231233123");
+    post.getPostIdentify().setValue("231231233123");
+    lista.push_back(post);
+
+
+
 
 };
 
-class LNStubComent : PostProtocol
-{
+class LNComent : ComentProtocol {
 public:
     /*! \fn novo(Coment)
-    *  \brief Método responsável por criar uma comentário
-    *  \param Coment =  objeto de um comentário
-    */
-    void novo(Coment) = 0;
+     *  \brief Mï¿½todo responsï¿½vel por criar uma comentï¿½rio
+     *  \param Coment =  objeto de um comentï¿½rio
+     */
+    void novo(Coment);
     /*! \fn update(Coment)
-    *  \brief Método responsável por atualizar um comentário
-    *  \param Coment =  objeto de um comentário
-    */
-    void update(Coment) = 0;
+     *  \brief Mï¿½todo responsï¿½vel por atualizar um comentï¿½rio
+     *  \param Coment =  objeto de um comentï¿½rio
+     */
+    void update(Coment);
     /*! \fn deleta(Coment)
-    *  \brief Método responsável por deletar uma comentário
-    *  \param Coment =  objeto de um comentário
-    */
-    void deleta(Coment) = 0;
+     *  \brief Mï¿½todo responsï¿½vel por deletar uma comentï¿½rio
+     *  \param Coment =  objeto de um comentï¿½rio
+     */
+    void deleta(Coment);
     /*! \fn pegar(Coment)
-    *  \brief Método responsável por pegar uma comentário
-    *  \param Coment =  objeto de um comentário
-    */
-    void pegar(Coment) = 0;
+     *  \brief Mï¿½todo responsï¿½vel por pegar uma comentï¿½rio
+     *  \param Coment =  objeto de um comentï¿½rio
+     */
+    Coment pegar(Coment);
     /*! \fn listar(Post)
-    *  \brief Método responsável por listar todos os comentários de um post
-    *  \param Coment =  objeto de um comentário
-    */
-    list listar(Post) = 0;
+     *  \brief Mï¿½todo responsï¿½vel por listar todos os comentï¿½rios de um post
+     *  \param Coment =  objeto de um comentï¿½rio
+     */
+    list<Coment> listar();
+
     /*! \fn setPercistence(PercistenceProtocol *)
-     *  \brief Método responsável por ativar um protocolo de persitência
-     *  \param PercistenceProtocol = protocolo de persitência
+     *  \brief Mï¿½todo responsï¿½vel por ativar um protocolo de persitï¿½ncia
+     *  \param PercistenceProtocol = protocolo de persitï¿½ncia
      */
-    virtual void setPercistence(PercistenceProtocol *) = 0;
+    virtual void setPercistence(PercistenceProtocol *) {
+    };
+
     /*! \fn LNPost()
-     *  \brief Método responsável por construir a classe
+     *  \brief Mï¿½todo responsï¿½vel por construir a classe
      */
-    LNPost();
+    LNComent() {
+    }
+
     /*! \fn ~LNPost()
-     *  \brief Método responsável por construir a classe
+     *  \brief Mï¿½todo responsï¿½vel por construir a classe
      */
-    ~LNPost();
+    ~LNComent() {
+    }
 
 };
-    void novo(Coment coment){};
-    void update(Coment coment){};
-    void deleta(Coment coment) {};
-    void pegar(Coment coment){};
 
-    list listar(){
+void novo(Coment coment) {
+};
+
+void update(Coment coment) {
+};
+
+void deleta(Coment coment) {
+};
+
+Coment pegar(Coment comento) {
+    Coment coment;
+        coment.getAuthorIdentify().setValue("123124");
+        coment.getComentText().setValue("123124");
+        coment.getPostIdentify().setValue("123124");
+        coment.getComentIdentify().setValue("123124");
+        return coment;
+};
+
+list<Coment>  LNComent::listar() {
     Coment coment;
     int i;
-    std::list<int> lista;
-    for(i=0; i<5; i++)
-    {
-        coment.getAuthorIdentify().setValue(itoa(i*5));
-        coment.getComentText().setValue(itoa(i*4));
-        coment.getPostIdentify().setValue(itoa(i*2));
-        coment.getComentIdentify().setValue(itoa(i*10));
+    std::list<Coment> lista;
+    for (i = 0; i < 5; i++) {
+        coment.getAuthorIdentify().setValue("123124");
+        coment.getComentText().setValue("123124");
+        coment.getPostIdentify().setValue("123124");
+        coment.getComentIdentify().setValue("123124");
         lista.push_back(coment);
     }
     return lista;
-
-
-
-    }
-
+}
 #endif

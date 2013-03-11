@@ -1,0 +1,7 @@
+<map id="PostCommand::setPost" name="PostCommand::setPost">
+<area shape="rect" id="node3" href="$class_l_n_post.html#a3ab3b83674e572c7a8c645c8ea6f447d" title="Método responsável por criar uma postagem." alt="" coords="241,5,340,32"/>
+<area shape="rect" id="node5" href="$class_l_n_post.html#a24a5694180c400a4f75b05e3cc2b1b49" title="Método responsável por deletar uma postagem." alt="" coords="237,56,345,83"/>
+<area shape="rect" id="node7" href="$class_l_n_post.html#a76e4575cc5e542510c1f135f879e88f5" title="Método responsável por atualizar uma postagem." alt="" coords="235,107,347,133"/>
+<area shape="rect" id="node9" href="$class_l_n_post.html#acb5f1b004c87e6cc34afa3890ff09682" title="Método responsável por pegar uma postagens." alt="" coords="238,157,343,184"/>
+<area shape="rect" id="node11" href="$class_l_n_post.html#ad57f97108f666b1c2cc512e8301bc659" title="Método responsável por listar as postagens por usuário." alt="" coords="217,208,365,235"/>
+</map>

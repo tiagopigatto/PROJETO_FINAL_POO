@@ -1,0 +1,6 @@
+<map id="CommandUpdateComent::execute" name="CommandUpdateComent::execute">
+<area shape="rect" id="node3" href="$class_a_command.html#a7ef6229ca895b6c264d4e466c08fe331" title="Método responsável por conectar do banco de dados." alt="" coords="242,5,379,32"/>
+<area shape="rect" id="node5" href="$class_coment.html#a9d8b854216fe9e0c22d9daf58ac91d66" title="Pega o valor armazenado no campo do texto do comentario." alt="" coords="229,56,392,83"/>
+<area shape="rect" id="node7" href="$class_coment.html#a531f1b46ea41684e718b40ea48efde24" title="Pega o valor armazenado no campo de data do comentario." alt="" coords="251,107,371,133"/>
+<area shape="rect" id="node9" href="$class_coment.html#a6a57b7f20c9a0a4331f12b7058980b99" title="Pega o valor armazenado no campo do indentificador unico do comentario." alt="" coords="221,157,400,184"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="BasicType" name="BasicType">
+<area shape="rect" id="node3" href="$class_coment_text.html" title="Essa e a classe responsavel por represnetar os textos do comentarios no contexto do sistema..." alt="" coords="5,80,96,107"/>
+<area shape="rect" id="node5" href="$class_date.html" title="Essa e a classe responsavel por reprensentar as datas do sistema." alt="" coords="121,80,169,107"/>
+<area shape="rect" id="node7" href="$class_evaluation.html" title="Essa e a classe responsavel por reprensentatar as avaliaçaoes geradas pelos usuarios para determinada..." alt="" coords="194,80,275,107"/>
+<area shape="rect" id="node9" href="$class_identify.html" title="Essa e a classe responsavel por representar os identificadores dos termos no sistema." alt="" coords="299,80,361,107"/>
+<area shape="rect" id="node11" href="$class_password.html" title="Essa e a classe responsavel por resprendentar a senha do usuario no sistema." alt="" coords="386,80,464,107"/>
+<area shape="rect" id="node13" href="$class_post_text.html" title="Essa e a classe responsavel por reprensentar os textos dos posts no contexto do sistema." alt="" coords="489,80,564,107"/>
+<area shape="rect" id="node15" href="$class_user_name.html" title="Essa e a classe responsavel reprensentar o nome do ususario no sistema." alt="" coords="588,80,671,107"/>
+</map>

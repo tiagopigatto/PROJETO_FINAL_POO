@@ -1,0 +1,9 @@
+<map id="PostCommand" name="PostCommand">
+<area shape="rect" id="node5" href="$class_command_create_post.html" title="Classe que irá procurar se já existe um id,igual ao do objeto, no bd, se esse não existir irá adicion..." alt="" coords="308,5,455,32"/>
+<area shape="rect" id="node7" href="$class_command_delete_post.html" title="Classe que irá deletar um post no banco de dados, caso esse exista." alt="" coords="309,56,454,83"/>
+<area shape="rect" id="node9" href="$class_command_find_all_post.html" title="Classe que irá listar todos os posts." alt="" coords="307,107,455,133"/>
+<area shape="rect" id="node11" href="$class_command_find_post.html" title="Classe que irá procurar um post pelo id, se encontrar o coloca em um objeto Post." alt="" coords="315,157,448,184"/>
+<area shape="rect" id="node13" href="$class_command_find_user_post.html" title="Classe que retorna os posts de um usário que estão no banco de dados." alt="" coords="301,208,461,235"/>
+<area shape="rect" id="node15" href="$class_command_update_post.html" title="Classe que irá atualizar um post no banco de dados, caso esse exista." alt="" coords="307,259,456,285"/>
+<area shape="rect" id="node2" href="$class_a_command.html" title="Essa é a classe abstrata de comandos da persistência." alt="" coords="5,132,96,159"/>
+</map>

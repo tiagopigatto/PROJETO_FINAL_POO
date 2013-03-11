@@ -1,0 +1,8 @@
+<map id="ComentCommand" name="ComentCommand">
+<area shape="rect" id="node5" href="$class_command_create_coment.html" title="Classe que irá procurar se já existe um id,igual ao do objeto, no bd, se esse não existir irá adicion..." alt="" coords="331,5,495,32"/>
+<area shape="rect" id="node7" href="$class_command_delete_coment.html" title="Classe que irá deletar um comentário no banco de dados, caso esse exista." alt="" coords="332,56,495,83"/>
+<area shape="rect" id="node9" href="$class_command_find_coment.html" title="Classe que irá procurar um cometário pelo id, se encontrar o coloca em um objeto Coment." alt="" coords="338,107,489,133"/>
+<area shape="rect" id="node11" href="$class_command_find_post_coments.html" title="Classe que irá procurar os comentários de um post, se encontrar os coloca em um lista de objetos Come..." alt="" coords="321,157,506,184"/>
+<area shape="rect" id="node13" href="$class_command_update_coment.html" title="Classe que irá atualizar um comentário no banco de dados, caso esse exista." alt="" coords="330,208,497,235"/>
+<area shape="rect" id="node2" href="$class_a_command.html" title="Essa é a classe abstrata de comandos da persistência." alt="" coords="5,107,96,133"/>
+</map>

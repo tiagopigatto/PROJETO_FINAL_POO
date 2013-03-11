@@ -1,0 +1,357 @@
+\hypertarget{class_coment}{\section{Coment Class Reference}
+\label{class_coment}\index{Coment@{Coment}}
+}
+
+
+Essa e a classe que repensenta os cometarios dos Usuarios nos posts no contexto do Sistema.  
+
+
+
+
+{\ttfamily \#include $<$Entidades.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_coment_a578e61870997d13095a9daf39f2863bc}{\hyperlink{class_coment_a578e61870997d13095a9daf39f2863bc}{Coment} ()}\label{class_coment_a578e61870997d13095a9daf39f2863bc}
+
+\begin{DoxyCompactList}\small\item\em Funcao contrutora da comentario quando nao ha paramentros, essa apenas inicia um novo comentario \par
+ com todos os termos iquais a null. \end{DoxyCompactList}\item 
+\hyperlink{class_coment_ae57275f77601a77eaa9b984589e025f2}{Coment} (\hyperlink{class_identify}{Identify}, \hyperlink{class_identify}{Identify}, \hyperlink{class_identify}{Identify}, \hyperlink{class_coment_text}{Coment\-Text}, \hyperlink{class_date}{Date})
+\begin{DoxyCompactList}\small\item\em Funcao contrutora do \hyperlink{class_post}{Post} quando todos os termos sao passados no momento da criacao \par
+ essa ira setar todos o termos passados. \end{DoxyCompactList}\item 
+\hyperlink{class_identify}{Identify} \hyperlink{class_coment_a4006ae63196c19c5fb6feed70f6588ff}{get\-Author\-Identify} ()
+\begin{DoxyCompactList}\small\item\em Pega o valor armazenado no campo identificador do author do comentario. \end{DoxyCompactList}\item 
+void \hyperlink{class_coment_a29f4700734b5b9d50c17357876b3d96e}{set\-Author\-Identify} (\hyperlink{class_identify}{Identify})
+\begin{DoxyCompactList}\small\item\em Da um set no valor do indetificador do auhthor do comentario. \end{DoxyCompactList}\item 
+\hyperlink{class_identify}{Identify} \hyperlink{class_coment_a3fb57e3fdaf0e3c1e9d025af8e197e99}{get\-Post\-Identify} ()
+\begin{DoxyCompactList}\small\item\em Pega o valor armazenado no campo indentificador do post do comentario. \end{DoxyCompactList}\item 
+void \hyperlink{class_coment_a65bccaa5ff5ef75e22b19e41f1b2db08}{set\-Post\-Identify} (\hyperlink{class_identify}{Identify})
+\begin{DoxyCompactList}\small\item\em Da um set no valor do campo do indentificador do post do comentario . \end{DoxyCompactList}\item 
+\hyperlink{class_identify}{Identify} \hyperlink{class_coment_a6a57b7f20c9a0a4331f12b7058980b99}{get\-Coment\-Identify} ()
+\begin{DoxyCompactList}\small\item\em Pega o valor armazenado no campo do indentificador unico do comentario. \end{DoxyCompactList}\item 
+void \hyperlink{class_coment_ab980dae53d71c2c43d639482273e2032}{set\-Coment\-Identify} (\hyperlink{class_identify}{Identify})
+\begin{DoxyCompactList}\small\item\em Da um set no valor do campo da avaliaçao. \end{DoxyCompactList}\item 
+\hyperlink{class_coment_text}{Coment\-Text} \hyperlink{class_coment_a9d8b854216fe9e0c22d9daf58ac91d66}{get\-Coment\-Text} ()
+\begin{DoxyCompactList}\small\item\em Pega o valor armazenado no campo do texto do comentario. \end{DoxyCompactList}\item 
+void \hyperlink{class_coment_aee3806f744c85b8759d78caf327288a9}{set\-Coment\-Text} (\hyperlink{class_coment_text}{Coment\-Text})
+\begin{DoxyCompactList}\small\item\em Da um set no valor do campo de texto do comentario. \end{DoxyCompactList}\item 
+\hyperlink{class_date}{Date} \hyperlink{class_coment_a531f1b46ea41684e718b40ea48efde24}{get\-Date} ()
+\begin{DoxyCompactList}\small\item\em Pega o valor armazenado no campo de data do comentario. \end{DoxyCompactList}\item 
+void \hyperlink{class_coment_ad2faca7f8d5bac7538a9b5cde9642c46}{set\-Date} (\hyperlink{class_date}{Date})
+\begin{DoxyCompactList}\small\item\em Da um set na data do comentario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Essa e a classe que repensenta os cometarios dos Usuarios nos posts no contexto do Sistema. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_coment_ae57275f77601a77eaa9b984589e025f2}{\index{Coment@{Coment}!Coment@{Coment}}
+\index{Coment@{Coment}!Coment@{Coment}}
+\subsubsection[{Coment}]{\setlength{\rightskip}{0pt plus 5cm}Coment\-::\-Coment (
+\begin{DoxyParamCaption}
+\item[{{\bf Identify}}]{author\-Identify, }
+\item[{{\bf Identify}}]{post\-Identify, }
+\item[{{\bf Identify}}]{coment\-Identify, }
+\item[{{\bf Coment\-Text}}]{coment\-Text, }
+\item[{{\bf Date}}]{date}
+\end{DoxyParamCaption}
+)}}\label{class_coment_ae57275f77601a77eaa9b984589e025f2}
+
+
+Funcao contrutora do \hyperlink{class_post}{Post} quando todos os termos sao passados no momento da criacao \par
+ essa ira setar todos o termos passados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em author\-Identify} & \-: o identificador do Usuario dono do comentario. \\
+\hline
+{\em post\-Identify} & \-: o identificador do post a que o comentario pertence. \\
+\hline
+{\em coment\-Identify} & \-: o identificador unico do comentario. \\
+\hline
+{\em coment\-Text} & \-: o texto do comentario. \\
+\hline
+{\em date} & \-: a data do comentario. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_coment_ae57275f77601a77eaa9b984589e025f2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_coment_a4006ae63196c19c5fb6feed70f6588ff}{\index{Coment@{Coment}!get\-Author\-Identify@{get\-Author\-Identify}}
+\index{get\-Author\-Identify@{get\-Author\-Identify}!Coment@{Coment}}
+\subsubsection[{get\-Author\-Identify}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Identify} Coment\-::get\-Author\-Identify (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_coment_a4006ae63196c19c5fb6feed70f6588ff}
+
+
+Pega o valor armazenado no campo identificador do author do comentario. 
+
+\begin{DoxyReturn}{Returns}
+o identificador do author do comentario. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_coment_a4006ae63196c19c5fb6feed70f6588ff_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_coment_a6a57b7f20c9a0a4331f12b7058980b99}{\index{Coment@{Coment}!get\-Coment\-Identify@{get\-Coment\-Identify}}
+\index{get\-Coment\-Identify@{get\-Coment\-Identify}!Coment@{Coment}}
+\subsubsection[{get\-Coment\-Identify}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Identify} Coment\-::get\-Coment\-Identify (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_coment_a6a57b7f20c9a0a4331f12b7058980b99}
+
+
+Pega o valor armazenado no campo do indentificador unico do comentario. 
+
+\begin{DoxyReturn}{Returns}
+o indetificador do comentario. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_coment_a6a57b7f20c9a0a4331f12b7058980b99_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_coment_a9d8b854216fe9e0c22d9daf58ac91d66}{\index{Coment@{Coment}!get\-Coment\-Text@{get\-Coment\-Text}}
+\index{get\-Coment\-Text@{get\-Coment\-Text}!Coment@{Coment}}
+\subsubsection[{get\-Coment\-Text}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coment\-Text} Coment\-::get\-Coment\-Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_coment_a9d8b854216fe9e0c22d9daf58ac91d66}
+
+
+Pega o valor armazenado no campo do texto do comentario. 
+
+\begin{DoxyReturn}{Returns}
+o texto do comentario. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_coment_a9d8b854216fe9e0c22d9daf58ac91d66_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_coment_a531f1b46ea41684e718b40ea48efde24}{\index{Coment@{Coment}!get\-Date@{get\-Date}}
+\index{get\-Date@{get\-Date}!Coment@{Coment}}
+\subsubsection[{get\-Date}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Date} Coment\-::get\-Date (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_coment_a531f1b46ea41684e718b40ea48efde24}
+
+
+Pega o valor armazenado no campo de data do comentario. 
+
+\begin{DoxyReturn}{Returns}
+a data do comentario. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_coment_a531f1b46ea41684e718b40ea48efde24_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_coment_a3fb57e3fdaf0e3c1e9d025af8e197e99}{\index{Coment@{Coment}!get\-Post\-Identify@{get\-Post\-Identify}}
+\index{get\-Post\-Identify@{get\-Post\-Identify}!Coment@{Coment}}
+\subsubsection[{get\-Post\-Identify}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Identify} Coment\-::get\-Post\-Identify (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_coment_a3fb57e3fdaf0e3c1e9d025af8e197e99}
+
+
+Pega o valor armazenado no campo indentificador do post do comentario. 
+
+\begin{DoxyReturn}{Returns}
+o indetificador do post a qual o comentario pertence. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_coment_a3fb57e3fdaf0e3c1e9d025af8e197e99_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_coment_a29f4700734b5b9d50c17357876b3d96e}{\index{Coment@{Coment}!set\-Author\-Identify@{set\-Author\-Identify}}
+\index{set\-Author\-Identify@{set\-Author\-Identify}!Coment@{Coment}}
+\subsubsection[{set\-Author\-Identify}]{\setlength{\rightskip}{0pt plus 5cm}void Coment\-::set\-Author\-Identify (
+\begin{DoxyParamCaption}
+\item[{{\bf Identify}}]{author\-Identify}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_coment_a29f4700734b5b9d50c17357876b3d96e}
+
+
+Da um set no valor do indetificador do auhthor do comentario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em author\-Identify} & \-: o identificador do author do comentario. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_coment_a29f4700734b5b9d50c17357876b3d96e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_coment_ab980dae53d71c2c43d639482273e2032}{\index{Coment@{Coment}!set\-Coment\-Identify@{set\-Coment\-Identify}}
+\index{set\-Coment\-Identify@{set\-Coment\-Identify}!Coment@{Coment}}
+\subsubsection[{set\-Coment\-Identify}]{\setlength{\rightskip}{0pt plus 5cm}void Coment\-::set\-Coment\-Identify (
+\begin{DoxyParamCaption}
+\item[{{\bf Identify}}]{coment\-Identify}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_coment_ab980dae53d71c2c43d639482273e2032}
+
+
+Da um set no valor do campo da avaliaçao. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coment\-Identify} & \-: o identificador unico do comentario. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_coment_ab980dae53d71c2c43d639482273e2032_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_coment_aee3806f744c85b8759d78caf327288a9}{\index{Coment@{Coment}!set\-Coment\-Text@{set\-Coment\-Text}}
+\index{set\-Coment\-Text@{set\-Coment\-Text}!Coment@{Coment}}
+\subsubsection[{set\-Coment\-Text}]{\setlength{\rightskip}{0pt plus 5cm}void Coment\-::set\-Coment\-Text (
+\begin{DoxyParamCaption}
+\item[{{\bf Coment\-Text}}]{coment\-Text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_coment_aee3806f744c85b8759d78caf327288a9}
+
+
+Da um set no valor do campo de texto do comentario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coment\-Text} & \-: o texto do comentario. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_coment_aee3806f744c85b8759d78caf327288a9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_coment_ad2faca7f8d5bac7538a9b5cde9642c46}{\index{Coment@{Coment}!set\-Date@{set\-Date}}
+\index{set\-Date@{set\-Date}!Coment@{Coment}}
+\subsubsection[{set\-Date}]{\setlength{\rightskip}{0pt plus 5cm}void Coment\-::set\-Date (
+\begin{DoxyParamCaption}
+\item[{{\bf Date}}]{date}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_coment_ad2faca7f8d5bac7538a9b5cde9642c46}
+
+
+Da um set na data do comentario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & \-: a data do comentario. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_coment_ad2faca7f8d5bac7538a9b5cde9642c46_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_coment_a65bccaa5ff5ef75e22b19e41f1b2db08}{\index{Coment@{Coment}!set\-Post\-Identify@{set\-Post\-Identify}}
+\index{set\-Post\-Identify@{set\-Post\-Identify}!Coment@{Coment}}
+\subsubsection[{set\-Post\-Identify}]{\setlength{\rightskip}{0pt plus 5cm}void Coment\-::set\-Post\-Identify (
+\begin{DoxyParamCaption}
+\item[{{\bf Identify}}]{post\-Identify}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_coment_a65bccaa5ff5ef75e22b19e41f1b2db08}
+
+
+Da um set no valor do campo do indentificador do post do comentario . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em post\-Identify} & \-: o indentificador do post do comentariot. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_coment_a65bccaa5ff5ef75e22b19e41f1b2db08_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Vitor/\-Desktop/\-Work\-Space/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-F\-I\-N\-A\-L\-\_\-\-P\-O\-O/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-D\-E\-V/\-P\-R\-O\-J\-E\-T\-O/\-Projeto\-\_\-codeblocks/\hyperlink{_entidades_8h}{Entidades.\-h}\item 
+C\-:/\-Users/\-Vitor/\-Desktop/\-Work\-Space/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-F\-I\-N\-A\-L\-\_\-\-P\-O\-O/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-D\-E\-V/\-P\-R\-O\-J\-E\-T\-O/\-Projeto\-\_\-codeblocks/Entidades.\-cpp\end{DoxyCompactItemize}

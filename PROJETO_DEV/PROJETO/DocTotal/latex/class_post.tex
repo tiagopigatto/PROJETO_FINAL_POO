@@ -1,0 +1,357 @@
+\hypertarget{class_post}{\section{Post Class Reference}
+\label{class_post}\index{Post@{Post}}
+}
+
+
+Essa e a classe que repensenta os post dos Usuarios no contexto do Sistema.  
+
+
+
+
+{\ttfamily \#include $<$Entidades.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_post_a1327e448954d596eda1868d3badb5892}{\hyperlink{class_post_a1327e448954d596eda1868d3badb5892}{Post} ()}\label{class_post_a1327e448954d596eda1868d3badb5892}
+
+\begin{DoxyCompactList}\small\item\em Funcao contrutora da Postagem quando nao ha paramentros, essa apenas inicia um novo post \par
+ com todos os termos iquais a null. \end{DoxyCompactList}\item 
+\hyperlink{class_post_a6aa3ee41a0187844ea28a6b1870e3e97}{Post} (\hyperlink{class_identify}{Identify}, \hyperlink{class_identify}{Identify}, \hyperlink{class_post_text}{Post\-Text}, \hyperlink{class_date}{Date}, \hyperlink{class_evaluation}{Evaluation})
+\begin{DoxyCompactList}\small\item\em Funcao contrutora do \hyperlink{class_post}{Post} quando todos os termos sao passados no momento da criacao \par
+ essa ira setar todos o termos passados. \end{DoxyCompactList}\item 
+\hyperlink{class_identify}{Identify} \hyperlink{class_post_a57b229252360fa3966d548ffcb83ad11}{get\-Author\-Identify} ()
+\begin{DoxyCompactList}\small\item\em Pega o valor armazenado no compo do identificador do usuario. \end{DoxyCompactList}\item 
+void \hyperlink{class_post_af08b76053c6703c094e2beaab6dce268}{set\-Author\-Identify} (\hyperlink{class_identify}{Identify})
+\begin{DoxyCompactList}\small\item\em Da um set no valor do campo Author \hyperlink{class_identify}{Identify}. \end{DoxyCompactList}\item 
+\hyperlink{class_identify}{Identify} \hyperlink{class_post_a69aa08a4b5f53bc66664010fba928880}{get\-Post\-Identify} ()
+\begin{DoxyCompactList}\small\item\em Pega o valor armazenado no compo do identificador do post. \end{DoxyCompactList}\item 
+void \hyperlink{class_post_a840eea1b1e1fb0a7dae6631064b3d584}{set\-Post\-Identify} (\hyperlink{class_identify}{Identify})
+\begin{DoxyCompactList}\small\item\em Da um set no valor do campo \hyperlink{class_post}{Post} \hyperlink{class_identify}{Identify}. \end{DoxyCompactList}\item 
+\hyperlink{class_post_text}{Post\-Text} \hyperlink{class_post_ab9ea6345952d8f7436aebb10e73b5545}{get\-Post\-Text} ()
+\begin{DoxyCompactList}\small\item\em Pega o valor armazenado no compo do texto do post. \end{DoxyCompactList}\item 
+void \hyperlink{class_post_a707c32c73737cf886f32f733af58f851}{set\-Post\-Text} (\hyperlink{class_post_text}{Post\-Text})
+\begin{DoxyCompactList}\small\item\em Da um set no valor do campo do texto do post. \end{DoxyCompactList}\item 
+\hyperlink{class_date}{Date} \hyperlink{class_post_a66926dfefe3d5b0cc127506719eb8732}{get\-Date} ()
+\begin{DoxyCompactList}\small\item\em Pega o valor armazenado no compo da data. \end{DoxyCompactList}\item 
+void \hyperlink{class_post_a6476486ac78e6eb2c3eb950a3fba9de1}{set\-Date} (\hyperlink{class_date}{Date})
+\begin{DoxyCompactList}\small\item\em Da um set no valor do campo data. \end{DoxyCompactList}\item 
+\hyperlink{class_evaluation}{Evaluation} \hyperlink{class_post_ab41c4b25e8256cc820f6805f06eb7dba}{get\-Evaluation} ()
+\begin{DoxyCompactList}\small\item\em Pega o valor armazenado no campo avaliacao do post. \end{DoxyCompactList}\item 
+void \hyperlink{class_post_adaf2ae8bd4bc4d7981b2f7704b2603a0}{set\-Evaluation} (\hyperlink{class_evaluation}{Evaluation})
+\begin{DoxyCompactList}\small\item\em Da um set no valor do campo da avaliaçao. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Essa e a classe que repensenta os post dos Usuarios no contexto do Sistema. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_post_a6aa3ee41a0187844ea28a6b1870e3e97}{\index{Post@{Post}!Post@{Post}}
+\index{Post@{Post}!Post@{Post}}
+\subsubsection[{Post}]{\setlength{\rightskip}{0pt plus 5cm}Post\-::\-Post (
+\begin{DoxyParamCaption}
+\item[{{\bf Identify}}]{author\-Identify, }
+\item[{{\bf Identify}}]{post\-Identify, }
+\item[{{\bf Post\-Text}}]{post\-Text, }
+\item[{{\bf Date}}]{date, }
+\item[{{\bf Evaluation}}]{evaluation}
+\end{DoxyParamCaption}
+)}}\label{class_post_a6aa3ee41a0187844ea28a6b1870e3e97}
+
+
+Funcao contrutora do \hyperlink{class_post}{Post} quando todos os termos sao passados no momento da criacao \par
+ essa ira setar todos o termos passados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em author\-Identify} & \-: o identificador do Usuario. \\
+\hline
+{\em post\-Identify} & \-: o identificador do post. \\
+\hline
+{\em post\-Text} & \-: o texto do post. \\
+\hline
+{\em date} & \-: a data do post. \\
+\hline
+{\em evaluation} & \-: a avaliaçao do post. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_post_a6aa3ee41a0187844ea28a6b1870e3e97_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_post_a57b229252360fa3966d548ffcb83ad11}{\index{Post@{Post}!get\-Author\-Identify@{get\-Author\-Identify}}
+\index{get\-Author\-Identify@{get\-Author\-Identify}!Post@{Post}}
+\subsubsection[{get\-Author\-Identify}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Identify} Post\-::get\-Author\-Identify (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_post_a57b229252360fa3966d548ffcb83ad11}
+
+
+Pega o valor armazenado no compo do identificador do usuario. 
+
+\begin{DoxyReturn}{Returns}
+o identificar do usario dono do post. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_post_a57b229252360fa3966d548ffcb83ad11_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_post_a66926dfefe3d5b0cc127506719eb8732}{\index{Post@{Post}!get\-Date@{get\-Date}}
+\index{get\-Date@{get\-Date}!Post@{Post}}
+\subsubsection[{get\-Date}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Date} Post\-::get\-Date (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_post_a66926dfefe3d5b0cc127506719eb8732}
+
+
+Pega o valor armazenado no compo da data. 
+
+\begin{DoxyReturn}{Returns}
+a data do post. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_post_a66926dfefe3d5b0cc127506719eb8732_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_post_ab41c4b25e8256cc820f6805f06eb7dba}{\index{Post@{Post}!get\-Evaluation@{get\-Evaluation}}
+\index{get\-Evaluation@{get\-Evaluation}!Post@{Post}}
+\subsubsection[{get\-Evaluation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Evaluation} Post\-::get\-Evaluation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_post_ab41c4b25e8256cc820f6805f06eb7dba}
+
+
+Pega o valor armazenado no campo avaliacao do post. 
+
+\begin{DoxyReturn}{Returns}
+a avaliaçao atual do post. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_post_ab41c4b25e8256cc820f6805f06eb7dba_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_post_a69aa08a4b5f53bc66664010fba928880}{\index{Post@{Post}!get\-Post\-Identify@{get\-Post\-Identify}}
+\index{get\-Post\-Identify@{get\-Post\-Identify}!Post@{Post}}
+\subsubsection[{get\-Post\-Identify}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Identify} Post\-::get\-Post\-Identify (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_post_a69aa08a4b5f53bc66664010fba928880}
+
+
+Pega o valor armazenado no compo do identificador do post. 
+
+\begin{DoxyReturn}{Returns}
+o identificar do usario do post. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_post_a69aa08a4b5f53bc66664010fba928880_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_post_ab9ea6345952d8f7436aebb10e73b5545}{\index{Post@{Post}!get\-Post\-Text@{get\-Post\-Text}}
+\index{get\-Post\-Text@{get\-Post\-Text}!Post@{Post}}
+\subsubsection[{get\-Post\-Text}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Post\-Text} Post\-::get\-Post\-Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_post_ab9ea6345952d8f7436aebb10e73b5545}
+
+
+Pega o valor armazenado no compo do texto do post. 
+
+\begin{DoxyReturn}{Returns}
+o texto do post. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_post_ab9ea6345952d8f7436aebb10e73b5545_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_post_af08b76053c6703c094e2beaab6dce268}{\index{Post@{Post}!set\-Author\-Identify@{set\-Author\-Identify}}
+\index{set\-Author\-Identify@{set\-Author\-Identify}!Post@{Post}}
+\subsubsection[{set\-Author\-Identify}]{\setlength{\rightskip}{0pt plus 5cm}void Post\-::set\-Author\-Identify (
+\begin{DoxyParamCaption}
+\item[{{\bf Identify}}]{author\-Identify}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_post_af08b76053c6703c094e2beaab6dce268}
+
+
+Da um set no valor do campo Author \hyperlink{class_identify}{Identify}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em author\-Identify} & \-: o identificador do author do . \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_post_af08b76053c6703c094e2beaab6dce268_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_post_a6476486ac78e6eb2c3eb950a3fba9de1}{\index{Post@{Post}!set\-Date@{set\-Date}}
+\index{set\-Date@{set\-Date}!Post@{Post}}
+\subsubsection[{set\-Date}]{\setlength{\rightskip}{0pt plus 5cm}void Post\-::set\-Date (
+\begin{DoxyParamCaption}
+\item[{{\bf Date}}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_post_a6476486ac78e6eb2c3eb950a3fba9de1}
+
+
+Da um set no valor do campo data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \-: a data do post. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_post_a6476486ac78e6eb2c3eb950a3fba9de1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_post_adaf2ae8bd4bc4d7981b2f7704b2603a0}{\index{Post@{Post}!set\-Evaluation@{set\-Evaluation}}
+\index{set\-Evaluation@{set\-Evaluation}!Post@{Post}}
+\subsubsection[{set\-Evaluation}]{\setlength{\rightskip}{0pt plus 5cm}void Post\-::set\-Evaluation (
+\begin{DoxyParamCaption}
+\item[{{\bf Evaluation}}]{evaluation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_post_adaf2ae8bd4bc4d7981b2f7704b2603a0}
+
+
+Da um set no valor do campo da avaliaçao. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em evaluation} & \-: o avaliaçao do post. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_post_adaf2ae8bd4bc4d7981b2f7704b2603a0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_post_a840eea1b1e1fb0a7dae6631064b3d584}{\index{Post@{Post}!set\-Post\-Identify@{set\-Post\-Identify}}
+\index{set\-Post\-Identify@{set\-Post\-Identify}!Post@{Post}}
+\subsubsection[{set\-Post\-Identify}]{\setlength{\rightskip}{0pt plus 5cm}void Post\-::set\-Post\-Identify (
+\begin{DoxyParamCaption}
+\item[{{\bf Identify}}]{post\-Identify}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_post_a840eea1b1e1fb0a7dae6631064b3d584}
+
+
+Da um set no valor do campo \hyperlink{class_post}{Post} \hyperlink{class_identify}{Identify}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em post\-Identify} & \-: o identificador do post. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_post_a840eea1b1e1fb0a7dae6631064b3d584_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_post_a707c32c73737cf886f32f733af58f851}{\index{Post@{Post}!set\-Post\-Text@{set\-Post\-Text}}
+\index{set\-Post\-Text@{set\-Post\-Text}!Post@{Post}}
+\subsubsection[{set\-Post\-Text}]{\setlength{\rightskip}{0pt plus 5cm}void Post\-::set\-Post\-Text (
+\begin{DoxyParamCaption}
+\item[{{\bf Post\-Text}}]{post\-Text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_post_a707c32c73737cf886f32f733af58f851}
+
+
+Da um set no valor do campo do texto do post. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em post\-Text} & \-: o texto do post. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_post_a707c32c73737cf886f32f733af58f851_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Vitor/\-Desktop/\-Work\-Space/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-F\-I\-N\-A\-L\-\_\-\-P\-O\-O/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-D\-E\-V/\-P\-R\-O\-J\-E\-T\-O/\-Projeto\-\_\-codeblocks/\hyperlink{_entidades_8h}{Entidades.\-h}\item 
+C\-:/\-Users/\-Vitor/\-Desktop/\-Work\-Space/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-F\-I\-N\-A\-L\-\_\-\-P\-O\-O/\-P\-R\-O\-J\-E\-T\-O\-\_\-\-D\-E\-V/\-P\-R\-O\-J\-E\-T\-O/\-Projeto\-\_\-codeblocks/Entidades.\-cpp\end{DoxyCompactItemize}

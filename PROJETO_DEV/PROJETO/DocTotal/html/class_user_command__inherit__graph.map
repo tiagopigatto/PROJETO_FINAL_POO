@@ -1,0 +1,8 @@
+<map id="UserCommand" name="UserCommand">
+<area shape="rect" id="node5" href="$class_command_create_user.html" title="Classe que irá procurar se já existe um id ou um nome ,igual ao do objeto, no bd, se esse não existir..." alt="" coords="303,5,449,32"/>
+<area shape="rect" id="node7" href="$class_command_delete_user.html" title="Classe que irá deletar um usuário no banco de dados, caso esse exista." alt="" coords="303,56,449,83"/>
+<area shape="rect" id="node9" href="$class_command_find_user.html" title="Classe que irá procurar um usuário pelo id e o colocara no objeto." alt="" coords="309,107,443,133"/>
+<area shape="rect" id="node11" href="$class_command_find_users.html" title="Classe que irá listar todos os usuários." alt="" coords="306,157,446,184"/>
+<area shape="rect" id="node13" href="$class_command_update_user.html" title="Classe que irá atualizar um usuário no banco de dados, caso esse exista." alt="" coords="301,208,451,235"/>
+<area shape="rect" id="node2" href="$class_a_command.html" title="Essa é a classe abstrata de comandos da persistência." alt="" coords="5,107,96,133"/>
+</map>

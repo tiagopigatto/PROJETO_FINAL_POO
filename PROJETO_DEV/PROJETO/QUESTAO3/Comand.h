@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   Comand.h
  * Author: Vitor
  *
@@ -13,10 +13,12 @@
 #include "Entidades.h"
 #include "sqlite3.h"
 
-
+/*! \class ACommad
+ *  \brief Esse e a classe abstrata de comandos
+ */
 class ACommand {
 protected:
-    char *sql, *end;    /**< Variavel que armazena o comando a ser realizado em sqp*/   /**< Variavel que serve para finalizar o BD*/           
+    char *sql, *end;    /**< Variavel que armazena o comando a ser realizado em sqp*/   /**< Variavel que serve para finalizar o BD*/
     int retval, i;      /**< Variavel que verifica se tudo ocorreu bem*/   /**< Contador*/
     int q_cnt, q_size;    /**< Variavel que armazena o identificador unico do Usuario*/   /**< Variavel que armazena o identificador unico do Usuario*/
     char **queries;         /**< Variavel que armazena as consultas*/
@@ -26,17 +28,17 @@ protected:
     sqlite3 *handle;        /**< Variavel que armazena o o banco de dados*/
     /*! \fn void conect();
      *  \brief Método responsável por conectar do banco de dados
-     */ 
+     */
     void conect();
     /*! \fn void desconect()
      *  \brief Método responsável por desconectar do banco de dados
-     */ 
+     */
     void desconect();
 
 public:
     /*! \fn virtual void execute()
      *  \brief Método responsável por iniciar a execução da classe
-    */   
+    */
     virtual void execute() = 0;
 };
 
@@ -56,15 +58,15 @@ public:
    /*! \fn void setUser(User user)
      *  \brief Método responsável por adicionar um usuário no banco de dados
      *  \param User = Objeto de um usuário
-     */     
+     */
     void setUser(User user);
    /*! \fn User getUser()
      *  \brief Método responsável pegar um usuário do banco de dados
-     */   
+     */
     User getUser();
    /*! \fn list getList()
      *  \brief Método responsável receber uma lista com os usuários de um banco de dados
-     */  
+     */
     list<User> getList();
 };
 
@@ -93,15 +95,15 @@ public:
    /*! \fn void setPost(Post post)
      *  \brief Método responsável por adicionar um post no banco de dados
      *  \param Post = Objeto de um post
-     */      
+     */
     void setPost(Post post);
    /*! \fn Post getPost()
      *  \brief Método responsável por pegar um post do banco de dados
-     */  
+     */
     Post getPost();
    /*! \fn list getList()
      *  \brief Método responsável gerar uma lista com os posts do banco de dados
-     */  
+     */
     list<Post> getList();
 };
 
@@ -125,21 +127,21 @@ inline list<Post> PostCommand::getList() {
 class ComentCommand : public ACommand {
 protected:
     Coment coment;           /**< Variavel que contém o objeto de um comentário*/
-    std::list<Coment> coments;  /**< Variavel que contém uma lista de objetos de comentários*/      
+    std::list<Coment> coments;  /**< Variavel que contém uma lista de objetos de comentários*/
 
 public:
    /*! \fn void setComent(Coment coment)
      *  \brief Método responsável por adicionar um comentário no banco de dados
      *  \param Coment = Objeto de um comentário
-     */    
-    void setComent(Coment coment);  
+     */
+    void setComent(Coment coment);
    /*! \fn Coment getComent()
      *  \brief Método responsável por adicionar um comentário no banco de dados
-     */    
+     */
     Coment getComent();
    /*! \fn list getList()
      *  \brief Método responsável por listar os comentários de um post do banco de dados
-     */    
+     */
     list<Coment> getList();
 };
 
@@ -158,7 +160,7 @@ inline list<Coment> ComentCommand::getList() {
 
 
 /** \class CommandCreateUser
- *  \brief Classe que irá procurar se já existe um id ou um nome ,igual ao do objeto, no bd, se esse não existir irá adicionar o obj. 
+ *  \brief Classe que irá procurar se já existe um id ou um nome ,igual ao do objeto, no bd, se esse não existir irá adicionar o obj.
  */
 class CommandCreateUser : public UserCommand {
 public:
@@ -168,7 +170,7 @@ public:
     void execute();
 };
 /** \class CommandFindUser
- *  \brief Classe que irá procurar um usuário pelo id e o colocara no objeto. 
+ *  \brief Classe que irá procurar um usuário pelo id e o colocara no objeto.
  */
 class CommandFindUser : public UserCommand {
 public:
@@ -178,7 +180,7 @@ public:
     void execute();
 };
 /** \class  CommandFindUsers
- *  \brief Classe que irá listar todos os usuários. 
+ *  \brief Classe que irá listar todos os usuários.
  */
 class CommandFindUsers : public UserCommand {
 public:
@@ -188,7 +190,7 @@ public:
     void execute();
 };
 /** \class  CommandUpdateUser
- *  \brief Classe que irá atualizar um usuário no banco de dados, caso esse exista. 
+ *  \brief Classe que irá atualizar um usuário no banco de dados, caso esse exista.
  */
 class CommandUpdateUser : public UserCommand {
 public:
@@ -198,7 +200,7 @@ public:
     void execute();
 };
 /** \class  CommandDeleteUser
- *  \brief Classe que irá deletar um usuário no banco de dados, caso esse exista. 
+ *  \brief Classe que irá deletar um usuário no banco de dados, caso esse exista.
  */
 class CommandDeleteUser : public UserCommand {
 public:
@@ -211,7 +213,7 @@ public:
 
 
 /** \class CommandCreatePost
- *  \brief Classe que irá procurar se já existe um id,igual ao do objeto, no bd, se esse não existir irá adicionar o obj. 
+ *  \brief Classe que irá procurar se já existe um id,igual ao do objeto, no bd, se esse não existir irá adicionar o obj.
  */
 class CommandCreatePost : public PostCommand {
 public:
@@ -221,7 +223,7 @@ public:
     void execute();
 };
 /** \class CommandUpdatePost
- *  \brief Classe que irá atualizar um post no banco de dados, caso esse exista. 
+ *  \brief Classe que irá atualizar um post no banco de dados, caso esse exista.
  */
 class CommandUpdatePost : public PostCommand {
 public:
@@ -231,7 +233,7 @@ public:
     void execute();
 };
 /** \class CommandDeletePost
- *  \brief Classe que irá deletar um post no banco de dados, caso esse exista. 
+ *  \brief Classe que irá deletar um post no banco de dados, caso esse exista.
  */
 class CommandDeletePost : public PostCommand {
 public:
@@ -241,7 +243,7 @@ public:
     void execute();
 };
 /** \class CommandFindPost
- *  \brief Classe que irá procurar um post pelo id, se encontrar o coloca em um objeto Post. 
+ *  \brief Classe que irá procurar um post pelo id, se encontrar o coloca em um objeto Post.
  */
 class CommandFindPost : public PostCommand {
 public:
@@ -251,7 +253,7 @@ public:
     void execute();
 };
 /** \class CommandFindAllPost
- *  \brief Classe que irá listar todos os posts. 
+ *  \brief Classe que irá listar todos os posts.
  */
 class CommandFindAllPost : public PostCommand {
 public:
@@ -274,7 +276,7 @@ public:
 
 //Comentários
 /** \class CommandCreateComent
- *  \brief Classe que irá procurar se já existe um id,igual ao do objeto, no bd, se esse não existir irá adicionar o obj. 
+ *  \brief Classe que irá procurar se já existe um id,igual ao do objeto, no bd, se esse não existir irá adicionar o obj.
  */
 class CommandCreateComent : public ComentCommand {
 public:
@@ -285,7 +287,7 @@ public:
 
 };
 /** \class CommandUpdateComent
- *  \brief Classe que irá atualizar um comentário no banco de dados, caso esse exista. 
+ *  \brief Classe que irá atualizar um comentário no banco de dados, caso esse exista.
  */
 class CommandUpdateComent : public ComentCommand {
 public:
@@ -295,7 +297,7 @@ public:
     void execute();
 };
 /** \class CommandDeleteComent
- *  \brief Classe que irá deletar um comentário no banco de dados, caso esse exista. 
+ *  \brief Classe que irá deletar um comentário no banco de dados, caso esse exista.
  */
 class CommandDeleteComent : public ComentCommand {
 public:
@@ -305,19 +307,19 @@ public:
     void execute();
 };
 /** \class CommandFindComent
- *  \brief Classe que irá procurar um cometário pelo id, se encontrar o coloca em um objeto Coment. 
+ *  \brief Classe que irá procurar um cometário pelo id, se encontrar o coloca em um objeto Coment.
  */
 class CommandFindComent : public ComentCommand {
 public:
     /*! \fn void execute()
      *  \brief Método responsável por iniciar a execução da classe
-    */    
+    */
    void execute();
 
 }; //POst
 
 /** \class CommandFindPostComents
- *  \brief Classe que irá procurar os comentários de um post, se encontrar os coloca em um lista de objetos Coment. 
+ *  \brief Classe que irá procurar os comentários de um post, se encontrar os coloca em um lista de objetos Coment.
  */
 class CommandFindPostComents : public ComentCommand {
 public:

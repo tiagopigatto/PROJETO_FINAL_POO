@@ -1,0 +1,21 @@
+<map id="ACommand" name="ACommand">
+<area shape="rect" id="node3" href="$class_coment_command.html" title="Classe que possui todos os comandos que podem ser realizados para um post." alt="" coords="145,132,271,159"/>
+<area shape="rect" id="node15" href="$class_post_command.html" title="Classe que possui todos os comandos que podem ser realizados para um post." alt="" coords="154,385,262,412"/>
+<area shape="rect" id="node29" href="$class_user_command.html" title="Classe que possui todos os comandos que podem ser realizados para um usuário." alt="" coords="154,639,262,665"/>
+<area shape="rect" id="node5" href="$class_command_create_coment.html" title="Classe que irá procurar se já existe um id,igual ao do objeto, no bd, se esse não existir irá adicion..." alt="" coords="331,5,495,32"/>
+<area shape="rect" id="node7" href="$class_command_delete_coment.html" title="Classe que irá deletar um comentário no banco de dados, caso esse exista." alt="" coords="332,56,495,83"/>
+<area shape="rect" id="node9" href="$class_command_find_coment.html" title="Classe que irá procurar um cometário pelo id, se encontrar o coloca em um objeto Coment." alt="" coords="338,107,489,133"/>
+<area shape="rect" id="node11" href="$class_command_find_post_coments.html" title="Classe que irá procurar os comentários de um post, se encontrar os coloca em um lista de objetos Come..." alt="" coords="321,157,506,184"/>
+<area shape="rect" id="node13" href="$class_command_update_coment.html" title="Classe que irá atualizar um comentário no banco de dados, caso esse exista." alt="" coords="330,208,497,235"/>
+<area shape="rect" id="node17" href="$class_command_create_post.html" title="Classe que irá procurar se já existe um id,igual ao do objeto, no bd, se esse não existir irá adicion..." alt="" coords="340,259,487,285"/>
+<area shape="rect" id="node19" href="$class_command_delete_post.html" title="Classe que irá deletar um post no banco de dados, caso esse exista." alt="" coords="341,309,486,336"/>
+<area shape="rect" id="node21" href="$class_command_find_all_post.html" title="Classe que irá listar todos os posts." alt="" coords="339,360,487,387"/>
+<area shape="rect" id="node23" href="$class_command_find_post.html" title="Classe que irá procurar um post pelo id, se encontrar o coloca em um objeto Post." alt="" coords="347,411,480,437"/>
+<area shape="rect" id="node25" href="$class_command_find_user_post.html" title="Classe que retorna os posts de um usário que estão no banco de dados." alt="" coords="333,461,493,488"/>
+<area shape="rect" id="node27" href="$class_command_update_post.html" title="Classe que irá atualizar um post no banco de dados, caso esse exista." alt="" coords="339,512,488,539"/>
+<area shape="rect" id="node31" href="$class_command_create_user.html" title="Classe que irá procurar se já existe um id ou um nome ,igual ao do objeto, no bd, se esse não existir..." alt="" coords="340,563,487,589"/>
+<area shape="rect" id="node33" href="$class_command_delete_user.html" title="Classe que irá deletar um usuário no banco de dados, caso esse exista." alt="" coords="341,613,486,640"/>
+<area shape="rect" id="node35" href="$class_command_find_user.html" title="Classe que irá procurar um usuário pelo id e o colocara no objeto." alt="" coords="347,664,480,691"/>
+<area shape="rect" id="node37" href="$class_command_find_users.html" title="Classe que irá listar todos os usuários." alt="" coords="343,715,483,741"/>
+<area shape="rect" id="node39" href="$class_command_update_user.html" title="Classe que irá atualizar um usuário no banco de dados, caso esse exista." alt="" coords="339,765,488,792"/>
+</map>

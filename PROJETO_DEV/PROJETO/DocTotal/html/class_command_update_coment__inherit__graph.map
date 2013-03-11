@@ -1,0 +1,4 @@
+<map id="CommandUpdateComent" name="CommandUpdateComent">
+<area shape="rect" id="node2" href="$class_coment_command.html" title="Classe que possui todos os comandos que podem ser realizados para um post." alt="" coords="25,80,151,107"/>
+<area shape="rect" id="node4" href="$class_a_command.html" title="Essa é a classe abstrata de comandos da persistência." alt="" coords="43,5,133,32"/>
+</map>

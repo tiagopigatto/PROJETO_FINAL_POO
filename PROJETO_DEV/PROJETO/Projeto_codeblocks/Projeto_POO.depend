@@ -307,3 +307,157 @@
 	<stdexcept>
 	"testestipos.h"
 
+1362390651 source:c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\builder.cpp
+	"Builder.h"
+
+1362401635 c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\builder.h
+	"ProtocoloLN.h"
+	"PercistenceProtocol.h"
+	"IUProtocols.h"
+	"InterUsu.h"
+	"LogNeg.h"
+	"Percistencia.h"
+
+1362403484 c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\protocololn.h
+	"Entidades.h"
+	"PercistenceProtocol.h"
+	<list>
+
+1362390651 c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\entidades.h
+	<string>
+	<stdexcept>
+	"TiposBasicos.h"
+
+1362390651 c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\tiposbasicos.h
+	<string>
+	<stdexcept>
+	<cstdlib>
+
+1362403209 c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\percistenceprotocol.h
+	"Comand.h"
+	"Errors.h"
+
+1362401566 c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\comand.h
+	<list>
+	<string.h>
+	"Entidades.h"
+	"sqlite3.h"
+
+1362390652 c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\sqlite3.h
+	<stdarg.h>
+
+1362402007 c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\errors.h
+	<string>
+
+1362402682 c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\iuprotocols.h
+	"ProtocoloLN.h"
+
+1362390651 c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\interusu.h
+	"ProtocoloLN.h"
+	"IUProtocols.h"
+	"PercistenceProtocol.h"
+	"Entidades.h"
+	"Errors.h"
+	<iostream>
+	<string>
+	<stdio.h>
+	<list>
+
+1362390651 c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\logneg.h
+	"Entidades.h"
+	"ProtocoloLN.h"
+	"Comand.h"
+	"Errors.h"
+	<stdexcept>
+	<iostream>
+	<string>
+
+1362403265 c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\percistencia.h
+	<list>
+	"Entidades.h"
+	"PercistenceProtocol.h"
+	"sqlite3.h"
+
+1362390651 source:c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\comand.cpp
+	"Comand.h"
+
+1362390651 source:c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\entidades.cpp
+	"Entidades.h"
+
+1362390651 source:c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\interusu.cpp
+	"InterUsu.h"
+
+1362390651 source:c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\logneg.cpp
+	"LogNeg.h"
+
+1362390651 source:c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\percistence.cpp
+
+1362390651 source:c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\protocolo.cpp
+
+1362390651 source:c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\stubln.cpp
+	"LogNeg.h"
+
+1362390651 source:c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\tiposbasicos.cpp
+	"TiposBasicos.h"
+
+1362390652 source:c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\main.cpp
+	<iostream>
+	<string>
+	<stdio.h>
+	"Builder.h"
+	"testestipos.h"
+
+1362390652 c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\testestipos.h
+	<iostream>
+	"TiposBasicos.h"
+	"Entidades.h"
+
+1362390652 source:c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\sqlite3.c
+	"config.h"
+	<stdint.h>
+	<inttypes.h>
+	<tcl.h>
+	<stdarg.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<windows.h>
+	<os2safe.h>
+	<os2.h>
+	<uconv.h>
+	<ctype.h>
+	<time.h>
+	<pthread.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/ioctl.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/file.h>
+	<sys/param.h>
+	<sys/mount.h>
+	<dlfcn.h>
+	<winbase.h>
+	<sys/cygwin.h>
+	"sqlite3rtree.h"
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+
+1362390652 source:c:\users\vitor\desktop\workspace\projeto_final_poo\projeto_dev\projeto\projeto_codeblocks\testestipos.cpp
+	<cstdlib>
+	<iostream>
+	<stdexcept>
+	"testestipos.h"
+
